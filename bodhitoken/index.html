@@ -68,13 +68,19 @@
     <li class="toctree-l2"><a href="#interface-abi">Interface (ABI)</a></li>
     
 
+    <li class="toctree-l2"><a href="#function-signatures">Function Signatures</a></li>
+    
+
     <li class="toctree-l2"><a href="#environment-prerequisites">Environment Prerequisites</a></li>
     
 
     <li class="toctree-l2"><a href="#convert-qtum-address-to-hash">Convert Qtum Address to Hash</a></li>
     
 
-    <li class="toctree-l2"><a href="#transfer-bodhi-tokens">Transfer Bodhi Tokens</a></li>
+    <li class="toctree-l2"><a href="#transfer-bodhi-tokens-using-qt-wallet">Transfer Bodhi Tokens (using QT Wallet)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#transfer-bodhi-tokens-using-qtum-cli">Transfer Bodhi Tokens (using qtum-cli)</a></li>
     
 
     </ul>
@@ -126,8 +132,27 @@
 <pre><code>[{&quot;constant&quot;:true,&quot;inputs&quot;:[],&quot;name&quot;:&quot;name&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;view&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:false,&quot;inputs&quot;:[{&quot;name&quot;:&quot;_spender&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;name&quot;:&quot;approve&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;bool&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;nonpayable&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:true,&quot;inputs&quot;:[],&quot;name&quot;:&quot;totalSupply&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;view&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:false,&quot;inputs&quot;:[{&quot;name&quot;:&quot;_from&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;name&quot;:&quot;transferFrom&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;bool&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;nonpayable&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:true,&quot;inputs&quot;:[],&quot;name&quot;:&quot;decimals&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;view&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:false,&quot;inputs&quot;:[{&quot;name&quot;:&quot;_to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_amount&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;name&quot;:&quot;mintByOwner&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;bool&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;nonpayable&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:true,&quot;inputs&quot;:[{&quot;name&quot;:&quot;_owner&quot;,&quot;type&quot;:&quot;address&quot;}],&quot;name&quot;:&quot;balanceOf&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;balance&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;view&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:true,&quot;inputs&quot;:[],&quot;name&quot;:&quot;owner&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;address&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;view&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:true,&quot;inputs&quot;:[],&quot;name&quot;:&quot;symbol&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;view&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:false,&quot;inputs&quot;:[{&quot;name&quot;:&quot;_to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;name&quot;:&quot;transfer&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;bool&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;nonpayable&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:true,&quot;inputs&quot;:[{&quot;name&quot;:&quot;_owner&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;_spender&quot;,&quot;type&quot;:&quot;address&quot;}],&quot;name&quot;:&quot;allowance&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;remaining&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;view&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:false,&quot;inputs&quot;:[{&quot;name&quot;:&quot;newOwner&quot;,&quot;type&quot;:&quot;address&quot;}],&quot;name&quot;:&quot;transferOwnership&quot;,&quot;outputs&quot;:[],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;nonpayable&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;constant&quot;:true,&quot;inputs&quot;:[],&quot;name&quot;:&quot;tokenTotalSupply&quot;,&quot;outputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;view&quot;,&quot;type&quot;:&quot;function&quot;},{&quot;inputs&quot;:[],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;nonpayable&quot;,&quot;type&quot;:&quot;constructor&quot;},{&quot;anonymous&quot;:false,&quot;inputs&quot;:[{&quot;indexed&quot;:false,&quot;name&quot;:&quot;supply&quot;,&quot;type&quot;:&quot;uint256&quot;},{&quot;indexed&quot;:true,&quot;name&quot;:&quot;to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;indexed&quot;:false,&quot;name&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;name&quot;:&quot;Mint&quot;,&quot;type&quot;:&quot;event&quot;},{&quot;anonymous&quot;:false,&quot;inputs&quot;:[{&quot;indexed&quot;:true,&quot;name&quot;:&quot;_owner&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;indexed&quot;:true,&quot;name&quot;:&quot;_spender&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;indexed&quot;:false,&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;name&quot;:&quot;Approval&quot;,&quot;type&quot;:&quot;event&quot;},{&quot;anonymous&quot;:false,&quot;inputs&quot;:[{&quot;indexed&quot;:true,&quot;name&quot;:&quot;_from&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;indexed&quot;:true,&quot;name&quot;:&quot;_to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;indexed&quot;:false,&quot;name&quot;:&quot;_value&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;name&quot;:&quot;Transfer&quot;,&quot;type&quot;:&quot;event&quot;}]
 </code></pre>
 
+<h2 id="function-signatures">Function Signatures</h2>
+<pre><code>dd62ed3e: allowance(address,address)
+095ea7b3: approve(address,uint256)
+70a08231: balanceOf(address)
+313ce567: decimals()
+3542aee2: mintByOwner(address,uint256)
+06fdde03: name()
+8da5cb5b: owner()
+95d89b41: symbol()
+f7abab9e: tokenTotalSupply()
+18160ddd: totalSupply()
+a9059cbb: transfer(address,uint256)
+23b872dd: transferFrom(address,address,uint256)
+f2fde38b: transferOwnership(address)
+</code></pre>
+
 <h2 id="environment-prerequisites">Environment Prerequisites</h2>
-<p>QTUM - find latest release and download installer from <a href="https://github.com/qtumproject/qtum/releases">https://github.com/qtumproject/qtum/releases</a></p>
+<ul>
+<li>QTUM - find latest release and download installer from <a href="https://github.com/qtumproject/qtum/releases">https://github.com/qtumproject/qtum/releases</a></li>
+<li>Ethabi (if using the CLI) - <a href="https://github.com/paritytech/ethabi">https://github.com/paritytech/ethabi</a> </li>
+</ul>
 <h2 id="convert-qtum-address-to-hash">Convert Qtum Address to Hash</h2>
 <ol>
 <li>With QT Wallet open, select Help &gt; Debug window</li>
@@ -135,7 +160,7 @@
 <li>Type the command: <code>gethexaddress (yourQtumAddress)</code></li>
 <li>Output is the hash address</li>
 </ol>
-<h2 id="transfer-bodhi-tokens">Transfer Bodhi Tokens</h2>
+<h2 id="transfer-bodhi-tokens-using-qt-wallet">Transfer Bodhi Tokens (using QT Wallet)</h2>
 <ol>
 <li>
 <p>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
@@ -169,6 +194,135 @@
 <li>Click the <code>Send To Contract</code> button</li>
 <li>Wait for your transaction to be mined</li>
 </ul>
+</li>
+</ol>
+<h2 id="transfer-bodhi-tokens-using-qtum-cli">Transfer Bodhi Tokens (using qtum-cli)</h2>
+<ol>
+<li>
+<p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
+<pre><code>$ ./qtumd
+</code></pre>
+</li>
+<li>
+<p>Open a new Terminal tab</p>
+</li>
+<li>
+<p>Check for account: Make sure you have a valid Qtum address that has some QTUM (for the transaction fee) and BOT for transferring.</p>
+<pre><code>$ ./qtum-cli listaccounts
+{
+  "": -238.19753958,
+  "deric": 248.78550718,
+  "tester1": 15.08267720
+}
+# My example shows 2 accounts: deric &amp; tester1. 
+# If you don’t see any accounts, go to Step 2. 
+# Otherwise, go to Step 3.
+</code></pre>
+</li>
+<li>
+<p>Creating an account</p>
+<pre><code>$ ./qtum-cli getaccountaddress “yourAccountName”
+qdghGtMxvfxPzdSJHNvJhN6gpzZSYdLDRN
+</code></pre>
+</li>
+<li>
+<p>Transferring QTUM to your account: You will need some QTUM in your accounts to be able to transfer BOT. If you need to transfer some QTUM to your address from a different QTUM address.</p>
+<p>a. Encrypt wallet: <a href="https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial">https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial</a></p>
+<p>b. Save your passphrase words</p>
+<p>c. Unlock wallet</p>
+<pre><code>$ ./qtum-cli walletpassphrase “your passphase words” numOfSecondsToKeepUnlocked
+</code></pre>
+<p>d. Transfer QTUM</p>
+<pre><code>$ ./qtum-cli sendtoaddress “addressToSendQtum” amountToSend
+de639bb266a4143d56fe24d64fe21d416847fcbc16cd51b8d4eeb04818af0628
+</code></pre>
+<p>e. Wait until your transaction is confirmed. You can check with:</p>
+<pre><code>$ ./qtum-cli gettransaction de639bb266a4143d56fe24d64fe21d416847fcbc16cd51b8d4eeb04818af0628
+</code></pre>
+</li>
+<li>
+<p>Transfer Bodhi Tokens using transfer(address, uint256)</p>
+<pre><code># sendtocontract help
+Arguments:
+1. "contractAddress" (string, required) The contract address that will receive the funds and data.
+2. "dataHex"  (string, required) data to send.
+3. "amount"      (numeric or string, optional) The amount in QTUM to send. eg 0.1, default: 0
+4. gasLimit  (numeric or string, optional) gasLimit, default: 250000, max: 40000000
+5. gasPrice  (numeric or string, optional) gasPrice Qtum price per gas unit, default: 0.0000004, min:0.0000004
+6. "senderAddress" (string, optional) The quantum address that will be used as sender.
+
+$ ./qtum-cli sendtocontract contractAddress dataHex amount gasLimit gasPrice senderAddress
+</code></pre>
+<p>Constructing the <code>dataHex</code> for <code>transfer(address, uint256)</code>:</p>
+<p>This data string is hex of data which consists of function name, value of parameters. All parts of hex strings need to be concatenated together with no space in between.</p>
+<ul>
+<li>Function name: transfer() = function signature: <code>a9059cbb</code></li>
+<li>
+<p>First param: address param = Recipient address of BOT. Need to get the encoded address first</p>
+<pre><code>$ ./qtum-cli gethexaddress QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF
+# hash address:
+d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+
+$ ethabi encode params -v address d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+# encoded address with ethabi
+000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+</code></pre>
+</li>
+<li>
+<p>Second parameter: uint256 param = amount to send to in lowest denomination of BOT (Botoshi). </p>
+<pre><code>$ ethabi encode params -v uint 10000 --lenient
+0000000000000000000000000000000000000000000000000000000000002710
+</code></pre>
+</li>
+</ul>
+<p>Now we have all the params we need encoded properly:</p>
+<pre><code>a9059cbb000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada40000000000000000000000000000000000000000000000000000000000002710
+</code></pre>
+<p>Finally the last arguments in the call:</p>
+<ul>
+<li><code>amount</code> = 0</li>
+<li><code>gasLimit</code> = 250000</li>
+<li><code>gasPrice</code> = 0.0000004</li>
+<li><code>senderAddress</code> = QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF</li>
+</ul>
+<p>Execute the transfer():</p>
+<pre><code>$ ./qtum-cli sendtocontract f13f51550faaf698d09fdcc74d79335bfe19e062 a9059cbb000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada40000000000000000000000000000000000000000000000000000000000002710 0 250000 0.0000004 QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF
+# transaction receipt
+{
+  "txid": "25af2f8cc32e76b52b39175336612f0ae568906216667e6482421edce2909f72",
+  "sender": "QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF",
+  "hash160": "d965cdc9eff7412a278cd9dd7dc32e022b7bada4"
+}
+</code></pre>
+</li>
+<li>
+<p>Check the BOT balance of your address</p>
+<pre><code># $ ./qtum-cli callcontract contractAddress dataHex
+# dataHex = function signature: 70a08231 + encodedAddressToCheckBalanceOf
+$ ./qtum-cli callcontract f13f51550faaf698d09fdcc74d79335bfe19e062 70a082310000000000000000000000004cb69aae6761e52413b948ad10689cc2428e2ef7
+{
+  "address": "a619b1a87d4f17fb56e347887b971094918b016c",
+  "executionResult": {
+    "gasUsed": 23404,
+    "excepted": "None",
+    "newAddress": "a619b1a87d4f17fb56e347887b971094918b016c",
+    "output": "000000000000000000000000000000000000000000000000000000000000015e", &lt;--
+    "codeDeposit": 0,
+    "gasRefunded": 0,
+    "depositSize": 0,
+    "gasForDeposit": 0
+  },
+  "transactionReceipt": {
+    "stateRoot": "a040c9b3ba184d57ae0942fb70dfdeba9c436809ec66c855b2d15441c46824d8",
+    "gasUsed": 23404,
+    "bloom": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "log": [
+    ]
+  }
+}
+</code></pre>
+<p><code>output: 000000000000000000000000000000000000000000000000000000000000015e</code></p>
+<p>This is the hex return value of <code>balanceOf()</code>. Converted to decimals, it is <code>350</code>.</p>
 </li>
 </ol>
               
