@@ -1,8 +1,8 @@
 ## Deployed Contracts
 
-**QTUM**
+**QTUM Testnet**
 
-* Testnet: a619b1a87d4f17fb56e347887b971094918b016c
+* a619b1a87d4f17fb56e347887b971094918b016c
 
 
 ## Interface (ABI)
