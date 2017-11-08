@@ -3,4 +3,5 @@ theme: readthedocs
 pages:
   - Home: index.md
   - Deployment: deployment.md
+  - BodhiToken: bodhitoken.md
   - Help: help.md
