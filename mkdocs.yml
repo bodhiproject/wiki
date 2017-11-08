@@ -1,3 +1,4 @@
 site_name: Bodhi Prediction Market Wiki
 pages:
  - Home: 'README.md'
+theme: readthedocs
