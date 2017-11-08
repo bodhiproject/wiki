@@ -1,4 +1,6 @@
 site_name: Bodhi Prediction Market Wiki
-pages:
- - Home: 'README.md'
 theme: readthedocs
+pages:
+  - Home: index.md
+  - Deployment: deployment.md
+  - Help: help.md
