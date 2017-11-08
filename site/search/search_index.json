@@ -2,23 +2,43 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
-            "title": "Welcome to MkDocs"
+            "text": "Welcome\n\n\nBodhi Prediction Market: the next generation decentralized prediction market\n\n\nhttps://www.bodhi.network/", 
+            "title": "Home"
         }, 
         {
-            "location": "/#welcome-to-mkdocs", 
+            "location": "/#welcome", 
+            "text": "Bodhi Prediction Market: the next generation decentralized prediction market  https://www.bodhi.network/", 
+            "title": "Welcome"
+        }, 
+        {
+            "location": "/deployment/", 
+            "text": "Deployment\n\n\nGetting Started", 
+            "title": "Deployment"
+        }, 
+        {
+            "location": "/deployment/#deployment", 
+            "text": "", 
+            "title": "Deployment"
+        }, 
+        {
+            "location": "/deployment/#getting-started", 
+            "text": "", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/help/", 
+            "text": "Help\n\n\nMkdocs Markdown\n\n\nFor full documentation visit \nmkdocs.org\n.", 
+            "title": "Help"
+        }, 
+        {
+            "location": "/help/#help", 
+            "text": "", 
+            "title": "Help"
+        }, 
+        {
+            "location": "/help/#mkdocs-markdown", 
             "text": "For full documentation visit  mkdocs.org .", 
-            "title": "Welcome to MkDocs"
-        }, 
-        {
-            "location": "/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
-            "title": "Commands"
-        }, 
-        {
-            "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
-            "title": "Project layout"
+            "title": "Mkdocs Markdown"
         }
     ]
 }
