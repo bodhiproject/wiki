@@ -2,6 +2,6 @@ site_name: Bodhi Prediction Market Wiki
 theme: readthedocs
 pages:
   - Home: index.md
-  - Deployment: deployment.md
+  - Contract Deployment: deployment.md
   - BodhiToken: bodhitoken.md
   - Help: help.md
