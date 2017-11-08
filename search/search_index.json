@@ -62,12 +62,7 @@
         }, 
         {
             "location": "/help/", 
-            "text": "Help\n\n\nMkdocs Markdown\n\n\nFor full documentation visit \nmkdocs.org\n.", 
-            "title": "Help"
-        }, 
-        {
-            "location": "/help/#help", 
-            "text": "", 
+            "text": "Mkdocs Markdown\n\n\nFor full documentation visit \nmkdocs.org\n.", 
             "title": "Help"
         }, 
         {
