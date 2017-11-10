@@ -38,7 +38,14 @@ f2fde38b: transferOwnership(address)
 * Ethabi (if using the CLI) - [https://github.com/paritytech/ethabi](https://github.com/paritytech/ethabi) 
 
 
-## Adding BodhiToken to QT Wallet
+## Convert Qtum Address to Hash
+1. With QT Wallet open, select Help > Debug window
+2. Select the Console tab
+3. Type the command: `gethexaddress (yourQtumAddress)`
+4. Output is the hash address
+
+
+## Adding Bodhi Token to QT Wallet
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -50,14 +57,22 @@ f2fde38b: transferOwnership(address)
 6. You should now see `BOT` being monitored in the `Overview` and `QRC Token` tabs
 
 
-## Convert Qtum Address to Hash
-1. With QT Wallet open, select Help > Debug window
-2. Select the Console tab
-3. Type the command: `gethexaddress (yourQtumAddress)`
-4. Output is the hash address
+## Transfer Bodhi Tokens (using QT Wallet) (Easy)
+1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
+    ```
+    $ ./qtum-qt
+    ```
+2. Add Bodhi Token to your QT Wallet (see above)
+3. In the `QRC Token` tab, click the `Send` button
+4. In the `PayTo` field, add the address you would like to send BOT to
+5. In the `Amount` field, type in the amount to send (in lowest denomination of BOT, Botoshi)
+6. (Optional) In the `Description` field, add a note for reference
+7. Click the `Confirm` button, then a popup window will appear to confirm
+8. Wait for the timer in the `Yes` button to finish, then click it
+9. Wait until your transaction is mined
 
 
-## Transfer Bodhi Tokens (using QT Wallet)
+## Transfer Bodhi Tokens (using QT Wallet) (Hard)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
