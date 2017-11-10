@@ -38,6 +38,18 @@ f2fde38b: transferOwnership(address)
 * Ethabi (if using the CLI) - [https://github.com/paritytech/ethabi](https://github.com/paritytech/ethabi) 
 
 
+## Adding BodhiToken to QT Wallet
+1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
+    ```
+    $ ./qtum-qt
+    ```
+2. In the `Overview` tab, click the `Add Token` button
+3. Copy/paste the token address in `Contract Address`
+4. Select the `Token Address` which you would like to monitor BOT activity on
+5. Click on the `Confirm` button
+6. You should now see `BOT` being monitored in the `Overview` and `QRC Token` tabs
+
+
 ## Convert Qtum Address to Hash
 1. With QT Wallet open, select Help > Debug window
 2. Select the Console tab
