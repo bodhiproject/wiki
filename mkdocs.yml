@@ -1,5 +1,7 @@
 site_name: Bodhi Prediction Market Wiki
-theme: readthedocs
+theme:
+  name: readthedocs
+  custom_dir: custom_theme
 pages:
   - Home: index.md
   - Contract Deployment: deployment.md
