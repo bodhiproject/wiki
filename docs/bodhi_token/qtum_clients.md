@@ -13,22 +13,28 @@
 3. Type the command: `gethexaddress (yourQtumAddress)`
 4. Output is the hash address
 
-# Send BOT using Qtum mobile app
-1. Download the mobile app:
-2. Launch the app
-3. Click on `Profile` tab
-4. Click on `Smart Contracts`
-5. Click on `Watch Token`
-6. Add `Token Name`: BOT
-7. Copy/paste the `Token Address` (see [Deployed Contracts](info.md#deployed-contracts) Mainnet address above)
-8. Copy/paste the `ABI Interface` (see [Interface (ABI)](info.md#interface-abi) above)
-9. Click `OK` button
-10. Click on `Send` Tab
-11. Add the `Receiver's Address` of the person you want to send BOT to
-12. Click `Choose Token` dropdown and select `BOT`
-13. Enter the `Amount` to send (in [Botoshi](info.md#bot-units))
-14. Click the `Send` button
-15. Wait for the transaction to be mined
+# Send BOT with Qtum mobile app
+1. Download the mobile app and launch it
+2. Click on `Profile` tab
+3. Click on `Smart Contracts`
+4. Click on `Watch Token`
+5. Add `Token Name`: BOT
+6. Copy/paste the `Token Address` (see [Deployed Contracts](info.md#deployed-contracts) Mainnet address above)
+7. Copy/paste the `ABI Interface` (see [Interface (ABI)](info.md#interface-abi) above)
+8. Click `OK` button
+9. Click on `Send` Tab
+10. Add the `Receiver's Address` of the person you want to send BOT to
+11. Click `Choose Token` dropdown and select `BOT`
+12. Enter the `Amount` to send (in [Botoshi](info.md#bot-units))
+13. Click the `Send` button
+14. Wait for the transaction to be mined
+
+# Receive BOT with Qtum mobile app
+1. Download the mobile app and launch it
+2. The address shown in the `Wallet` tab is your main address
+3. Click on the address or `+` sign next to the address
+4. Click on the `Copy Wallet Address` button
+5. Give that address to the person sending the BOT to you
 
 # Watch BOT in QT Wallet
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
@@ -41,7 +47,7 @@
 5. Click on the `Confirm` button
 6. You should now see `BOT` being monitored in the `Overview` and `QRC Token` tabs
 
-# Send BOT using QT Wallet (Easy)
+# Send BOT with QT Wallet (Easy)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -55,7 +61,16 @@
 8. Wait for the timer in the `Yes` button to finish, then click it
 9. Wait until your transaction is mined
 
-# Send BOT using QT Wallet (Harder)
+# Receive BOT with QT Wallet
+1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
+    ```
+    $ ./qtum-qt
+    ```
+2. Click on `File` > `Receiving addresses...`
+3. Select the address you would like the BOT sent to then click `Copy`
+4. Give that address to the person sending the BOT to you
+
+# Send BOT with QT Wallet (Harder)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -83,7 +98,7 @@
     * Click the `Send To Contract` button
     * Wait for your transaction to be mined
 
-# Send BOT using qtum-cli (Hardest)
+# Send BOT with qtum-cli (Hardest)
 1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
 
         $ ./qtumd
@@ -209,3 +224,28 @@
     `output: 000000000000000000000000000000000000000000000000000000000000015e`
 
     This is the hex return value of `balanceOf()`. Converted to decimals, it is `350`.
+
+# Receive BOT with qtum-cli
+1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
+
+        $ ./qtumd
+
+2. Open a new Terminal tab
+3. List your accounts:
+
+        $ ./qtum-cli listaccounts
+        {
+          "": -569.38821838,
+          "deric": 576.02622998,
+          "tester1": 15.08267720
+        }
+
+4. Find the addresses of your accounts:
+
+        $ ./qtum-cli getaddressesbyaccount deric
+        [
+          "qQZ1GB4db8jVaBmzyw7dsoSDqEAGN7Bfov", 
+          "qQnvzVjK2xASAkvEwfmEAiG2vZPUQrF6Cg"
+        ]
+
+5. Pick an address to receive and give that to the person sending you the BOT

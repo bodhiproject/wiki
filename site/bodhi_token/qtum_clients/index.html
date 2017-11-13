@@ -71,19 +71,28 @@
     <li class="toctree-l3"><a href="#convert-qtum-address-to-hash">Convert Qtum Address to Hash</a></li>
     
 
-    <li class="toctree-l3"><a href="#send-bot-using-qtum-mobile-app">Send BOT using Qtum mobile app</a></li>
+    <li class="toctree-l3"><a href="#send-bot-with-qtum-mobile-app">Send BOT with Qtum mobile app</a></li>
+    
+
+    <li class="toctree-l3"><a href="#receive-bot-with-qtum-mobile-app">Receive BOT with Qtum mobile app</a></li>
     
 
     <li class="toctree-l3"><a href="#watch-bot-in-qt-wallet">Watch BOT in QT Wallet</a></li>
     
 
-    <li class="toctree-l3"><a href="#send-bot-using-qt-wallet-easy">Send BOT using QT Wallet (Easy)</a></li>
+    <li class="toctree-l3"><a href="#send-bot-with-qt-wallet-easy">Send BOT with QT Wallet (Easy)</a></li>
     
 
-    <li class="toctree-l3"><a href="#send-bot-using-qt-wallet-harder">Send BOT using QT Wallet (Harder)</a></li>
+    <li class="toctree-l3"><a href="#receive-bot-with-qt-wallet">Receive BOT with QT Wallet</a></li>
     
 
-    <li class="toctree-l3"><a href="#send-bot-using-qtum-cli-hardest">Send BOT using qtum-cli (Hardest)</a></li>
+    <li class="toctree-l3"><a href="#send-bot-with-qt-wallet-harder">Send BOT with QT Wallet (Harder)</a></li>
+    
+
+    <li class="toctree-l3"><a href="#send-bot-with-qtum-cli-hardest">Send BOT with qtum-cli (Hardest)</a></li>
+    
+
+    <li class="toctree-l3"><a href="#receive-bot-with-qtum-cli">Receive BOT with qtum-cli</a></li>
     
 
     </ul>
@@ -164,10 +173,9 @@
 <li>Type the command: <code>gethexaddress (yourQtumAddress)</code></li>
 <li>Output is the hash address</li>
 </ol>
-<h1 id="send-bot-using-qtum-mobile-app">Send BOT using Qtum mobile app</h1>
+<h1 id="send-bot-with-qtum-mobile-app">Send BOT with Qtum mobile app</h1>
 <ol>
-<li>Download the mobile app:</li>
-<li>Launch the app</li>
+<li>Download the mobile app and launch it</li>
 <li>Click on <code>Profile</code> tab</li>
 <li>Click on <code>Smart Contracts</code></li>
 <li>Click on <code>Watch Token</code></li>
@@ -182,6 +190,14 @@
 <li>Click the <code>Send</code> button</li>
 <li>Wait for the transaction to be mined</li>
 </ol>
+<h1 id="receive-bot-with-qtum-mobile-app">Receive BOT with Qtum mobile app</h1>
+<ol>
+<li>Download the mobile app and launch it</li>
+<li>The address shown in the <code>Wallet</code> tab is your main address</li>
+<li>Click on the address or <code>+</code> sign next to the address</li>
+<li>Click on the <code>Copy Wallet Address</code> button</li>
+<li>Give that address to the person sending the BOT to you</li>
+</ol>
 <h1 id="watch-bot-in-qt-wallet">Watch BOT in QT Wallet</h1>
 <ol>
 <li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
@@ -192,7 +208,7 @@
 <li>Click on the <code>Confirm</code> button</li>
 <li>You should now see <code>BOT</code> being monitored in the <code>Overview</code> and <code>QRC Token</code> tabs</li>
 </ol>
-<h1 id="send-bot-using-qt-wallet-easy">Send BOT using QT Wallet (Easy)</h1>
+<h1 id="send-bot-with-qt-wallet-easy">Send BOT with QT Wallet (Easy)</h1>
 <ol>
 <li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
     <code>$ ./qtum-qt</code></li>
@@ -205,7 +221,15 @@
 <li>Wait for the timer in the <code>Yes</code> button to finish, then click it</li>
 <li>Wait until your transaction is mined</li>
 </ol>
-<h1 id="send-bot-using-qt-wallet-harder">Send BOT using QT Wallet (Harder)</h1>
+<h1 id="receive-bot-with-qt-wallet">Receive BOT with QT Wallet</h1>
+<ol>
+<li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
+    <code>$ ./qtum-qt</code></li>
+<li>Click on <code>File</code> &gt; <code>Receiving addresses...</code></li>
+<li>Select the address you would like the BOT sent to then click <code>Copy</code></li>
+<li>Give that address to the person sending the BOT to you</li>
+</ol>
+<h1 id="send-bot-with-qt-wallet-harder">Send BOT with QT Wallet (Harder)</h1>
 <ol>
 <li>
 <p>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
@@ -241,7 +265,7 @@
 </ul>
 </li>
 </ol>
-<h1 id="send-bot-using-qtum-cli-hardest">Send BOT using qtum-cli (Hardest)</h1>
+<h1 id="send-bot-with-qtum-cli-hardest">Send BOT with qtum-cli (Hardest)</h1>
 <ol>
 <li>
 <p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
@@ -368,6 +392,39 @@ $ ./qtum-cli callcontract f13f51550faaf698d09fdcc74d79335bfe19e062 70a0823100000
 </code></pre>
 <p><code>output: 000000000000000000000000000000000000000000000000000000000000015e</code></p>
 <p>This is the hex return value of <code>balanceOf()</code>. Converted to decimals, it is <code>350</code>.</p>
+</li>
+</ol>
+<h1 id="receive-bot-with-qtum-cli">Receive BOT with qtum-cli</h1>
+<ol>
+<li>
+<p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
+<pre><code>$ ./qtumd
+</code></pre>
+</li>
+<li>
+<p>Open a new Terminal tab</p>
+</li>
+<li>
+<p>List your accounts:</p>
+<pre><code>$ ./qtum-cli listaccounts
+{
+  "": -569.38821838,
+  "deric": 576.02622998,
+  "tester1": 15.08267720
+}
+</code></pre>
+</li>
+<li>
+<p>Find the addresses of your accounts:</p>
+<pre><code>$ ./qtum-cli getaddressesbyaccount deric
+[
+  "qQZ1GB4db8jVaBmzyw7dsoSDqEAGN7Bfov", 
+  "qQnvzVjK2xASAkvEwfmEAiG2vZPUQrF6Cg"
+]
+</code></pre>
+</li>
+<li>
+<p>Pick an address to receive and give that to the person sending you the BOT</p>
 </li>
 </ol>
               
