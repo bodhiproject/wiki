@@ -4,6 +4,6 @@ theme:
   custom_dir: custom_theme
 pages:
   - Home: index.md
+  - Bodhi Token: bodhitoken.md
   - Contract Deployment: deployment.md
-  - BodhiToken: bodhitoken.md
   - Help: help.md

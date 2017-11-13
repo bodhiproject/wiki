@@ -45,7 +45,7 @@ f2fde38b: transferOwnership(address)
 4. Output is the hash address
 
 
-## Adding Bodhi Token to QT Wallet
+## Adding BOT to QT Wallet
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -57,7 +57,7 @@ f2fde38b: transferOwnership(address)
 6. You should now see `BOT` being monitored in the `Overview` and `QRC Token` tabs
 
 
-## Transfer Bodhi Tokens (using QT Wallet) (Easy)
+## Transfer BOT (using QT Wallet) (Easy)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -72,7 +72,7 @@ f2fde38b: transferOwnership(address)
 9. Wait until your transaction is mined
 
 
-## Transfer Bodhi Tokens (using QT Wallet) (Hard)
+## Transfer BOT (using QT Wallet) (Harder)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -101,7 +101,7 @@ f2fde38b: transferOwnership(address)
     * Wait for your transaction to be mined
 
 
-## Transfer Bodhi Tokens (using qtum-cli)
+## Transfer BOT (using qtum-cli) (Hardest)
 1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
 
         $ ./qtumd
@@ -228,3 +228,16 @@ f2fde38b: transferOwnership(address)
 
     This is the hex return value of `balanceOf()`. Converted to decimals, it is `350`.
 
+
+## Transfer BOT (using QBao mobile app)
+1. Download the mobile app:
+    * Android: [https://play.google.com/store/apps/details?id=com.aether.coder.qbao&hl=en](https://play.google.com/store/apps/details?id=com.aether.coder.qbao&hl=en)
+    * iOS: link coming soon
+
+2. Launch the app
+3. Click on `BOT` in the list of different tokens
+4. Click on `Transfer` button
+5. Enter the `Receiver Address` of the person you are sending it to
+6. Enter the `Amount` to send
+7. Make sure `BOT` is selected in the dropdown menu
+8. Click the `Confirm Transfer` button
