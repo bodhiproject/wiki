@@ -70,7 +70,7 @@
 3. Select the address you would like the BOT sent to then click `Copy`
 4. Give that address to the person sending the BOT to you
 
-# Send BOT with QT Wallet (Harder)
+# Send BOT with QT Wallet (Hard)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -98,7 +98,7 @@
     * Click the `Send To Contract` button
     * Wait for your transaction to be mined
 
-# Send BOT with qtum-cli (Hardest)
+# Send BOT with qtum-cli
 1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
 
         $ ./qtumd
