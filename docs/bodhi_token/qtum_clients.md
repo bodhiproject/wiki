@@ -1,57 +1,14 @@
-## BOT Units
-* 8 decimals
-* 1 Botoshi = lowest denomination of BOT
-* 100000000 Botoshi = 1 BOT
-
-
-## Deployed Contracts
-
-**QTUM Mainnet**
-
-* 6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7
-
-**QTUM Testnet**
-
-* a619b1a87d4f17fb56e347887b971094918b016c
-
-
-## Interface (ABI)
-```
-[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_amount","type":"uint256"}],"name":"mintByOwner","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"tokenTotalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"supply","type":"uint256"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"Mint","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"}]
-```
-
-
-## Function Signatures
-```
-dd62ed3e: allowance(address,address)
-095ea7b3: approve(address,uint256)
-70a08231: balanceOf(address)
-313ce567: decimals()
-3542aee2: mintByOwner(address,uint256)
-06fdde03: name()
-8da5cb5b: owner()
-95d89b41: symbol()
-f7abab9e: tokenTotalSupply()
-18160ddd: totalSupply()
-a9059cbb: transfer(address,uint256)
-23b872dd: transferFrom(address,address,uint256)
-f2fde38b: transferOwnership(address)
-```
-
-
-## Environment Prerequisites
+# Environment Prerequisites
 * QTUM - find latest release and download installer from [https://github.com/qtumproject/qtum/releases](https://github.com/qtumproject/qtum/releases)
 * Ethabi (if using the CLI) - [https://github.com/paritytech/ethabi](https://github.com/paritytech/ethabi) 
 
-
-## Convert Qtum Address to Hash
+# Convert Qtum Address to Hash
 1. With QT Wallet open, select Help > Debug window
 2. Select the Console tab
 3. Type the command: `gethexaddress (yourQtumAddress)`
 4. Output is the hash address
 
-
-## Transfer BOT using QTUM mobile app
+# Send BOT using QTUM mobile app
 1. Download the mobile app:
     * Android: [https://play.google.com/store/apps/details?id=org.qtum.wallet&hl=en](https://play.google.com/store/apps/details?id=org.qtum.wallet&hl=en)
     * iOS: [https://itunes.apple.com/us/app/qtum-wallet/id1277563210?mt=8](https://itunes.apple.com/us/app/qtum-wallet/id1277563210?mt=8)
@@ -60,32 +17,17 @@ f2fde38b: transferOwnership(address)
 4. Click on `Smart Contracts`
 5. Click on `Watch Token`
 6. Add `Token Name`: BOT
-7. Copy/paste the `Token Address` (see [Deployed Contracts](bodhitoken.md#deployed-contracts) Mainnet address above)
-8. Copy/paste the `ABI Interface` (see [Interface (ABI)](bodhitoken.md#interface-abi) above)
+7. Copy/paste the `Token Address` (see [Deployed Contracts](info.md#deployed-contracts) Mainnet address above)
+8. Copy/paste the `ABI Interface` (see [Interface (ABI)](info.md#interface-abi) above)
 9. Click `OK` button
 10. Click on `Send` Tab
 11. Add the `Receiver's Address` of the person you want to send BOT to
 12. Click `Choose Token` dropdown and select `BOT`
-13. Enter the `Amount` to send (in [Botoshi](bodhitoken.md#bot-units))
+13. Enter the `Amount` to send (in [Botoshi](info.md#bot-units))
 14. Click the `Send` button
 15. Wait for the transaction to be mined
 
-
-## Transfer BOT using QBao mobile app
-1. Download the mobile app:
-    * Android: [https://play.google.com/store/apps/details?id=com.aether.coder.qbao&hl=en](https://play.google.com/store/apps/details?id=com.aether.coder.qbao&hl=en)
-    * iOS: link coming soon
-
-2. Launch the app
-3. Click on `BOT` in the list of different tokens
-4. Click on `Transfer` button
-5. Enter the `Receiver Address` of the person you are sending it to
-6. Enter the `Amount` to send
-7. Make sure `BOT` is selected in the dropdown menu
-8. Click the `Confirm Transfer` button
-
-
-## Adding BOT to QT Wallet
+# Watch BOT in QT Wallet
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -96,8 +38,7 @@ f2fde38b: transferOwnership(address)
 5. Click on the `Confirm` button
 6. You should now see `BOT` being monitored in the `Overview` and `QRC Token` tabs
 
-
-## Transfer BOT using QT Wallet (Easy)
+# Send BOT using QT Wallet (Easy)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -105,14 +46,13 @@ f2fde38b: transferOwnership(address)
 2. Add Bodhi Token to your QT Wallet (see above)
 3. In the `QRC Token` tab, click the `Send` button
 4. In the `PayTo` field, add the address you would like to send BOT to
-5. In the `Amount` field, type in the amount to send (in [Botoshi](bodhitoken.md#bot-units))
+5. In the `Amount` field, type in the amount to send (in [Botoshi](info.md#bot-units))
 6. (Optional) In the `Description` field, add a note for reference
 7. Click the `Confirm` button, then a popup window will appear to confirm
 8. Wait for the timer in the `Yes` button to finish, then click it
 9. Wait until your transaction is mined
 
-
-## Transfer BOT using QT Wallet (Harder)
+# Send BOT using QT Wallet (Harder)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
     ```
     $ ./qtum-qt
@@ -124,24 +64,23 @@ f2fde38b: transferOwnership(address)
 3. Check for BOT balance
     * Click on `Smart Contract` > `Call`
     * Copy and paste the contract address
-    * Copy and paste the [BodhiToken ABI](bodhitoken.md#interface-abi)
+    * Copy and paste the [BodhiToken ABI](info.md#interface-abi)
     * Select `Function` > `balanceOf(70a08231)`
-    * Get your [hash address](bodhitoken.md#convert-qtum-address-to-hash) and paste it
+    * Get your [hash address](info.md#convert-qtum-address-to-hash) and paste it
     * Click the `Call Contract` button
 
 4. Transfer BOT to another address
     * Click on `Smart Contract` > `SendTo`
     * Copy and paste the contract address
-    * Copy and paste the [BodhiToken ABI](bodhitoken.md#interface-abi)
+    * Copy and paste the [BodhiToken ABI](info.md#interface-abi)
     * Select `Function` > `transfer(a9059cbb)`
-    * Get the [hash address](bodhitoken.md#convert-qtum-address-to-hash) you want to send to and paste it
-    * Type in the value as the amount to send to that address (in [Botoshi](bodhitoken.md#bot-units))
+    * Get the [hash address](info.md#convert-qtum-address-to-hash) you want to send to and paste it
+    * Type in the value as the amount to send to that address (in [Botoshi](info.md#bot-units))
     * Select the `Sender Address` at the bottom as the address that contains the BOT
     * Click the `Send To Contract` button
     * Wait for your transaction to be mined
 
-
-## Transfer BOT using qtum-cli (Hardest)
+# Send BOT using qtum-cli (Hardest)
 1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
 
         $ ./qtumd

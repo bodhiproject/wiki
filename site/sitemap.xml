@@ -10,11 +10,25 @@
     
 
     
+        
     <url>
-     <loc>/bodhitoken/</loc>
+     <loc>/bodhi_token/info/</loc>
      <lastmod>2017-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/bodhi_token/qtum_clients/</loc>
+     <lastmod>2017-11-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/bodhi_token/qbao/</loc>
+     <lastmod>2017-11-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
