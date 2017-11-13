@@ -1,8 +1,10 @@
-# Send BOT using QBao mobile app
-1. Download the mobile app:
-    * Android: [https://play.google.com/store/apps/details?id=com.aether.coder.qbao&hl=en](https://play.google.com/store/apps/details?id=com.aether.coder.qbao&hl=en)
+# Downloads
+* QBao mobile apps:
+    * [Android](https://play.google.com/store/apps/details?id=com.aether.coder.qbao&hl=en)
     * iOS: link coming soon
 
+# Send BOT using QBao mobile app
+1. Download the mobile app:
 2. Launch the app
 3. Click on `BOT` in the list of different tokens
 4. Click on `Transfer` button

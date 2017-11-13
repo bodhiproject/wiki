@@ -1,6 +1,11 @@
-# Environment Prerequisites
-* QTUM - find latest release and download installer from [https://github.com/qtumproject/qtum/releases](https://github.com/qtumproject/qtum/releases)
-* Ethabi (if using the CLI) - [https://github.com/paritytech/ethabi](https://github.com/paritytech/ethabi) 
+# Downloads
+* Qtum mobile apps:
+    * [Android](https://play.google.com/store/apps/details?id=org.qtum.wallet&hl=en)
+    * [iOS](https://itunes.apple.com/us/app/qtum-wallet/id1277563210?mt=8)
+* QT wallet/qtum-cli - find latest release and download installer:
+    * [https://github.com/qtumproject/qtum/releases](https://github.com/qtumproject/qtum/releases)
+* Ethabi (if using the qtum-cli)
+    * [https://github.com/paritytech/ethabi](https://github.com/paritytech/ethabi) 
 
 # Convert Qtum Address to Hash
 1. With QT Wallet open, select Help > Debug window
@@ -8,10 +13,8 @@
 3. Type the command: `gethexaddress (yourQtumAddress)`
 4. Output is the hash address
 
-# Send BOT using QTUM mobile app
+# Send BOT using Qtum mobile app
 1. Download the mobile app:
-    * Android: [https://play.google.com/store/apps/details?id=org.qtum.wallet&hl=en](https://play.google.com/store/apps/details?id=org.qtum.wallet&hl=en)
-    * iOS: [https://itunes.apple.com/us/app/qtum-wallet/id1277563210?mt=8](https://itunes.apple.com/us/app/qtum-wallet/id1277563210?mt=8)
 2. Launch the app
 3. Click on `Profile` tab
 4. Click on `Smart Contracts`
