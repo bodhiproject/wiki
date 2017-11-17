@@ -250,103 +250,100 @@
 
 5. Pick an address to receive and give that to the person sending you the BOT
 
-# Parse Events with qtum-cli
+# Parse Events with ethabi
 1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
 
         $ ./qtumd
+
 2. Open a new Terminal tab
-3. Use the `searchlogs` command to view events that were recorded on the blockchain
+3. Copy the [ABI](info.md#interface-abi) to a file named `BodhiToken.json` and save it
+4. How to construct the `ethabi decode log`
 
-        a. For the purpose of this tutorial we will be parsing these events:
+        ethabi decode log <abi-path> <event-name> [-l <topic>]... <data>
+        # note that each "topic" needs to be preceeded by "-l"
 
-            event Transfer(address indexed _from, address indexed _to, uint256 _value)
-            event Mint(uint256 supply, address indexed to, uint256 amount)
+5. Parsing event Transfer(address indexed _from, address indexed _to, uint256 _value):
+    
+    a. Get all Transfer events
+        
+        $ ./qtum-cli searchlogs 1 -1 '{"addresses": ["6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7"]}' '{"topics": ["ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}'
+        # searchlogs = command to search through transactions on the blockchain
+        # 1 = starting block number
+        # -1 = ending block number (-1 goes to the latest block)
+        # addresses = BOT contract address
+        # topics = hashes of the events to watch, ie. this is the hash of the Transfer event.
 
-        b. Example Transfer event:
+        # sample Transfer event fetched from searchlogs call
+        [
+            {
+                "blockHash": "c79bcecae6bc7611b56960be0c3c2041f9e3ebfc2e73da0357462078361ba06f",
+                "blockNumber": 46831,
+                "transactionHash": "32c6874925aa0d400fad4c655283ab6c18d84c003f4e4f8c3cac32675d2eff5b",
+                "transactionIndex": 8,
+                "from": "d965cdc9eff7412a278cd9dd7dc32e022b7bada4",
+                "to": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
+                "cumulativeGasUsed": 21422, 
+                "gasUsed": 21422,
+                "contractAddress": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
+                "log": [
+                    {
+                        "address": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
+                        "topics": [
+                            "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", 
+                            "000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4", 
+                            "000000000000000000000000c0d3421708f1574e00959c082e75a77ff4770bed"
+                        ],
+                        "data": "0000000000000000000000000000000000000000000000000000000005f5e100"
+                    }
+                ]
+            }
+        ]
 
-            $ ./qtum-cli searchlogs 1 -1 '{"addresses": ["6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7"]}' '{"topics": ["ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}'
-            # searchlogs = command to search through transactions on the blockchain
-            # 1 = starting block number
-            # -1 = ending block number (-1 goes to the latest block)
-            # addresses = BOT contract address
-            # topics = hashes of the events to watch, ie. this is the hash of the Transfer event.
+    b. Parse the Transfer event:
 
-            [
-                {
-                    "blockHash": "c79bcecae6bc7611b56960be0c3c2041f9e3ebfc2e73da0357462078361ba06f",
-                    "blockNumber": 46831,
-                    "transactionHash": "32c6874925aa0d400fad4c655283ab6c18d84c003f4e4f8c3cac32675d2eff5b",
-                    "transactionIndex": 8,
-                    "from": "d965cdc9eff7412a278cd9dd7dc32e022b7bada4",
-                    "to": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
-                    "cumulativeGasUsed": 21422, 
-                    "gasUsed": 21422,
-                    "contractAddress": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
-                    "log": [
-                        {
-                            "address": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
-                            "topics": [
-                                "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", 
-                                "000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4", 
-                                "000000000000000000000000c0d3421708f1574e00959c082e75a77ff4770bed"
-                            ],
-                            "data": "0000000000000000000000000000000000000000000000000000000005f5e100"
-                        }
-                    ]
-                }
-            ]
-            # event Transfer(address indexed _from, address indexed _to, uint256 _value)
+        $ ethabi decode log ~/Desktop/BodhiToken.json Transfer -l ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef -l 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 -l 000000000000000000000000c0d3421708f1574e00959c082e75a77ff4770bed 0000000000000000000000000000000000000000000000000000000005f5e100
 
-            # look specifically in the "log" array
+        _from d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+        _to c0d3421708f1574e00959c082e75a77ff4770bed
+        _value 0000000000000000000000000000000000000000000000000000000005f5e100
+        # the values "_from", "_to", and "_value" are printed out neatly
 
-            # topics:
-            # ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef = Transfer event hash
-            # 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 = address indexed _from
-            # 000000000000000000000000c0d3421708f1574e00959c082e75a77ff4770bed = address indexed _to
-            # indexed params are shown as part of the "topics" array
+6. Parsing event Mint(uint256 supply, address indexed to, uint256 amount):
+    
+    a. Get all Mint events:
+        
+        $ ./qtum-cli searchlogs 1 -1 '{"addresses": ["6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7"]}' '{"topics": ["4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6"]}'
 
-            # data:
-            # 0000000000000000000000000000000000000000000000000000000005f5e100 = uint256 _value
-            # non-indexed params show up in the "data" object
+        # sample Mint event fetched from searchlogs call
+        [
+            {
+                "blockHash": "8d30c1b633b5dd90f159f146e0f919b2b6271afa8c302d06fb4ed04ec733c0b8",
+                "blockNumber": 46828,
+                "transactionHash": "ba58122f413cb00ca83262f6be87c57b48b08bf100d90ebb5285c84b018f1d2c",
+                "transactionIndex": 9,
+                "from": "d965cdc9eff7412a278cd9dd7dc32e022b7bada4",
+                "to": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
+                "cumulativeGasUsed": 51789,
+                "gasUsed": 51789,
+                "contractAddress": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
+                "log": [
+                    {
+                        "address": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
+                        "topics": [
+                            "4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6", 
+                            "000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4"
+                        ],
+                        "data": "00000000000000000000000000000000000000000000000000038d7ec889c6000000000000000000000000000000000000000000000000000000000005f5e100"
+                    }
+                ]
+            }
+        ]
 
-        c. Example Mint event:
+    b. Parse the Mint event:
 
-            $ ./qtum-cli searchlogs 30000 -1 '{"addresses": ["6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7"]}' '{"topics": ["4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6"]}'
+        $ ethabi decode log ~/Desktop/BodhiToken.json Mint -l 4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6 -l 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 00000000000000000000000000000000000000000000000000038d7ec889c6000000000000000000000000000000000000000000000000000000000005f5e100
 
-            [
-                {
-                    "blockHash": "8d30c1b633b5dd90f159f146e0f919b2b6271afa8c302d06fb4ed04ec733c0b8",
-                    "blockNumber": 46828,
-                    "transactionHash": "ba58122f413cb00ca83262f6be87c57b48b08bf100d90ebb5285c84b018f1d2c",
-                    "transactionIndex": 9,
-                    "from": "d965cdc9eff7412a278cd9dd7dc32e022b7bada4",
-                    "to": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
-                    "cumulativeGasUsed": 51789,
-                    "gasUsed": 51789,
-                    "contractAddress": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
-                    "log": [
-                        {
-                            "address": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
-                            "topics": [
-                                "4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6", 
-                                "000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4"
-                            ],
-                            "data": "00000000000000000000000000000000000000000000000000038d7ec889c6000000000000000000000000000000000000000000000000000000000005f5e100"
-                        }
-                    ]
-                }
-            ]
-            # event Mint(uint256 supply, address indexed to, uint256 amount)
-
-            # topics:
-            # 4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6 = Mint event hash
-            # 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 = address indexed to
-
-            # data:
-            # 00000000000000000000000000000000000000000000000000038d7ec889c600 = first 32 bytes: uint256 supply
-            # 0000000000000000000000000000000000000000000000000000000005f5e100 = second 32 bytes: uint256 amount
-
-        d. Couple things to note:
-
-            * topics and data values should be left-padded to 32 bytes
-            * outputs of uint256 are in hex format and should be converted to decimals to get a readable number
+        supply 00000000000000000000000000000000000000000000000000038d7ec889c600
+        to d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+        amount 0000000000000000000000000000000000000000000000000000000005f5e100
+        # this neatly prints out the values for "supply", "to", and "amount"

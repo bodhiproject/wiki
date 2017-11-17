@@ -35,3 +35,12 @@ a9059cbb: transfer(address,uint256)
 23b872dd: transferFrom(address,address,uint256)
 f2fde38b: transferOwnership(address)
 ```
+
+# Event Hashes
+```
+event Mint(uint256 supply, address indexed to, uint256 amount): 
+4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6
+
+event Transfer(address indexed _from, address indexed _to, uint256 _value):
+ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+```

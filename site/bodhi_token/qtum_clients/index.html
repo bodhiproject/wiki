@@ -95,7 +95,7 @@
     <li class="toctree-l3"><a href="#receive-bot-with-qtum-cli">Receive BOT with qtum-cli</a></li>
     
 
-    <li class="toctree-l3"><a href="#parse-events-with-qtum-cli">Parse Events with qtum-cli</a></li>
+    <li class="toctree-l3"><a href="#parse-events-with-ethabi">Parse Events with ethabi</a></li>
     
 
     </ul>
@@ -430,19 +430,26 @@ $ ./qtum-cli callcontract f13f51550faaf698d09fdcc74d79335bfe19e062 70a0823100000
 <p>Pick an address to receive and give that to the person sending you the BOT</p>
 </li>
 </ol>
-<h1 id="parse-events-with-qtum-cli">Parse Events with qtum-cli</h1>
+<h1 id="parse-events-with-ethabi">Parse Events with ethabi</h1>
 <ol>
-<li>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:<pre><code>$ ./qtumd
-</code></pre>
-<ol>
-<li>Open a new Terminal tab</li>
 <li>
-<p>Use the <code>searchlogs</code> command to view events that were recorded on the blockchain</p>
-<p>a. For the purpose of this tutorial we will be parsing these events:</p>
-<pre><code>event Transfer(address indexed _from, address indexed _to, uint256 _value)
-event Mint(uint256 supply, address indexed to, uint256 amount)
+<p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
+<pre><code>$ ./qtumd
 </code></pre>
-<p>b. Example Transfer event:</p>
+</li>
+<li>
+<p>Open a new Terminal tab</p>
+</li>
+<li>Copy the <a href="../info/#interface-abi">ABI</a> to a file named <code>BodhiToken.json</code> and save it</li>
+<li>
+<p>How to construct the <code>ethabi decode log</code></p>
+<pre><code>ethabi decode log &lt;abi-path&gt; &lt;event-name&gt; [-l &lt;topic&gt;]... &lt;data&gt;
+# note that each "topic" needs to be preceeded by "-l"
+</code></pre>
+</li>
+<li>
+<p>Parsing event Transfer(address indexed _from, address indexed _to, uint256 _value):</p>
+<p>a. Get all Transfer events</p>
 <pre><code>$ ./qtum-cli searchlogs 1 -1 '{"addresses": ["6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7"]}' '{"topics": ["ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}'
 # searchlogs = command to search through transactions on the blockchain
 # 1 = starting block number
@@ -450,6 +457,7 @@ event Mint(uint256 supply, address indexed to, uint256 amount)
 # addresses = BOT contract address
 # topics = hashes of the events to watch, ie. this is the hash of the Transfer event.
 
+# sample Transfer event fetched from searchlogs call
 [
     {
         "blockHash": "c79bcecae6bc7611b56960be0c3c2041f9e3ebfc2e73da0357462078361ba06f",
@@ -474,23 +482,22 @@ event Mint(uint256 supply, address indexed to, uint256 amount)
         ]
     }
 ]
-# event Transfer(address indexed _from, address indexed _to, uint256 _value)
-
-# look specifically in the "log" array
-
-# topics:
-# ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef = Transfer event hash
-# 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 = address indexed _from
-# 000000000000000000000000c0d3421708f1574e00959c082e75a77ff4770bed = address indexed _to
-# indexed params are shown as part of the "topics" array
-
-# data:
-# 0000000000000000000000000000000000000000000000000000000005f5e100 = uint256 _value
-# non-indexed params show up in the "data" object
 </code></pre>
-<p>c. Example Mint event:</p>
-<pre><code>$ ./qtum-cli searchlogs 30000 -1 '{"addresses": ["6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7"]}' '{"topics": ["4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6"]}'
+<p>b. Parse the Transfer event:</p>
+<pre><code>$ ethabi decode log ~/Desktop/BodhiToken.json Transfer -l ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef -l 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 -l 000000000000000000000000c0d3421708f1574e00959c082e75a77ff4770bed 0000000000000000000000000000000000000000000000000000000005f5e100
 
+_from d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+_to c0d3421708f1574e00959c082e75a77ff4770bed
+_value 0000000000000000000000000000000000000000000000000000000005f5e100
+# the values "_from", "_to", and "_value" are printed out neatly
+</code></pre>
+</li>
+<li>
+<p>Parsing event Mint(uint256 supply, address indexed to, uint256 amount):</p>
+<p>a. Get all Mint events:</p>
+<pre><code>$ ./qtum-cli searchlogs 1 -1 '{"addresses": ["6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7"]}' '{"topics": ["4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6"]}'
+
+# sample Mint event fetched from searchlogs call
 [
     {
         "blockHash": "8d30c1b633b5dd90f159f146e0f919b2b6271afa8c302d06fb4ed04ec733c0b8",
@@ -514,22 +521,15 @@ event Mint(uint256 supply, address indexed to, uint256 amount)
         ]
     }
 ]
-# event Mint(uint256 supply, address indexed to, uint256 amount)
-
-# topics:
-# 4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6 = Mint event hash
-# 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 = address indexed to
-
-# data:
-# 00000000000000000000000000000000000000000000000000038d7ec889c600 = first 32 bytes: uint256 supply
-# 0000000000000000000000000000000000000000000000000000000005f5e100 = second 32 bytes: uint256 amount
 </code></pre>
-<p>d. Couple things to note:</p>
-<pre><code>* topics and data values should be left-padded to 32 bytes
-* outputs of uint256 are in hex format and should be converted to decimals to get a readable number
+<p>b. Parse the Mint event:</p>
+<pre><code>$ ethabi decode log ~/Desktop/BodhiToken.json Mint -l 4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6 -l 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 00000000000000000000000000000000000000000000000000038d7ec889c6000000000000000000000000000000000000000000000000000000000005f5e100
+
+supply 00000000000000000000000000000000000000000000000000038d7ec889c600
+to d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+amount 0000000000000000000000000000000000000000000000000000000005f5e100
+# this neatly prints out the values for "supply", "to", and "amount"
 </code></pre>
-</li>
-</ol>
 </li>
 </ol>
               
