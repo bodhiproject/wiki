@@ -250,7 +250,7 @@
 
 5. Pick an address to receive and give that to the person sending you the BOT
 
-# Parse event transactions with qtum-cli
+# Parse Events with qtum-cli
 1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
 
         $ ./qtumd
