@@ -42,7 +42,7 @@
         }, 
         {
             "location": "/bodhi_token/qtum_wallet_mobile/", 
-            "text": "Downloads\n\n\n\n\nQtum mobile apps:\n\n\nAndroid\n\n\niOS\n\n\n\n\n\n\n\n\nWatch BOT\n\n\n\n\nDownload the mobile app and launch it\n\n\n\n\nClick on \nProfile\n tab\n\n\n\n\n\n\n\n\nClick on \nSmart Contracts\n\n\n\n\n\n\n\n\nClick on \nWatch Token\n\n\n\n\n\n\n\n\nAdd \nToken Name\n: BOT\n\n\n\n\nCopy/paste the \nToken Address\n (see \nDeployed Contracts\n Mainnet address above)\n\n\nCopy/paste the \nABI Interface\n (see \nInterface (ABI)\n above)\n\n\n\n\nClick \nOK\n button\n\n\n\n\n\n\n\n\nSend BOT\n\n\n\n\nDownload the mobile app and launch it\n\n\nFollow steps to \nWatch Bot\n\n\nClick on \nSend\n Tab\n\n\nAdd the \nReceiver's Address\n of the person you want to send BOT to\n\n\nClick \nChoose Token\n dropdown and select \nBOT\n\n\nEnter the \nAmount\n to send (in \nBotoshi\n)\n\n\nClick the \nSend\n button\n\n\nWait for the transaction to be mined\n\n\n\n\nReceive BOT with Qtum mobile app\n\n\n\n\nDownload the mobile app and launch it\n\n\nThe address shown in the \nWallet\n tab is your main address\n\n\nClick on the address or \n+\n sign next to the address\n\n\nClick on the \nCopy Wallet Address\n button\n\n\nGive that address to the person sending the BOT to you", 
+            "text": "Downloads\n\n\n\n\nQtum mobile apps:\n\n\nAndroid\n\n\niOS\n\n\n\n\n\n\n\n\nWatch BOT\n\n\n\n\nDownload the mobile app and launch it\n\n\n\n\nClick on \nProfile\n tab\n\n\n\n\n\n\n\n\nClick on \nSmart Contracts\n\n\n\n\n\n\n\n\nClick on \nWatch Token\n\n\n\n\n\n\n\n\nAdd \nToken Name\n: BOT\n\n\n\n\nCopy/paste the \nToken Address\n (see \nDeployed Contracts\n Mainnet address above)\n\n\nCopy/paste the \nABI Interface\n (see \nInterface (ABI)\n above)\n\n\n\n\nClick \nOK\n button\n\n\n\n\n\n\n\n\nSend BOT\n\n\n\n\nDownload the mobile app and launch it\n\n\nFollow steps to \nWatch Bot\n\n\n\n\nClick on \nSend\n Tab\n\n\n\n\n\n\n\n\nAdd the \nReceiver's Address\n of the person you want to send BOT to\n\n\n\n\nClick \nChoose Token\n dropdown and select \nBOT\n\n\n\n\nEnter the \nAmount\n to send in decimal format\n\n\n\n\n\n\n\n\nClick the \nSend\n button\n\n\n\n\nWait for the transaction to be mined\n\n\n\n\nReceive BOT\n\n\n\n\nDownload the mobile app and launch it\n\n\nThe address shown in the \nWallet\n tab is your main address\n\n\n\n\nClick on the \n+\n sign next to the address\n\n\n\n\n\n\n\n\nClick on the \nCopy Wallet Address\n button\n\n\n\n\n\n\n\n\nGive that address to the person sending the BOT to you", 
             "title": "Qtum Wallet Mobile"
         }, 
         {
@@ -57,13 +57,13 @@
         }, 
         {
             "location": "/bodhi_token/qtum_wallet_mobile/#send-bot", 
-            "text": "Download the mobile app and launch it  Follow steps to  Watch Bot  Click on  Send  Tab  Add the  Receiver's Address  of the person you want to send BOT to  Click  Choose Token  dropdown and select  BOT  Enter the  Amount  to send (in  Botoshi )  Click the  Send  button  Wait for the transaction to be mined", 
+            "text": "Download the mobile app and launch it  Follow steps to  Watch Bot   Click on  Send  Tab     Add the  Receiver's Address  of the person you want to send BOT to   Click  Choose Token  dropdown and select  BOT   Enter the  Amount  to send in decimal format     Click the  Send  button   Wait for the transaction to be mined", 
             "title": "Send BOT"
         }, 
         {
-            "location": "/bodhi_token/qtum_wallet_mobile/#receive-bot-with-qtum-mobile-app", 
-            "text": "Download the mobile app and launch it  The address shown in the  Wallet  tab is your main address  Click on the address or  +  sign next to the address  Click on the  Copy Wallet Address  button  Give that address to the person sending the BOT to you", 
-            "title": "Receive BOT with Qtum mobile app"
+            "location": "/bodhi_token/qtum_wallet_mobile/#receive-bot", 
+            "text": "Download the mobile app and launch it  The address shown in the  Wallet  tab is your main address   Click on the  +  sign next to the address     Click on the  Copy Wallet Address  button     Give that address to the person sending the BOT to you", 
+            "title": "Receive BOT"
         }, 
         {
             "location": "/bodhi_token/qtum_clients/", 
@@ -117,7 +117,7 @@
         }, 
         {
             "location": "/bodhi_token/qbao/", 
-            "text": "Downloads\n\n\n\n\nQBao mobile apps:\n\n\nAndroid\n\n\niOS: link coming soon\n\n\n\n\n\n\n\n\nSend BOT with QBao mobile app\n\n\n\n\nDownload and launch the mobile app\n\n\n\n\nClick on \nBOT\n in the list of different tokens\n\n\n\n\n\n\n\n\nClick on \nTransfer\n button\n\n\n\n\n\n\n\n\nEnter the \nReceiver Address\n of the person you are sending it to\n\n\n\n\nEnter the \nAmount\n to send in decimal format\n\n\nMake sure \nBOT\n is selected in the dropdown menu\n\n\n\n\nClick the \nConfirm Transfer\n button\n\n\n\n\n\n\n\n\nWait for your transaction to be mined\n\n\n\n\n\n\n\n\nReceive BOT with QBao mobile app\n\n\n\n\nDownload and launch the mobile app\n\n\n\n\nClick on the \nQR Code\n button\n\n\n\n\n\n\n\n\nClick the \nCopy Address\n button\n\n\n\n\n\n\n\n\nGive that address to the person sending the BOT to you", 
+            "text": "Downloads\n\n\n\n\nQBao mobile apps:\n\n\nAndroid\n\n\niOS: link coming soon\n\n\n\n\n\n\n\n\nSend BOT\n\n\n\n\nDownload and launch the mobile app\n\n\n\n\nClick on \nBOT\n in the list of different tokens\n\n\n\n\n\n\n\n\nClick on \nTransfer\n button\n\n\n\n\n\n\n\n\nEnter the \nReceiver Address\n of the person you are sending it to\n\n\n\n\nEnter the \nAmount\n to send in decimal format\n\n\n\n\nMake sure \nBOT\n is selected in the dropdown menu\n\n\n\n\n\n\n\n\nClick the \nConfirm Transfer\n button\n\n\n\n\n\n\nWait for your transaction to be mined\n\n\n\n\n\n\n\n\nReceive BOT\n\n\n\n\nDownload and launch the mobile app\n\n\n\n\nClick on the \nQR Code\n button\n\n\n\n\n\n\n\n\nClick the \nCopy Address\n button\n\n\n\n\n\n\n\n\nGive that address to the person sending the BOT to you", 
             "title": "QBao"
         }, 
         {
@@ -126,14 +126,14 @@
             "title": "Downloads"
         }, 
         {
-            "location": "/bodhi_token/qbao/#send-bot-with-qbao-mobile-app", 
-            "text": "Download and launch the mobile app   Click on  BOT  in the list of different tokens     Click on  Transfer  button     Enter the  Receiver Address  of the person you are sending it to   Enter the  Amount  to send in decimal format  Make sure  BOT  is selected in the dropdown menu   Click the  Confirm Transfer  button     Wait for your transaction to be mined", 
-            "title": "Send BOT with QBao mobile app"
+            "location": "/bodhi_token/qbao/#send-bot", 
+            "text": "Download and launch the mobile app   Click on  BOT  in the list of different tokens     Click on  Transfer  button     Enter the  Receiver Address  of the person you are sending it to   Enter the  Amount  to send in decimal format   Make sure  BOT  is selected in the dropdown menu     Click the  Confirm Transfer  button    Wait for your transaction to be mined", 
+            "title": "Send BOT"
         }, 
         {
-            "location": "/bodhi_token/qbao/#receive-bot-with-qbao-mobile-app", 
+            "location": "/bodhi_token/qbao/#receive-bot", 
             "text": "Download and launch the mobile app   Click on the  QR Code  button     Click the  Copy Address  button     Give that address to the person sending the BOT to you", 
-            "title": "Receive BOT with QBao mobile app"
+            "title": "Receive BOT"
         }, 
         {
             "location": "/deployment/", 

@@ -28,15 +28,27 @@
 1. Download the mobile app and launch it
 2. Follow steps to [Watch Bot](#watch-bot)
 3. Click on `Send` Tab
+
+	![](../img/qt_mobile_send_1.png)
+
 4. Add the `Receiver's Address` of the person you want to send BOT to
 5. Click `Choose Token` dropdown and select `BOT`
-6. Enter the `Amount` to send (in [Botoshi](info.md#bot-units))
+6. Enter the `Amount` to send in decimal format
+
+	![](../img/qt_mobile_send_2.png)
+
 7. Click the `Send` button
 8. Wait for the transaction to be mined
 
-# Receive BOT with Qtum mobile app
+# Receive BOT
 1. Download the mobile app and launch it
 2. The address shown in the `Wallet` tab is your main address
-3. Click on the address or `+` sign next to the address
+3. Click on the `+` sign next to the address
+
+	![](../img/qt_mobile_receive_1.png)
+
 4. Click on the `Copy Wallet Address` button
+
+	![](../img/qt_mobile_receive_2.png)
+
 5. Give that address to the person sending the BOT to you
