@@ -1,13 +1,13 @@
 # Downloads
 * QT wallet/qtum-cli - find latest release and download installer:
     * [https://github.com/qtumproject/qtum/releases](https://github.com/qtumproject/qtum/releases)
-* Ethabi (if using the qtum-cli)
+* Ethabi
     * [https://github.com/paritytech/ethabi](https://github.com/paritytech/ethabi) 
 
-# Send BOT with qtum-cli
+# Send BOT
 1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
 
-        $ ./qtumd
+        $ ./qtumd --logevents
 
 2. Open a new Terminal tab
 
@@ -131,7 +131,7 @@
 
     This is the hex return value of `balanceOf()`. Converted to decimals, it is `350`.
 
-# Receive BOT with qtum-cli
+# Receive BOT
 1. Launch Qtum daemon: go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
 
         $ ./qtumd

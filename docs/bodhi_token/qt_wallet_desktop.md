@@ -2,6 +2,15 @@
 * QT wallet/qtum-cli - find latest release and download installer:
     * [https://github.com/qtumproject/qtum/releases](https://github.com/qtumproject/qtum/releases)
 
+# Launch QT Wallet
+In your Terminal window, go to your `qtum-x.xx.x/bin` folder that you installed it in and run:
+    
+    $ ./qtum-qt --logevents 
+
+Please note you might get a message asking you to reindex. If that is the case, run with this command:
+
+	$ ./qtum-qt --logevents --reindex
+
 # Convert Qtum Address to Hash
 1. With QT Wallet open, select Help > Debug window
 
@@ -17,10 +26,7 @@
 	![](../img/qt_wallet_convert_3.png)
 
 # Watch BOT
-1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
-    ```
-    $ ./qtum-qt
-    ```
+1. [Launch QT Wallet](#launch-qt-wallet)
 2. In the `Overview` tab, click the `Add Token` button
 
 	![](../img/qt_wallet_watch_1.png)
@@ -35,53 +41,56 @@
 
 	![](../img/qt_wallet_watch_3.png)
 
-# Send BOT in QRC Token tab (Easy)
-1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
-    ```
-    $ ./qtum-qt
-    ```
-2. Add Bodhi Token to your QT Wallet (see above)
-3. In the `QRC Token` tab, click the `Send` button
+# Send BOT via QRC Token tab (Easy)
+1. [Launch QT Wallet](#launch-qt-wallet)
+2. [Watch BOT](#watch-bot)
+3. In the `QRC Token` tab, click the `Send` button and select an account which contains some BOT
+
+	![](../img/qt_wallet_send_qrc_1.png)
+
 4. In the `PayTo` field, add the address you would like to send BOT to
-5. In the `Amount` field, type in the amount to send (in [Botoshi](info.md#bot-units))
+5. In the `Amount` field, type in the amount to send in decimal format
 6. (Optional) In the `Description` field, add a note for reference
+
+	![](../img/qt_wallet_send_qrc_2.png)
+
 7. Click the `Confirm` button, then a popup window will appear to confirm
 8. Wait for the timer in the `Yes` button to finish, then click it
+
+	![](../img/qt_wallet_send_qrc_3.png)
+
 9. Wait until your transaction is mined
 
-# Send BOT in Smart Contract tab (Harder)
-1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
-    ```
-    $ ./qtum-qt
-    ```
+	![](../img/qt_wallet_send_qrc_4.png)
 
-2. Check for QTUM balance
-    Your QT Wallet should launch and start syncing. Wait for the syncing to be done. In the main Overview screen, you should see if you have available QTUM.
+# Send BOT via Smart Contract tab (Harder)
+1. [Launch QT Wallet](#launch-qt-wallet)
+2. Click on `Smart Contract` > `SendTo`
 
-3. Check for BOT balance
-    * Click on `Smart Contract` > `Call`
-    * Copy and paste the contract address
-    * Copy and paste the [BodhiToken ABI](info.md#interface-abi)
-    * Select `Function` > `balanceOf(70a08231)`
-    * Get your [hash address](info.md#convert-qtum-address-to-hash) and paste it
-    * Click the `Call Contract` button
+	![](../img/qt_wallet_sendto_1.png)
 
-4. Transfer BOT to another address
-    * Click on `Smart Contract` > `SendTo`
-    * Copy and paste the contract address
-    * Copy and paste the [BodhiToken ABI](info.md#interface-abi)
-    * Select `Function` > `transfer(a9059cbb)`
-    * Get the [hash address](info.md#convert-qtum-address-to-hash) you want to send to and paste it
-    * Type in the value as the amount to send to that address (in [Botoshi](info.md#bot-units))
-    * Select the `Sender Address` at the bottom as the address that contains the BOT
-    * Click the `Send To Contract` button
-    * Wait for your transaction to be mined
+3. Copy/paste the [Contract Address](info.md#deployed-contracts)
+4. Copy/paste the [BodhiToken ABI](info.md#interface-abi)
+5. Select `Function` > `transfer(a9059cbb)`
+6. Get the [hash address](#convert-qtum-address-to-hash) you want to send to and paste it
+7. Type in the value as the amount to send (in [Botoshi](info.md#bot-units)) to that address
+8. Select the `Sender Address` at the bottom as the address that contains the BOT
+
+	![](../img/qt_wallet_sendto_2.png)
+
+9. Click the `Send To Contract` button
+10. Wait for your transaction to be mined
+
+	![](../img/qt_wallet_sendto_3.png)
 
 # Receive BOT
-1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
-    ```
-    $ ./qtum-qt
-    ```
+1. [Launch QT Wallet](#launch-qt-wallet)
 2. Click on `File` > `Receiving addresses...`
+
+	![](../img/qt_wallet_receive_1.png)
+
 3. Select the address you would like the BOT sent to then click `Copy`
+
+	![](../img/qt_wallet_receive_2.png)
+
 4. Give that address to the person sending the BOT to you
