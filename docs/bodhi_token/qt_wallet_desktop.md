@@ -22,10 +22,18 @@
     $ ./qtum-qt
     ```
 2. In the `Overview` tab, click the `Add Token` button
+
+	![](../img/qt_wallet_watch_1.png)
+
 3. Copy/paste the token address in `Contract Address`
 4. Select the `Token Address` which you would like to monitor BOT activity on
 5. Click on the `Confirm` button
+
+	![](../img/qt_wallet_watch_2.png)
+
 6. You should now see `BOT` being monitored in the `Overview` and `QRC Token` tabs
+
+	![](../img/qt_wallet_watch_3.png)
 
 # Send BOT in QRC Token tab (Easy)
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
