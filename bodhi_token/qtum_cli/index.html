@@ -76,10 +76,10 @@
     <li class="toctree-l3"><a href="#downloads">Downloads</a></li>
     
 
-    <li class="toctree-l3"><a href="#send-bot-with-qtum-cli">Send BOT with qtum-cli</a></li>
+    <li class="toctree-l3"><a href="#send-bot">Send BOT</a></li>
     
 
-    <li class="toctree-l3"><a href="#receive-bot-with-qtum-cli">Receive BOT with qtum-cli</a></li>
+    <li class="toctree-l3"><a href="#receive-bot">Receive BOT</a></li>
     
 
     <li class="toctree-l3"><a href="#parse-events-with-ethabi">Parse Events with ethabi</a></li>
@@ -146,16 +146,16 @@
 <li><a href="https://github.com/qtumproject/qtum/releases">https://github.com/qtumproject/qtum/releases</a></li>
 </ul>
 </li>
-<li>Ethabi (if using the qtum-cli)<ul>
+<li>Ethabi<ul>
 <li><a href="https://github.com/paritytech/ethabi">https://github.com/paritytech/ethabi</a> </li>
 </ul>
 </li>
 </ul>
-<h1 id="send-bot-with-qtum-cli">Send BOT with qtum-cli</h1>
+<h1 id="send-bot">Send BOT</h1>
 <ol>
 <li>
 <p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
-<pre><code>$ ./qtumd
+<pre><code>$ ./qtumd --logevents
 </code></pre>
 </li>
 <li>
@@ -280,7 +280,7 @@ $ ./qtum-cli callcontract f13f51550faaf698d09fdcc74d79335bfe19e062 70a0823100000
 <p>This is the hex return value of <code>balanceOf()</code>. Converted to decimals, it is <code>350</code>.</p>
 </li>
 </ol>
-<h1 id="receive-bot-with-qtum-cli">Receive BOT with qtum-cli</h1>
+<h1 id="receive-bot">Receive BOT</h1>
 <ol>
 <li>
 <p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
