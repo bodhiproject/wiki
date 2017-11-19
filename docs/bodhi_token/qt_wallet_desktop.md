@@ -4,9 +4,17 @@
 
 # Convert Qtum Address to Hash
 1. With QT Wallet open, select Help > Debug window
+
+	![](../img/qt_wallet_convert_1.png)
+
 2. Select the Console tab
 3. Type the command: `gethexaddress (yourQtumAddress)`
+	
+	![](../img/qt_wallet_convert_2.png)
+
 4. Output is the hash address
+
+	![](../img/qt_wallet_convert_3.png)
 
 # Watch BOT
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
