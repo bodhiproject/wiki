@@ -6,6 +6,7 @@ pages:
   - Home: index.md
   - Bodhi Token:
     - Info: bodhi_token/info.md
+    - Qtum Wallet Mobile: bodhi_token/qtum_wallet_mobile.md
     - Qtum Clients: bodhi_token/qtum_clients.md
     - QBao: bodhi_token/qbao.md
   - Contract Deployment: deployment.md

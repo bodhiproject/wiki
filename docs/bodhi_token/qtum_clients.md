@@ -1,7 +1,4 @@
 # Downloads
-* Qtum mobile apps:
-    * [Android](https://play.google.com/store/apps/details?id=org.qtum.wallet&hl=en)
-    * [iOS](https://itunes.apple.com/us/app/qtum-wallet/id1277563210?mt=8)
 * QT wallet/qtum-cli - find latest release and download installer:
     * [https://github.com/qtumproject/qtum/releases](https://github.com/qtumproject/qtum/releases)
 * Ethabi (if using the qtum-cli)
@@ -12,29 +9,6 @@
 2. Select the Console tab
 3. Type the command: `gethexaddress (yourQtumAddress)`
 4. Output is the hash address
-
-# Send BOT with Qtum mobile app
-1. Download the mobile app and launch it
-2. Click on `Profile` tab
-3. Click on `Smart Contracts`
-4. Click on `Watch Token`
-5. Add `Token Name`: BOT
-6. Copy/paste the `Token Address` (see [Deployed Contracts](info.md#deployed-contracts) Mainnet address above)
-7. Copy/paste the `ABI Interface` (see [Interface (ABI)](info.md#interface-abi) above)
-8. Click `OK` button
-9. Click on `Send` Tab
-10. Add the `Receiver's Address` of the person you want to send BOT to
-11. Click `Choose Token` dropdown and select `BOT`
-12. Enter the `Amount` to send (in [Botoshi](info.md#bot-units))
-13. Click the `Send` button
-14. Wait for the transaction to be mined
-
-# Receive BOT with Qtum mobile app
-1. Download the mobile app and launch it
-2. The address shown in the `Wallet` tab is your main address
-3. Click on the address or `+` sign next to the address
-4. Click on the `Copy Wallet Address` button
-5. Give that address to the person sending the BOT to you
 
 # Watch BOT in QT Wallet
 1. Launch QT Wallet - Go to your `qtum-x.xx.x/bin` folder that you installed it in and run in Terminal:
