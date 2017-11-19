@@ -6,6 +6,9 @@
 # Send BOT with QBao mobile app
 1. Download and launch the mobile app
 2. Click on `BOT` in the list of different tokens
+	
+![Screenshot](img/qbao_send_1.png)
+
 3. Click on `Transfer` button
 4. Enter the `Receiver Address` of the person you are sending it to
 5. Enter the `Amount` to send (in [Botoshi](info.md#bot-units))

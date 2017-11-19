@@ -102,7 +102,7 @@
         }, 
         {
             "location": "/bodhi_token/qbao/", 
-            "text": "Downloads\n\n\n\n\nQBao mobile apps:\n\n\nAndroid\n\n\niOS: link coming soon\n\n\n\n\n\n\n\n\nSend BOT with QBao mobile app\n\n\n\n\nDownload and launch the mobile app\n\n\nClick on \nBOT\n in the list of different tokens\n\n\nClick on \nTransfer\n button\n\n\nEnter the \nReceiver Address\n of the person you are sending it to\n\n\nEnter the \nAmount\n to send (in \nBotoshi\n)\n\n\nMake sure \nBOT\n is selected in the dropdown menu\n\n\nClick the \nConfirm Transfer\n button\n\n\n\n\nReceive BOT with QBao mobile app\n\n\n\n\nDownload and launch the mobile app\n\n\nClick on the \nQR Code\n button\n\n\nClick the \nCopy Address\n button\n\n\nGive that address to the person sending the BOT to you", 
+            "text": "Downloads\n\n\n\n\nQBao mobile apps:\n\n\nAndroid\n\n\niOS: link coming soon\n\n\n\n\n\n\n\n\nSend BOT with QBao mobile app\n\n\n\n\nDownload and launch the mobile app\n\n\nClick on \nBOT\n in the list of different tokens\n\n\n\n\n\n\n\n\nClick on \nTransfer\n button\n\n\nEnter the \nReceiver Address\n of the person you are sending it to\n\n\nEnter the \nAmount\n to send (in \nBotoshi\n)\n\n\nMake sure \nBOT\n is selected in the dropdown menu\n\n\nClick the \nConfirm Transfer\n button\n\n\n\n\nReceive BOT with QBao mobile app\n\n\n\n\nDownload and launch the mobile app\n\n\nClick on the \nQR Code\n button\n\n\nClick the \nCopy Address\n button\n\n\nGive that address to the person sending the BOT to you", 
             "title": "QBao"
         }, 
         {
@@ -112,7 +112,7 @@
         }, 
         {
             "location": "/bodhi_token/qbao/#send-bot-with-qbao-mobile-app", 
-            "text": "Download and launch the mobile app  Click on  BOT  in the list of different tokens  Click on  Transfer  button  Enter the  Receiver Address  of the person you are sending it to  Enter the  Amount  to send (in  Botoshi )  Make sure  BOT  is selected in the dropdown menu  Click the  Confirm Transfer  button", 
+            "text": "Download and launch the mobile app  Click on  BOT  in the list of different tokens     Click on  Transfer  button  Enter the  Receiver Address  of the person you are sending it to  Enter the  Amount  to send (in  Botoshi )  Make sure  BOT  is selected in the dropdown menu  Click the  Confirm Transfer  button", 
             "title": "Send BOT with QBao mobile app"
         }, 
         {
