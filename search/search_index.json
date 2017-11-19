@@ -41,6 +41,26 @@
             "title": "Event Hashes"
         }, 
         {
+            "location": "/bodhi_token/qbao/", 
+            "text": "Downloads\n\n\n\n\nQBao mobile apps:\n\n\nAndroid\n\n\niOS: link coming soon\n\n\n\n\n\n\n\n\nSend BOT\n\n\n\n\nDownload and launch the mobile app\n\n\n\n\nClick on \nBOT\n in the list of different tokens\n\n\n\n\n\n\n\n\nClick on \nTransfer\n button\n\n\n\n\n\n\n\n\nEnter the \nReceiver Address\n of the person you are sending it to\n\n\n\n\nEnter the \nAmount\n to send in decimal format\n\n\n\n\nMake sure \nBOT\n is selected in the dropdown menu\n\n\n\n\n\n\n\n\nClick the \nConfirm Transfer\n button\n\n\n\n\n\n\nWait for your transaction to be mined\n\n\n\n\n\n\n\n\nReceive BOT\n\n\n\n\nDownload and launch the mobile app\n\n\n\n\nClick on the \nQR Code\n button\n\n\n\n\n\n\n\n\nClick the \nCopy Address\n button\n\n\n\n\n\n\n\n\nGive that address to the person sending the BOT to you", 
+            "title": "QBao (Mobile)"
+        }, 
+        {
+            "location": "/bodhi_token/qbao/#downloads", 
+            "text": "QBao mobile apps:  Android  iOS: link coming soon", 
+            "title": "Downloads"
+        }, 
+        {
+            "location": "/bodhi_token/qbao/#send-bot", 
+            "text": "Download and launch the mobile app   Click on  BOT  in the list of different tokens     Click on  Transfer  button     Enter the  Receiver Address  of the person you are sending it to   Enter the  Amount  to send in decimal format   Make sure  BOT  is selected in the dropdown menu     Click the  Confirm Transfer  button    Wait for your transaction to be mined", 
+            "title": "Send BOT"
+        }, 
+        {
+            "location": "/bodhi_token/qbao/#receive-bot", 
+            "text": "Download and launch the mobile app   Click on the  QR Code  button     Click the  Copy Address  button     Give that address to the person sending the BOT to you", 
+            "title": "Receive BOT"
+        }, 
+        {
             "location": "/bodhi_token/qtum_wallet_mobile/", 
             "text": "Downloads\n\n\n\n\nQtum mobile apps:\n\n\nAndroid\n\n\niOS\n\n\n\n\n\n\n\n\nWatch BOT\n\n\n\n\nDownload the mobile app and launch it\n\n\n\n\nClick on \nProfile\n tab\n\n\n\n\n\n\n\n\nClick on \nSmart Contracts\n\n\n\n\n\n\n\n\nClick on \nWatch Token\n\n\n\n\n\n\n\n\nAdd \nToken Name\n: BOT\n\n\n\n\nCopy/paste the \nToken Address\n (see \nDeployed Contracts\n Mainnet address above)\n\n\nCopy/paste the \nABI Interface\n (see \nInterface (ABI)\n above)\n\n\n\n\nClick \nOK\n button\n\n\n\n\n\n\n\n\nSend BOT\n\n\n\n\nDownload the mobile app and launch it\n\n\nFollow steps to \nWatch Bot\n\n\n\n\nClick on \nSend\n Tab\n\n\n\n\n\n\n\n\nAdd the \nReceiver's Address\n of the person you want to send BOT to\n\n\n\n\nClick \nChoose Token\n dropdown and select \nBOT\n\n\n\n\nEnter the \nAmount\n to send in decimal format\n\n\n\n\n\n\n\n\nClick the \nSend\n button\n\n\n\n\nWait for the transaction to be mined\n\n\n\n\nReceive BOT\n\n\n\n\nDownload the mobile app and launch it\n\n\nThe address shown in the \nWallet\n tab is your main address\n\n\n\n\nClick on the \n+\n sign next to the address\n\n\n\n\n\n\n\n\nClick on the \nCopy Wallet Address\n button\n\n\n\n\n\n\n\n\nGive that address to the person sending the BOT to you", 
             "title": "Qtum Wallet (Mobile)"
@@ -129,26 +149,6 @@
             "location": "/bodhi_token/qtum_cli/#parse-events-with-ethabi", 
             "text": "Launch Qtum daemon: go to your  qtum-x.xx.x/bin  folder that you installed it in and run in Terminal:  $ ./qtumd    Open a new Terminal tab   Copy the  ABI  to a file named  BodhiToken.json  and save it   How to construct the  ethabi decode log  ethabi decode log  abi-path   event-name  [-l  topic ]...  data \n# note that each \"topic\" needs to be preceeded by \"-l\"    Parsing event Transfer(address indexed _from, address indexed _to, uint256 _value):  a. Get all Transfer events  $ ./qtum-cli searchlogs 1 -1 '{\"addresses\": [\"6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7\"]}' '{\"topics\": [\"ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef\"]}'\n# searchlogs = command to search through transactions on the blockchain\n# 1 = starting block number\n# -1 = ending block number (-1 goes to the latest block)\n# addresses = BOT contract address\n# topics = hashes of the events to watch, ie. this is the hash of the Transfer event.\n\n# sample Transfer event fetched from searchlogs call\n[\n    {\n        \"blockHash\": \"c79bcecae6bc7611b56960be0c3c2041f9e3ebfc2e73da0357462078361ba06f\",\n        \"blockNumber\": 46831,\n        \"transactionHash\": \"32c6874925aa0d400fad4c655283ab6c18d84c003f4e4f8c3cac32675d2eff5b\",\n        \"transactionIndex\": 8,\n        \"from\": \"d965cdc9eff7412a278cd9dd7dc32e022b7bada4\",\n        \"to\": \"6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7\",\n        \"cumulativeGasUsed\": 21422, \n        \"gasUsed\": 21422,\n        \"contractAddress\": \"6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7\",\n        \"log\": [\n            {\n                \"address\": \"6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7\",\n                \"topics\": [\n                    \"ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef\", \n                    \"000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4\", \n                    \"000000000000000000000000c0d3421708f1574e00959c082e75a77ff4770bed\"\n                ],\n                \"data\": \"0000000000000000000000000000000000000000000000000000000005f5e100\"\n            }\n        ]\n    }\n]  b. Parse the Transfer event:  $ ethabi decode log ~/Desktop/BodhiToken.json Transfer -l ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef -l 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 -l 000000000000000000000000c0d3421708f1574e00959c082e75a77ff4770bed 0000000000000000000000000000000000000000000000000000000005f5e100\n\n_from d965cdc9eff7412a278cd9dd7dc32e022b7bada4\n_to c0d3421708f1574e00959c082e75a77ff4770bed\n_value 0000000000000000000000000000000000000000000000000000000005f5e100\n# the values \"_from\", \"_to\", and \"_value\" are printed out neatly    Parsing event Mint(uint256 supply, address indexed to, uint256 amount):  a. Get all Mint events:  $ ./qtum-cli searchlogs 1 -1 '{\"addresses\": [\"6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7\"]}' '{\"topics\": [\"4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6\"]}'\n\n# sample Mint event fetched from searchlogs call\n[\n    {\n        \"blockHash\": \"8d30c1b633b5dd90f159f146e0f919b2b6271afa8c302d06fb4ed04ec733c0b8\",\n        \"blockNumber\": 46828,\n        \"transactionHash\": \"ba58122f413cb00ca83262f6be87c57b48b08bf100d90ebb5285c84b018f1d2c\",\n        \"transactionIndex\": 9,\n        \"from\": \"d965cdc9eff7412a278cd9dd7dc32e022b7bada4\",\n        \"to\": \"6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7\",\n        \"cumulativeGasUsed\": 51789,\n        \"gasUsed\": 51789,\n        \"contractAddress\": \"6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7\",\n        \"log\": [\n            {\n                \"address\": \"6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7\",\n                \"topics\": [\n                    \"4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6\", \n                    \"000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4\"\n                ],\n                \"data\": \"00000000000000000000000000000000000000000000000000038d7ec889c6000000000000000000000000000000000000000000000000000000000005f5e100\"\n            }\n        ]\n    }\n]  b. Parse the Mint event:  $ ethabi decode log ~/Desktop/BodhiToken.json Mint -l 4e3883c75cc9c752bb1db2e406a822e4a75067ae77ad9a0a4d179f2709b9e1f6 -l 000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 00000000000000000000000000000000000000000000000000038d7ec889c6000000000000000000000000000000000000000000000000000000000005f5e100\n\nsupply 00000000000000000000000000000000000000000000000000038d7ec889c600\nto d965cdc9eff7412a278cd9dd7dc32e022b7bada4\namount 0000000000000000000000000000000000000000000000000000000005f5e100\n# this neatly prints out the values for \"supply\", \"to\", and \"amount\"", 
             "title": "Parse Events with ethabi"
-        }, 
-        {
-            "location": "/bodhi_token/qbao/", 
-            "text": "Downloads\n\n\n\n\nQBao mobile apps:\n\n\nAndroid\n\n\niOS: link coming soon\n\n\n\n\n\n\n\n\nSend BOT\n\n\n\n\nDownload and launch the mobile app\n\n\n\n\nClick on \nBOT\n in the list of different tokens\n\n\n\n\n\n\n\n\nClick on \nTransfer\n button\n\n\n\n\n\n\n\n\nEnter the \nReceiver Address\n of the person you are sending it to\n\n\n\n\nEnter the \nAmount\n to send in decimal format\n\n\n\n\nMake sure \nBOT\n is selected in the dropdown menu\n\n\n\n\n\n\n\n\nClick the \nConfirm Transfer\n button\n\n\n\n\n\n\nWait for your transaction to be mined\n\n\n\n\n\n\n\n\nReceive BOT\n\n\n\n\nDownload and launch the mobile app\n\n\n\n\nClick on the \nQR Code\n button\n\n\n\n\n\n\n\n\nClick the \nCopy Address\n button\n\n\n\n\n\n\n\n\nGive that address to the person sending the BOT to you", 
-            "title": "QBao (Mobile)"
-        }, 
-        {
-            "location": "/bodhi_token/qbao/#downloads", 
-            "text": "QBao mobile apps:  Android  iOS: link coming soon", 
-            "title": "Downloads"
-        }, 
-        {
-            "location": "/bodhi_token/qbao/#send-bot", 
-            "text": "Download and launch the mobile app   Click on  BOT  in the list of different tokens     Click on  Transfer  button     Enter the  Receiver Address  of the person you are sending it to   Enter the  Amount  to send in decimal format   Make sure  BOT  is selected in the dropdown menu     Click the  Confirm Transfer  button    Wait for your transaction to be mined", 
-            "title": "Send BOT"
-        }, 
-        {
-            "location": "/bodhi_token/qbao/#receive-bot", 
-            "text": "Download and launch the mobile app   Click on the  QR Code  button     Click the  Copy Address  button     Give that address to the person sending the BOT to you", 
-            "title": "Receive BOT"
         }, 
         {
             "location": "/deployment/", 
