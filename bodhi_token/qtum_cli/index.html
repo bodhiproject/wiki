@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Qtum Clients - Bodhi Prediction Market Wiki</title>
+  <title>Qtum-cli (Desktop) - Bodhi Prediction Market Wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Qtum Clients";
-    var mkdocs_page_input_path = "bodhi_token/qtum_clients.md";
-    var mkdocs_page_url = "/bodhi_token/qtum_clients/";
+    var mkdocs_page_name = "Qtum-cli (Desktop)";
+    var mkdocs_page_input_path = "bodhi_token/qtum_cli.md";
+    var mkdocs_page_url = "/bodhi_token/qtum_cli/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -62,29 +62,18 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../qtum_wallet_mobile/">Qtum Wallet Mobile</a>
+    <a class="" href="../qtum_wallet_mobile/">Qtum Wallet (Mobile)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../qt_wallet_desktop/">QT Wallet (Desktop)</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Qtum Clients</a>
+    <a class="current" href="./">Qtum-cli (Desktop)</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#downloads">Downloads</a></li>
-    
-
-    <li class="toctree-l3"><a href="#convert-qtum-address-to-hash">Convert Qtum Address to Hash</a></li>
-    
-
-    <li class="toctree-l3"><a href="#watch-bot-in-qt-wallet">Watch BOT in QT Wallet</a></li>
-    
-
-    <li class="toctree-l3"><a href="#send-bot-with-qt-wallet-easy">Send BOT with QT Wallet (Easy)</a></li>
-    
-
-    <li class="toctree-l3"><a href="#receive-bot-with-qt-wallet">Receive BOT with QT Wallet</a></li>
-    
-
-    <li class="toctree-l3"><a href="#send-bot-with-qt-wallet-hard">Send BOT with QT Wallet (Hard)</a></li>
     
 
     <li class="toctree-l3"><a href="#send-bot-with-qtum-cli">Send BOT with qtum-cli</a></li>
@@ -100,7 +89,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../qbao/">QBao</a>
+    <a class="" href="../qbao/">QBao (Mobile)</a>
                 </li>
     </ul>
 	    </li>
@@ -141,7 +130,7 @@
         
       
     
-    <li>Qtum Clients</li>
+    <li>Qtum-cli (Desktop)</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -162,80 +151,6 @@
 </ul>
 </li>
 </ul>
-<h1 id="convert-qtum-address-to-hash">Convert Qtum Address to Hash</h1>
-<ol>
-<li>With QT Wallet open, select Help &gt; Debug window</li>
-<li>Select the Console tab</li>
-<li>Type the command: <code>gethexaddress (yourQtumAddress)</code></li>
-<li>Output is the hash address</li>
-</ol>
-<h1 id="watch-bot-in-qt-wallet">Watch BOT in QT Wallet</h1>
-<ol>
-<li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
-    <code>$ ./qtum-qt</code></li>
-<li>In the <code>Overview</code> tab, click the <code>Add Token</code> button</li>
-<li>Copy/paste the token address in <code>Contract Address</code></li>
-<li>Select the <code>Token Address</code> which you would like to monitor BOT activity on</li>
-<li>Click on the <code>Confirm</code> button</li>
-<li>You should now see <code>BOT</code> being monitored in the <code>Overview</code> and <code>QRC Token</code> tabs</li>
-</ol>
-<h1 id="send-bot-with-qt-wallet-easy">Send BOT with QT Wallet (Easy)</h1>
-<ol>
-<li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
-    <code>$ ./qtum-qt</code></li>
-<li>Add Bodhi Token to your QT Wallet (see above)</li>
-<li>In the <code>QRC Token</code> tab, click the <code>Send</code> button</li>
-<li>In the <code>PayTo</code> field, add the address you would like to send BOT to</li>
-<li>In the <code>Amount</code> field, type in the amount to send (in <a href="../info/#bot-units">Botoshi</a>)</li>
-<li>(Optional) In the <code>Description</code> field, add a note for reference</li>
-<li>Click the <code>Confirm</code> button, then a popup window will appear to confirm</li>
-<li>Wait for the timer in the <code>Yes</code> button to finish, then click it</li>
-<li>Wait until your transaction is mined</li>
-</ol>
-<h1 id="receive-bot-with-qt-wallet">Receive BOT with QT Wallet</h1>
-<ol>
-<li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
-    <code>$ ./qtum-qt</code></li>
-<li>Click on <code>File</code> &gt; <code>Receiving addresses...</code></li>
-<li>Select the address you would like the BOT sent to then click <code>Copy</code></li>
-<li>Give that address to the person sending the BOT to you</li>
-</ol>
-<h1 id="send-bot-with-qt-wallet-hard">Send BOT with QT Wallet (Hard)</h1>
-<ol>
-<li>
-<p>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
-    <code>$ ./qtum-qt</code></p>
-</li>
-<li>
-<p>Check for QTUM balance
-    Your QT Wallet should launch and start syncing. Wait for the syncing to be done. In the main Overview screen, you should see if you have available QTUM.</p>
-</li>
-<li>
-<p>Check for BOT balance</p>
-<ul>
-<li>Click on <code>Smart Contract</code> &gt; <code>Call</code></li>
-<li>Copy and paste the contract address</li>
-<li>Copy and paste the <a href="../info/#interface-abi">BodhiToken ABI</a></li>
-<li>Select <code>Function</code> &gt; <code>balanceOf(70a08231)</code></li>
-<li>Get your <a href="../info/#convert-qtum-address-to-hash">hash address</a> and paste it</li>
-<li>Click the <code>Call Contract</code> button</li>
-</ul>
-</li>
-<li>
-<p>Transfer BOT to another address</p>
-<ul>
-<li>Click on <code>Smart Contract</code> &gt; <code>SendTo</code></li>
-<li>Copy and paste the contract address</li>
-<li>Copy and paste the <a href="../info/#interface-abi">BodhiToken ABI</a></li>
-<li>Select <code>Function</code> &gt; <code>transfer(a9059cbb)</code></li>
-<li>Get the <a href="../info/#convert-qtum-address-to-hash">hash address</a> you want to send to and paste it</li>
-<li>Type in the value as the amount to send to that address (in <a href="../info/#bot-units">Botoshi</a>)</li>
-<li>Select the <code>Sender Address</code> at the bottom as the address that contains the BOT</li>
-<li>Click the <code>Send To Contract</code> button</li>
-<li>Wait for your transaction to be mined</li>
-</ul>
-</li>
-</ol>
 <h1 id="send-bot-with-qtum-cli">Send BOT with qtum-cli</h1>
 <ol>
 <li>
@@ -507,10 +422,10 @@ amount 0000000000000000000000000000000000000000000000000000000005f5e100
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../qbao/" class="btn btn-neutral float-right" title="QBao">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../qbao/" class="btn btn-neutral float-right" title="QBao (Mobile)">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../qtum_wallet_mobile/" class="btn btn-neutral" title="Qtum Wallet Mobile"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../qt_wallet_desktop/" class="btn btn-neutral" title="QT Wallet (Desktop)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -536,7 +451,7 @@ amount 0000000000000000000000000000000000000000000000000000000005f5e100
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../qtum_wallet_mobile/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../qt_wallet_desktop/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../qbao/" style="color: #fcfcfc">Next &raquo;</a></span>

@@ -24,7 +24,13 @@
     </url>
         
     <url>
-     <loc>/bodhi_token/qtum_clients/</loc>
+     <loc>/bodhi_token/qt_wallet_desktop/</loc>
+     <lastmod>2017-11-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/bodhi_token/qtum_cli/</loc>
      <lastmod>2017-11-19</lastmod>
      <changefreq>daily</changefreq>
     </url>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>QT Wallet (Desktop) - Bodhi Prediction Market Wiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "QT Wallet (Desktop)";
+    var mkdocs_page_input_path = "bodhi_token/qt_wallet_desktop.md";
+    var mkdocs_page_url = "/bodhi_token/qt_wallet_desktop/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Bodhi Prediction Market Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bodhi Token</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../info/">Info</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../qtum_wallet_mobile/">Qtum Wallet (Mobile)</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">QT Wallet (Desktop)</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#downloads">Downloads</a></li>
+    
+
+    <li class="toctree-l3"><a href="#convert-qtum-address-to-hash">Convert Qtum Address to Hash</a></li>
+    
+
+    <li class="toctree-l3"><a href="#watch-bot">Watch BOT</a></li>
+    
+
+    <li class="toctree-l3"><a href="#send-bot-in-qrc-token-tab-easy">Send BOT in QRC Token tab (Easy)</a></li>
+    
+
+    <li class="toctree-l3"><a href="#send-bot-in-smart-contract-tab-harder">Send BOT in Smart Contract tab (Harder)</a></li>
+    
+
+    <li class="toctree-l3"><a href="#receive-bot">Receive BOT</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../qtum_cli/">Qtum-cli (Desktop)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../qbao/">QBao (Mobile)</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../deployment/">Contract Deployment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../help/">Help</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Bodhi Prediction Market Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Bodhi Token &raquo;</li>
+        
+      
+    
+    <li>QT Wallet (Desktop)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="downloads">Downloads</h1>
+<ul>
+<li>QT wallet/qtum-cli - find latest release and download installer:<ul>
+<li><a href="https://github.com/qtumproject/qtum/releases">https://github.com/qtumproject/qtum/releases</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="convert-qtum-address-to-hash">Convert Qtum Address to Hash</h1>
+<ol>
+<li>With QT Wallet open, select Help &gt; Debug window</li>
+<li>Select the Console tab</li>
+<li>Type the command: <code>gethexaddress (yourQtumAddress)</code></li>
+<li>Output is the hash address</li>
+</ol>
+<h1 id="watch-bot">Watch BOT</h1>
+<ol>
+<li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
+    <code>$ ./qtum-qt</code></li>
+<li>In the <code>Overview</code> tab, click the <code>Add Token</code> button</li>
+<li>Copy/paste the token address in <code>Contract Address</code></li>
+<li>Select the <code>Token Address</code> which you would like to monitor BOT activity on</li>
+<li>Click on the <code>Confirm</code> button</li>
+<li>You should now see <code>BOT</code> being monitored in the <code>Overview</code> and <code>QRC Token</code> tabs</li>
+</ol>
+<h1 id="send-bot-in-qrc-token-tab-easy">Send BOT in QRC Token tab (Easy)</h1>
+<ol>
+<li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
+    <code>$ ./qtum-qt</code></li>
+<li>Add Bodhi Token to your QT Wallet (see above)</li>
+<li>In the <code>QRC Token</code> tab, click the <code>Send</code> button</li>
+<li>In the <code>PayTo</code> field, add the address you would like to send BOT to</li>
+<li>In the <code>Amount</code> field, type in the amount to send (in <a href="../info/#bot-units">Botoshi</a>)</li>
+<li>(Optional) In the <code>Description</code> field, add a note for reference</li>
+<li>Click the <code>Confirm</code> button, then a popup window will appear to confirm</li>
+<li>Wait for the timer in the <code>Yes</code> button to finish, then click it</li>
+<li>Wait until your transaction is mined</li>
+</ol>
+<h1 id="send-bot-in-smart-contract-tab-harder">Send BOT in Smart Contract tab (Harder)</h1>
+<ol>
+<li>
+<p>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
+    <code>$ ./qtum-qt</code></p>
+</li>
+<li>
+<p>Check for QTUM balance
+    Your QT Wallet should launch and start syncing. Wait for the syncing to be done. In the main Overview screen, you should see if you have available QTUM.</p>
+</li>
+<li>
+<p>Check for BOT balance</p>
+<ul>
+<li>Click on <code>Smart Contract</code> &gt; <code>Call</code></li>
+<li>Copy and paste the contract address</li>
+<li>Copy and paste the <a href="../info/#interface-abi">BodhiToken ABI</a></li>
+<li>Select <code>Function</code> &gt; <code>balanceOf(70a08231)</code></li>
+<li>Get your <a href="../info/#convert-qtum-address-to-hash">hash address</a> and paste it</li>
+<li>Click the <code>Call Contract</code> button</li>
+</ul>
+</li>
+<li>
+<p>Transfer BOT to another address</p>
+<ul>
+<li>Click on <code>Smart Contract</code> &gt; <code>SendTo</code></li>
+<li>Copy and paste the contract address</li>
+<li>Copy and paste the <a href="../info/#interface-abi">BodhiToken ABI</a></li>
+<li>Select <code>Function</code> &gt; <code>transfer(a9059cbb)</code></li>
+<li>Get the <a href="../info/#convert-qtum-address-to-hash">hash address</a> you want to send to and paste it</li>
+<li>Type in the value as the amount to send to that address (in <a href="../info/#bot-units">Botoshi</a>)</li>
+<li>Select the <code>Sender Address</code> at the bottom as the address that contains the BOT</li>
+<li>Click the <code>Send To Contract</code> button</li>
+<li>Wait for your transaction to be mined</li>
+</ul>
+</li>
+</ol>
+<h1 id="receive-bot">Receive BOT</h1>
+<ol>
+<li>Launch QT Wallet - Go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:
+    <code>$ ./qtum-qt</code></li>
+<li>Click on <code>File</code> &gt; <code>Receiving addresses...</code></li>
+<li>Select the address you would like the BOT sent to then click <code>Copy</code></li>
+<li>Give that address to the person sending the BOT to you</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../qtum_cli/" class="btn btn-neutral float-right" title="Qtum-cli (Desktop)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../qtum_wallet_mobile/" class="btn btn-neutral" title="Qtum Wallet (Mobile)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../qtum_wallet_mobile/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../qtum_cli/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
