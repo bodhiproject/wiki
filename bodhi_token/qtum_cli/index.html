@@ -80,10 +80,19 @@
     <li class="toctree-l3"><a href="#downloads">Downloads</a></li>
     
 
+    <li class="toctree-l3"><a href="#launch-qtum-daemon">Launch Qtum daemon</a></li>
+    
+
+    <li class="toctree-l3"><a href="#encode-address-to-hex">Encode address to hex</a></li>
+    
+
     <li class="toctree-l3"><a href="#send-bot">Send BOT</a></li>
     
 
     <li class="toctree-l3"><a href="#receive-bot">Receive BOT</a></li>
+    
+
+    <li class="toctree-l3"><a href="#check-bot-balance">Check BOT balance</a></li>
     
 
     <li class="toctree-l3"><a href="#parse-events-with-ethabi">Parse Events with ethabi</a></li>
@@ -151,52 +160,28 @@
 </ul>
 </li>
 </ul>
-<h1 id="send-bot">Send BOT</h1>
-<ol>
-<li>
-<p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
+<h1 id="launch-qtum-daemon">Launch Qtum daemon</h1>
+<p>In your Terminal window, go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run:</p>
 <pre><code>$ ./qtumd --logevents
 </code></pre>
-</li>
-<li>
-<p>Open a new Terminal tab</p>
-</li>
-<li>
-<p>Check for account: Make sure you have a valid Qtum address that has some QTUM (for the transaction fee) and BOT for transferring.</p>
-<pre><code>$ ./qtum-cli listaccounts
-{
-  "": -238.19753958,
-  "deric": 248.78550718,
-  "tester1": 15.08267720
-}
-# My example shows 2 accounts: deric &amp; tester1. 
-# If you don’t see any accounts, go to Step 2. 
-# Otherwise, go to Step 3.
+<p>To reindex the chain:</p>
+<pre><code>$ ./qtumd --logevents --reindex
 </code></pre>
-</li>
+<h1 id="encode-address-to-hex">Encode address to hex</h1>
+<pre><code>$ ./qtum-cli gethexaddress QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF
+# hash address:
+d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+
+$ ethabi encode params -v address d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+# encoded address with ethabi (padded to 32 bytes):
+000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4
+</code></pre>
+<h1 id="send-bot">Send BOT</h1>
+<ol>
+<li><a href="#launch-qtum-daemon">Launch Qtum daemon</a></li>
+<li>Open a new Terminal tab</li>
 <li>
-<p>Creating an account</p>
-<pre><code>$ ./qtum-cli getaccountaddress “yourAccountName”
-qdghGtMxvfxPzdSJHNvJhN6gpzZSYdLDRN
-</code></pre>
-</li>
-<li>
-<p>Transferring QTUM to your account: You will need some QTUM in your accounts to be able to transfer BOT. If you need to transfer some QTUM to your address from a different QTUM address.</p>
-<p>a. Encrypt wallet: <a href="https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial">https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial</a></p>
-<p>b. Save your passphrase words</p>
-<p>c. Unlock wallet</p>
-<pre><code>$ ./qtum-cli walletpassphrase “your passphase words” numOfSecondsToKeepUnlocked
-</code></pre>
-<p>d. Transfer QTUM</p>
-<pre><code>$ ./qtum-cli sendtoaddress “addressToSendQtum” amountToSend
-de639bb266a4143d56fe24d64fe21d416847fcbc16cd51b8d4eeb04818af0628
-</code></pre>
-<p>e. Wait until your transaction is confirmed. You can check with:</p>
-<pre><code>$ ./qtum-cli gettransaction de639bb266a4143d56fe24d64fe21d416847fcbc16cd51b8d4eeb04818af0628
-</code></pre>
-</li>
-<li>
-<p>Transfer Bodhi Tokens using transfer(address, uint256)</p>
+<p>Transfer BOT using <code>transfer(address, uint256)</code>:</p>
 <pre><code># sendtocontract help
 Arguments:
 1. "contractAddress" (string, required) The contract address that will receive the funds and data.
@@ -209,37 +194,30 @@ Arguments:
 $ ./qtum-cli sendtocontract contractAddress dataHex amount gasLimit gasPrice senderAddress
 </code></pre>
 <p>Constructing the <code>dataHex</code> for <code>transfer(address, uint256)</code>:</p>
-<p>This data string is hex of data which consists of function name, value of parameters. All parts of hex strings need to be concatenated together with no space in between.</p>
+<p>This data string is a hex string of data which consists of the function name and it's parameters. All parts of hex strings need to be concatenated together with no space in between. Each parameter should be encoded to 32 bytes.</p>
 <ul>
-<li>Function name: transfer() = function signature: <code>a9059cbb</code></li>
-<li>
-<p>First param: address param = Recipient address of BOT. Need to get the encoded address first</p>
-<pre><code>$ ./qtum-cli gethexaddress QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF
-# hash address:
-d965cdc9eff7412a278cd9dd7dc32e022b7bada4
-
-$ ethabi encode params -v address d965cdc9eff7412a278cd9dd7dc32e022b7bada4
-# encoded address with ethabi
-000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4
-</code></pre>
-</li>
-<li>
-<p>Second parameter: uint256 param = amount to send to in lowest denomination of BOT (Botoshi). </p>
-<pre><code>$ ethabi encode params -v uint 10000 --lenient
+<li>Function name: <code>transfer(address,uint256)</code> = <a href="../info/#function-signatures">function signature</a>: <code>a9059cbb</code></li>
+<li>First param: <code>address</code> = recipient <a href="#encode-address-to-hex">encoded address</a> to send BOT to: <code>000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4</code></li>
+<li>Second parameter: <code>uint256</code> = amount to send to in lowest denomination of BOT (Botoshi). <pre><code>$ ethabi encode params -v uint 10000 --lenient
 0000000000000000000000000000000000000000000000000000000000002710
 </code></pre>
 </li>
 </ul>
 <p>Now we have all the params we need encoded properly:</p>
-<pre><code>a9059cbb000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada40000000000000000000000000000000000000000000000000000000000002710
+<pre><code>a9059cbb # function param
+000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada4 # address param
+0000000000000000000000000000000000000000000000000000000000002710 # uint256 param
+
+# dataHex concatenated without any spaces:
+a9059cbb000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada40000000000000000000000000000000000000000000000000000000000002710
 </code></pre>
-<p>Finally the last arguments in the call:</p>
-<ul>
-<li><code>amount</code> = 0</li>
-<li><code>gasLimit</code> = 250000</li>
-<li><code>gasPrice</code> = 0.0000004</li>
-<li><code>senderAddress</code> = QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF</li>
-</ul>
+<p>Finally the last arguments needed in the call:</p>
+<pre><code># other parameters needed:
+# amount = 0 (no QTUM to send)
+# gasLimit = 250000 (default)
+# gasPrice = 0.0000004 (default)
+# senderAddress = QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF (address that is transferring BOT)
+</code></pre>
 <p>Execute the transfer():</p>
 <pre><code>$ ./qtum-cli sendtocontract f13f51550faaf698d09fdcc74d79335bfe19e062 a9059cbb000000000000000000000000d965cdc9eff7412a278cd9dd7dc32e022b7bada40000000000000000000000000000000000000000000000000000000000002710 0 250000 0.0000004 QgRUhP8sLMCNKrzwtW4xU5DF8CCTeiA3sF
 # transaction receipt
@@ -251,9 +229,90 @@ $ ethabi encode params -v address d965cdc9eff7412a278cd9dd7dc32e022b7bada4
 </code></pre>
 </li>
 <li>
-<p>Check the BOT balance of your address</p>
-<pre><code># $ ./qtum-cli callcontract contractAddress dataHex
-# dataHex = function signature: 70a08231 + encodedAddressToCheckBalanceOf
+<p>Check for transaction to be mined:</p>
+<pre><code># $ ./qtum-cli gettransaction txid
+$ ./qtum-cli gettransaction 25af2f8cc32e76b52b39175336612f0ae568906216667e6482421edce2909f72
+
+# look at "confirmations" to be 1 or more
+{
+    "amount": 0.00000000,
+    "fee": -0.10120000,
+    "confirmations": 0, # once this hits 1 confirmation, you can check the balance
+    "blockhash": "c7eb9ff50dafc4c8c0b0e519eeea8dc98be5209d82e2a49c88be6173796bef75",
+    "blockindex": 2,
+    "blocktime": 1511152112,
+    "txid": "25af2f8cc32e76b52b39175336612f0ae568906216667e6482421edce2909f72",
+    "walletconflicts": [
+    ],
+    "time": 1511152081,
+    "timereceived": 1511152081,
+    "bip125-replaceable": "no",
+    "details": [
+    {
+      "account": "",
+      "category": "send",
+      "amount": 0.00000000,
+      "vout": 0,
+      "fee": -0.10120000,
+      "abandoned": false
+    }, 
+    {
+      "account": "",
+      "address": "qKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy",
+      "category": "send",
+      "amount": -91.78832400,
+      "label": "main",
+      "vout": 1,
+      "fee": -0.10120000,
+      "abandoned": false
+    }, 
+    {
+      "account": "main",
+      "address": "qKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy",
+      "category": "receive",
+      "amount": 91.78832400,
+      "label": "main",
+      "vout": 1
+    }
+    ],
+    "hex": "020000000106752a723b35434e877b7b4bf30635df1a46690563711324721dec800e38d79d000000006b483045022100de725038c8d2e1474b88f0c04121f18ad644596b527f65ff43732e5ee47394360220240812330bcf00a41e79e63f3e2d660d76e4dc13286653015385e5dff2638b8e0121038e8b6337a06712e40277d339b4643897e62b337b66eea2d8dd069812d7feb0a3feffffff0200000000000000006301040390d003012844a9059cbb00000000000000000000000074fafd43036239029a5dabc9463009daf4ef4a7c0000000000000000000000000000000000000000000000000000000005f5e10014f6177bc9812eeb531907621af6641a41133dea9ec210de1923020000001976a91417e7888aa7412a735f336d2f6d784caefabb6fa388ac8b8a0000"
+}
+</code></pre>
+</li>
+</ol>
+<h1 id="receive-bot">Receive BOT</h1>
+<ol>
+<li><a href="#launch-qtum-daemon">Launch Qtum daemon</a></li>
+<li>Open a new Terminal tab</li>
+<li>
+<p>List your accounts:</p>
+<pre><code>$ ./qtum-cli listaddressgroupings
+[
+  [
+    [
+      "qKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy", 
+      91.78832400, 
+      "main"
+    ]
+  ]
+]
+</code></pre>
+</li>
+<li>
+<p>Pick an address to receive and give that to the person sending you the BOT</p>
+</li>
+</ol>
+<h1 id="check-bot-balance">Check BOT balance</h1>
+<ol>
+<li><a href="#launch-qtum-daemon">Launch Qtum daemon</a></li>
+<li>
+<p>Use <code>callcontract</code> to check the balance:</p>
+<ul>
+<li>Function name: <code>balanceOf(address)</code> = <a href="../info/#function-signatures">function signature</a>: <code>70a08231</code></li>
+<li>First param: <code>address</code> = <a href="#encode-address-to-hex">encoded address</a> to check balanceOf<pre><code># $ ./qtum-cli callcontract contractAddress dataHex
+# dataHex:
+# function signature: 70a08231 
+# address: 0000000000000000000000004cb69aae6761e52413b948ad10689cc2428e2ef7
 $ ./qtum-cli callcontract f13f51550faaf698d09fdcc74d79335bfe19e062 70a082310000000000000000000000004cb69aae6761e52413b948ad10689cc2428e2ef7
 {
   "address": "a619b1a87d4f17fb56e347887b971094918b016c",
@@ -261,7 +320,7 @@ $ ./qtum-cli callcontract f13f51550faaf698d09fdcc74d79335bfe19e062 70a0823100000
     "gasUsed": 23404,
     "excepted": "None",
     "newAddress": "a619b1a87d4f17fb56e347887b971094918b016c",
-    "output": "000000000000000000000000000000000000000000000000000000000000015e", &lt;--
+    "output": "000000000000000000000000000000000000000000000000000000000000015e", # result
     "codeDeposit": 0,
     "gasRefunded": 0,
     "depositSize": 0,
@@ -275,54 +334,18 @@ $ ./qtum-cli callcontract f13f51550faaf698d09fdcc74d79335bfe19e062 70a0823100000
     ]
   }
 }
-</code></pre>
-<p><code>output: 000000000000000000000000000000000000000000000000000000000000015e</code></p>
-<p>This is the hex return value of <code>balanceOf()</code>. Converted to decimals, it is <code>350</code>.</p>
-</li>
-</ol>
-<h1 id="receive-bot">Receive BOT</h1>
-<ol>
-<li>
-<p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
-<pre><code>$ ./qtumd
+
+# output: 000000000000000000000000000000000000000000000000000000000000015e
+# converted to decimal format = 350
 </code></pre>
 </li>
-<li>
-<p>Open a new Terminal tab</p>
-</li>
-<li>
-<p>List your accounts:</p>
-<pre><code>$ ./qtum-cli listaccounts
-{
-  "": -569.38821838,
-  "deric": 576.02622998,
-  "tester1": 15.08267720
-}
-</code></pre>
-</li>
-<li>
-<p>Find the addresses of your accounts:</p>
-<pre><code>$ ./qtum-cli getaddressesbyaccount deric
-[
-  "qQZ1GB4db8jVaBmzyw7dsoSDqEAGN7Bfov", 
-  "qQnvzVjK2xASAkvEwfmEAiG2vZPUQrF6Cg"
-]
-</code></pre>
-</li>
-<li>
-<p>Pick an address to receive and give that to the person sending you the BOT</p>
+</ul>
 </li>
 </ol>
 <h1 id="parse-events-with-ethabi">Parse Events with ethabi</h1>
 <ol>
-<li>
-<p>Launch Qtum daemon: go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run in Terminal:</p>
-<pre><code>$ ./qtumd
-</code></pre>
-</li>
-<li>
-<p>Open a new Terminal tab</p>
-</li>
+<li><a href="#launch-qtum-daemon">Launch Qtum daemon</a></li>
+<li>Open a new Terminal tab</li>
 <li>Copy the <a href="../info/#interface-abi">ABI</a> to a file named <code>BodhiToken.json</code> and save it</li>
 <li>
 <p>How to construct the <code>ethabi decode log</code></p>
