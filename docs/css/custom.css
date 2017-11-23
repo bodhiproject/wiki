@@ -1,6 +1,8 @@
 #abi {
-	height: 80px;
+	height: 34px;
 	resize: none;
+	white-space: nowrap;
+	color: black;
 }
 
 .btn {
