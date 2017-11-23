@@ -1,0 +1,14 @@
+#abi {
+	height: 80px;
+	resize: none;
+}
+
+.btn {
+	margin-top: 2px;
+}
+
+.copied {
+	color: green;
+	display: none;
+	margin-left: 10px;
+}

@@ -12,3 +12,7 @@ pages:
     - Qtum-cli (Desktop): bodhi_token/qtum_cli.md
   - Contract Deployment: deployment.md
   - Help: help.md
+extra_javascript:
+  ['https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js','js/clipboard.js']
+extra_css:
+  ['css/custom.css']
