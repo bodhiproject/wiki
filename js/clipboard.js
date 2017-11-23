@@ -1,6 +1,6 @@
-var clipboard = new Clipboard('.buttonClass');
+var clip = new Clipboard('.btn');
 
-// when text is copied into clipboard use it
-clipboard.on('success', function(e) {
-  $('#log').text('Text copied into clipboard is: <' + e.text + '>');
+clip.on('success', function(e) {
+    $('.copied').show();
+	$('.copied').fadeOut(1000);
 });
