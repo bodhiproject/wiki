@@ -11,7 +11,6 @@ pages:
     - QT Wallet (Desktop): bodhi_token/qt_wallet_desktop.md
     - Qtum-cli (Desktop): bodhi_token/qtum_cli.md
   - Bodhi Core:
-    - Info: bodhi_core/info.md
     - EventFactory: bodhi_core/event_factory.md
     - TopicEvent: bodhi_core/topic_event.md
     - OracleFactory: bodhi_core/oracle_factory.md

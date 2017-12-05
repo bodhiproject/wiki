@@ -30,7 +30,7 @@ Places a bet on a result given the index. The QTUM is routed to the TopicEvent c
     ![](../img/bet_result2.png)
 
 8. Click `Send To Contract` button
-9. You should see your new transaction posted
+9. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
     
     ![](../img/bet_result3.png)
 
@@ -52,7 +52,7 @@ The CentralizedOracle can set the result by first approving 100 BOT (the consens
 7. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through
 8. Set the `Sender Address` as the CentralizedOracle address
 9. Click `Send To Contract` button
-10. You should see your new transaction posted. Save the transaction id.
+10. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
 11. Wait for your transaction to be mined
 
 # invalidateOracle()
