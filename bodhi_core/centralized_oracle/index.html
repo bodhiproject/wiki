@@ -97,6 +97,10 @@
                     
     <a class="" href="../topic_event/">TopicEvent</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../oracle_factory/">OracleFactory</a>
+                </li>
                 <li class=" current">
                     
     <a class="current" href="./">CentralizedOracle</a>
@@ -108,13 +112,42 @@
     <li class="toctree-l3"><a href="#event-hashes">Event Hashes</a></li>
     
 
-    <li class="toctree-l3"><a href="#betting-on-a-topicevent-result">Betting on a TopicEvent Result</a></li>
+    <li class="toctree-l3"><a href="#bet">bet()</a></li>
     
 
-    <li class="toctree-l3"><a href="#reading-bet-transaction-receipt">Reading bet transaction receipt</a></li>
+    <li class="toctree-l3"><a href="#setresult">setResult()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#invalidateoracle">invalidateOracle()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#geteventname">getEventName()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#geteventresultname">getEventResultName()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#oracle">oracle()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#bettingendblock">bettingEndBlock()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#resultsettingendblock">resultSettingEndBlock()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#getvotedbalance">getVotedBalance()</a></li>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../decentralized_oracle/">DecentralizedOracle</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../logs/">Logs</a>
                 </li>
     </ul>
 	    </li>
@@ -183,14 +216,17 @@
 <button class="btn" data-clipboard-target="#centralized_oracle_abi">Copy ABI</button>
 <span class="copied">Copied!</span></p>
 <h1 id="event-hashes">Event Hashes</h1>
-<pre><code>event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount);
+<pre><code>event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
 0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03
+
+event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
+b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
 </code></pre>
-<h1 id="betting-on-a-topicevent-result">Betting on a TopicEvent Result</h1>
+<h1 id="bet">bet()</h1>
+<p>Places a bet on a result given the index. The QTUM is routed to the TopicEvent contract for storage.</p>
 <ol>
 <li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
-<li>Click on <code>Smart Contract</code> tab</li>
-<li>Click on <code>SendTo</code> sub tab</li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>SendTo</code> sub tab</li>
 <li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
 <li>Set the <code>Function</code> to <code>bet(d0821b0e)</code></li>
 <li>
@@ -219,42 +255,85 @@
 <p>Wait for the transaction to get mined</p>
 </li>
 </ol>
-<h1 id="reading-bet-transaction-receipt">Reading bet transaction receipt</h1>
+<h1 id="setresult">setResult()</h1>
+<p>The CentralizedOracle can set the result by first approving 100 BOT (the consensus threshold) to the TopicEvent address. Then they can call this method to set the result.</p>
 <ol>
 <li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
-<li>In the top menu bar, open <code>Help</code> &gt; <code>Debug window</code></li>
-<li>Run the command <code>gettransactionreceipt (transactionId)</code>:<pre><code>$ gettransactionreceipt e08eb07a4bbd7ddb0d95dbb816bb675d1ba92b253caa348e858a32af42a5e74d
-[
-  {
-    "blockHash": "cc1bc42fb696e53ef3a591b3c387600fc3d82b6835a79e506dddab82f10e68e3",
-    "blockNumber": 44521,
-    "transactionHash": "e08eb07a4bbd7ddb0d95dbb816bb675d1ba92b253caa348e858a32af42a5e74d",
-    "transactionIndex": 2,
-    "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
-    "to": "a9716b4c11b5c3e9c76636967a68ccc4c1329622",
-    "cumulativeGasUsed": 137492,
-    "gasUsed": 137492,
-    "contractAddress": "a9716b4c11b5c3e9c76636967a68ccc4c1329622",
-    "log": [
-      {
-        "address": "a9716b4c11b5c3e9c76636967a68ccc4c1329622",
-        "topics": [
-          "0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03", 
-          "000000000000000000000000a9716b4c11b5c3e9c76636967a68ccc4c1329622", 
-          "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
-        ],
-        "data": "0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000003b9aca00"
-      }
-    ]
-  }
-]
-# contractAddress: a9716b4c11b5c3e9c76636967a68ccc4c1329622 is CentralizedOracle contract
-# log.address: a9716b4c11b5c3e9c76636967a68ccc4c1329622 is CentralizedOracle contract
-# log.topics[1]: 000000000000000000000000a9716b4c11b5c3e9c76636967a68ccc4c1329622 is address indexed _oracleAddress
-# log.topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
-# log.data: uint8 _resultIndex, uint256 _votedAmount
-</code></pre>
-</li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>SendTo</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>setResult(17840337)</code></li>
+<li>Set the Result Index you would like to set the result in <code>uint8 _resultIndex</code> field</li>
+<li>Set the amount <code>10000000000</code> (100 BOT in Botoshi) in the <code>uint256 _botAmount</code> field</li>
+<li>Set the <code>Gas Limit</code> to <code>3000000</code> (3 million) to make sure the transaction goes through</li>
+<li>Set the <code>Sender Address</code> as the CentralizedOracle address</li>
+<li>Click <code>Send To Contract</code> button</li>
+<li>You should see your new transaction posted. Save the transaction id.</li>
+<li>Wait for your transaction to be mined</li>
+</ol>
+<h1 id="invalidateoracle">invalidateOracle()</h1>
+<p>If the CentralizedOracle does not set the result by the result setting end block, anyone can call this method to invalidate the CentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on.</p>
+<h1 id="geteventname">getEventName()</h1>
+<p>Returns the event name.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getEventName(b81e43fc)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>string</code> is the event name</li>
+</ol>
+<h1 id="geteventresultname">getEventResultName()</h1>
+<p>Returns the event name given the Event result index.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getEventResultName(4cb15529)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>Set the <code>uint8 _eventResultIndex</code></li>
+<li>The <code>string</code> is the Event result name</li>
+</ol>
+<h1 id="oracle">oracle()</h1>
+<p>Returns the address of the CentralizedOracle.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>oracle(7dc0d1d0)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>address</code> is the CentralizedOracle in hex</li>
+</ol>
+<h1 id="bettingendblock">bettingEndBlock()</h1>
+<p>Returns the block when the betting period will end.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>bettingEndBlock(12ca9ed5)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256</code> is the betting end block</li>
+</ol>
+<h1 id="resultsettingendblock">resultSettingEndBlock()</h1>
+<p>Returns the block when the CentralizedOracle will no longer be able to set the result.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>resultSettingEndBlock(d16e637b)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256</code> is the result setting end block</li>
+</ol>
+<h1 id="getvotedbalance">getVotedBalance()</h1>
+<p>Returns the amount bet given the Event result index and the sender address.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getVotedBalance(33c5fb56)</code></li>
+<li>Set the <code>uint8 _eventResultIndex</code></li>
+<li>Set the <code>Sender Address</code> of the address that was used to bet</li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256</code> is the voted amout in satoshi for that result index</li>
 </ol>
               
             </div>
@@ -263,10 +342,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../qtum/qt_wallet/" class="btn btn-neutral float-right" title="QT Wallet (Desktop)">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../decentralized_oracle/" class="btn btn-neutral float-right" title="DecentralizedOracle">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../topic_event/" class="btn btn-neutral" title="TopicEvent"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../oracle_factory/" class="btn btn-neutral" title="OracleFactory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -292,10 +371,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../topic_event/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../oracle_factory/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../qtum/qt_wallet/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../decentralized_oracle/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

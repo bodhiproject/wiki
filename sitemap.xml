@@ -64,7 +64,25 @@
     </url>
         
     <url>
+     <loc>/bodhi_core/oracle_factory/</loc>
+     <lastmod>2017-12-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/bodhi_core/centralized_oracle/</loc>
+     <lastmod>2017-12-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/bodhi_core/decentralized_oracle/</loc>
+     <lastmod>2017-12-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/bodhi_core/logs/</loc>
      <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
