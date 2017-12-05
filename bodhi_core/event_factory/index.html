@@ -109,6 +109,9 @@
     <li class="toctree-l3"><a href="#creating-topicevent">Creating TopicEvent</a></li>
     
 
+    <li class="toctree-l3"><a href="#reading-topicevent-created-transaction-receipt">Reading TopicEvent created transaction receipt</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -200,21 +203,58 @@ b7fa6f4e0c226cf0645f9f983dbc0bb4bb971400b98fae2387487d6d810c9c56
 <li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
 <li>Click on <code>Smart Contract</code> tab</li>
 <li>Click on <code>SendTo</code> sub tab</li>
-<li>Set the <a href="#deployed-contracts">Contract Address</a> and <a href="#interface-abi">Interface (ABI)</a></li>
-<li>Set the <code>Function</code> to <code>createTopic(d0613dce)</code></li>
-<li>Set the <a href="../../qtum/qt_wallet/#convert-qtum-address-to-hash">hash address</a> of the CentralizedOracle in <code>address _oracle</code> field</li>
-<li>Set the TopicEvent name broken down by 32 byte blocks converted to hex in the <code>bytes32[10] _name</code> fields</li>
-<li>Set the TopicEvent result names converted to hex in the <code>bytes32[10] _resultName</code> fields</li>
-<li>Set the betting end block in the <code>uint256 _bettingEndBlock</code> field</li>
-<li>Set the result setting end block in the <code>uint256 _resultSettingEndBlock</code> field</li>
-<li>Set the <code>Gas Limit</code> to <code>4000000</code> (4 million gas just to be safe the transaction goes through, unused gas will be returned to you in the next coinstake transaction)</li>
-<li>Set the <code>Sender Address</code></li>
-<li>Click <code>Send To Contract</code> button</li>
-<li>Wait for transaction to get mined</li>
-<li>Open up the <code>Debug window</code></li>
+<li>
+<p>Set the <a href="#deployed-contracts">Contract Address</a> and <a href="#interface-abi">Interface (ABI)</a></p>
+<p><img alt="" src="../../img/create_topicevent1.png" /></p>
+</li>
+<li>
+<p>Set the <code>Function</code> to <code>createTopic(d0613dce)</code></p>
+<p><img alt="" src="../../img/create_topicevent2.png" /></p>
+</li>
+<li>
+<p>Set the <a href="../../qtum/qt_wallet/#convert-qtum-address-to-hash">hash address</a> of the CentralizedOracle in <code>address _oracle</code> field</p>
+<p><img alt="" src="../../img/create_topicevent3.png" /></p>
+</li>
+<li>
+<p>Set the TopicEvent name broken down by 32 byte blocks converted to hex in the <code>bytes32[10] _name</code> fields</p>
+<p><img alt="" src="../../img/create_topicevent4.png" /></p>
+</li>
+<li>
+<p>Set the TopicEvent result names converted to hex in the <code>bytes32[10] _resultName</code> fields</p>
+<p><img alt="" src="../../img/create_topicevent5.png" /></p>
+</li>
+<li>
+<p>Set the betting end block in the <code>uint256 _bettingEndBlock</code> field</p>
+<p><img alt="" src="../../img/create_topicevent6.png" /></p>
+</li>
+<li>
+<p>Set the result setting end block in the <code>uint256 _resultSettingEndBlock</code> field</p>
+<p><img alt="" src="../../img/create_topicevent7.png" /></p>
+</li>
+<li>
+<p>Set the <code>Gas Limit</code> to <code>4000000</code> (4 million gas just to be safe the transaction goes through, unused gas will be returned to you in the next coinstake transaction)</p>
+<p><img alt="" src="../../img/create_topicevent8.png" /></p>
+</li>
+<li>
+<p>Set the <code>Sender Address</code></p>
+<p><img alt="" src="../../img/create_topicevent9.png" /></p>
+</li>
+<li>
+<p>Click <code>Send To Contract</code> button</p>
+</li>
+<li>
+<p>Wait for transaction to get mined</p>
+<p><img alt="" src="../../img/create_topicevent10.png" /></p>
+</li>
+</ol>
+<h1 id="reading-topicevent-created-transaction-receipt">Reading TopicEvent created transaction receipt</h1>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>In the top menu bar, open <code>Help</code> &gt; <code>Debug window</code></li>
 <li>
 <p>Run the command <code>gettransactionreceipt (transactionId)</code>:</p>
-<pre><code>[
+<pre><code>$ gettransactionreceipt 05b35deb4f452bbbc053f0d47d3ec5560a6fc9d8837361a676a8d2dda42c80c7
+[
   {
     "blockHash": "f2c4cb58f1b5d242fe5cc2f6ab1effeacc0448b5cce8f1ee4942217ac5c68cff",
     "blockNumber": 44457,
