@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>QBao (Mobile) - Bodhi Prediction Market Wiki</title>
+  <title>QT Wallet (Desktop) - Bodhi Prediction Market Wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "QBao (Mobile)";
-    var mkdocs_page_input_path = "bodhi_token/qbao.md";
-    var mkdocs_page_url = "/bodhi_token/qbao/";
+    var mkdocs_page_name = "QT Wallet (Desktop)";
+    var mkdocs_page_input_path = "qtum/qt_wallet.md";
+    var mkdocs_page_url = "/qtum/qt_wallet/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -60,35 +60,23 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../info/">Info</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">QBao (Mobile)</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#downloads">Downloads</a></li>
-    
-
-    <li class="toctree-l3"><a href="#send-bot">Send BOT</a></li>
-    
-
-    <li class="toctree-l3"><a href="#receive-bot">Receive BOT</a></li>
-    
-
-    </ul>
+    <a class="" href="../../bodhi_token/info/">Info</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../qtum_wallet_mobile/">Qtum Wallet (Mobile)</a>
+    <a class="" href="../../bodhi_token/qbao/">QBao (Mobile)</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../qt_wallet_desktop/">QT Wallet (Desktop)</a>
+    <a class="" href="../../bodhi_token/qtum_wallet_mobile/">Qtum Wallet (Mobile)</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../qtum_cli/">Qtum-cli (Desktop)</a>
+    <a class="" href="../../bodhi_token/qt_wallet_desktop/">QT Wallet (Desktop)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bodhi_token/qtum_cli/">Qtum-cli (Desktop)</a>
                 </li>
     </ul>
 	    </li>
@@ -112,9 +100,21 @@
 		
     <span class="caption-text">Qtum</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../qtum/qt_wallet/">QT Wallet (Desktop)</a>
+    <a class="current" href="./">QT Wallet (Desktop)</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#downloads">Downloads</a></li>
+    
+
+    <li class="toctree-l3"><a href="#launch-qt-wallet">Launch QT Wallet</a></li>
+    
+
+    <li class="toctree-l3"><a href="#convert-qtum-address-to-hash">Convert Qtum Address to Hash</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -151,11 +151,11 @@
     
       
         
-          <li>Bodhi Token &raquo;</li>
+          <li>Qtum &raquo;</li>
         
       
     
-    <li>QBao (Mobile)</li>
+    <li>QT Wallet (Desktop)</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -167,52 +167,34 @@
               
                 <h1 id="downloads">Downloads</h1>
 <ul>
-<li>QBao mobile apps:<ul>
-<li><a href="https://play.google.com/store/apps/details?id=com.aether.coder.qbao&amp;hl=en">Android</a></li>
-<li>iOS: link coming soon</li>
+<li>QT Wallet - find latest release and download installer:<ul>
+<li><a href="https://github.com/qtumproject/qtum/releases">https://github.com/qtumproject/qtum/releases</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="send-bot">Send BOT</h1>
+<h1 id="launch-qt-wallet">Launch QT Wallet</h1>
+<p>In your Terminal window, go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run:</p>
+<pre><code>$ ./qtum-qt --logevents
+</code></pre>
+<p>Please note you might get a message asking you to reindex. If that is the case, run with this command:</p>
+<pre><code>$ ./qtum-qt --logevents --reindex
+</code></pre>
+<h1 id="convert-qtum-address-to-hash">Convert Qtum Address to Hash</h1>
 <ol>
-<li>Download and launch the mobile app</li>
 <li>
-<p>Click on <code>BOT</code> in the list of different tokens</p>
-<p><img alt="" src="../../img/qbao_send_1.png" /></p>
+<p>With QT Wallet open, select <code>Help</code> &gt; <code>Debug window</code></p>
+<p><img alt="" src="../../img/qt_wallet_convert_1.png" /></p>
 </li>
 <li>
-<p>Click on <code>Transfer</code> button</p>
-<p><img alt="" src="../../img/qbao_send_2.png" /></p>
+<p>Select the <code>Console</code> tab</p>
 </li>
 <li>
-<p>Enter the <code>Receiver Address</code> of the person you are sending it to</p>
-</li>
-<li>Enter the <code>Amount</code> to send in decimal format</li>
-<li>
-<p>Make sure <code>BOT</code> is selected in the dropdown menu</p>
-<p><img alt="" src="../../img/qbao_send_3.png" /></p>
+<p>Type the command: <code>gethexaddress (yourQtumAddress)</code></p>
+<p><img alt="" src="../../img/qt_wallet_convert_2.png" /></p>
 </li>
 <li>
-<p>Click the <code>Confirm Transfer</code> button</p>
-</li>
-<li>
-<p>Wait for your transaction to be mined</p>
-<p><img alt="" src="../../img/qbao_send_4.png" /></p>
-</li>
-</ol>
-<h1 id="receive-bot">Receive BOT</h1>
-<ol>
-<li>Download and launch the mobile app</li>
-<li>
-<p>Click on the <code>QR Code</code> button</p>
-<p><img alt="" src="../../img/qbao_receive_1.png" /></p>
-</li>
-<li>
-<p>Click the <code>Copy Address</code> button</p>
-<p><img alt="" src="../../img/qbao_receive_2.png" /></p>
-</li>
-<li>
-<p>Give that address to the person sending the BOT to you</p>
+<p>Output is the hash address</p>
+<p><img alt="" src="../../img/qt_wallet_convert_3.png" /></p>
 </li>
 </ol>
               
@@ -222,10 +204,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../qtum_wallet_mobile/" class="btn btn-neutral float-right" title="Qtum Wallet (Mobile)">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../deployment/" class="btn btn-neutral float-right" title="Contract Deployment">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../info/" class="btn btn-neutral" title="Info"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../bodhi_core/topic_event/" class="btn btn-neutral" title="TopicEvent"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -251,10 +233,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../info/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../bodhi_core/topic_event/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../qtum_wallet_mobile/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

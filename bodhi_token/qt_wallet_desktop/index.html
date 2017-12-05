@@ -75,15 +75,6 @@
     <a class="current" href="./">QT Wallet (Desktop)</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#downloads">Downloads</a></li>
-    
-
-    <li class="toctree-l3"><a href="#launch-qt-wallet">Launch QT Wallet</a></li>
-    
-
-    <li class="toctree-l3"><a href="#convert-qtum-address-to-hash">Convert Qtum Address to Hash</a></li>
-    
-
     <li class="toctree-l3"><a href="#watch-bot">Watch BOT</a></li>
     
 
@@ -101,6 +92,32 @@
                 <li class="">
                     
     <a class="" href="../qtum_cli/">Qtum-cli (Desktop)</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bodhi Core</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bodhi_core/info/">Info</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bodhi_core/topic_event/">TopicEvent</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Qtum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../qtum/qt_wallet/">QT Wallet (Desktop)</a>
                 </li>
     </ul>
 	    </li>
@@ -151,41 +168,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="downloads">Downloads</h1>
-<ul>
-<li>QT wallet/qtum-cli - find latest release and download installer:<ul>
-<li><a href="https://github.com/qtumproject/qtum/releases">https://github.com/qtumproject/qtum/releases</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="launch-qt-wallet">Launch QT Wallet</h1>
-<p>In your Terminal window, go to your <code>qtum-x.xx.x/bin</code> folder that you installed it in and run:</p>
-<pre><code>$ ./qtum-qt --logevents
-</code></pre>
-<p>Please note you might get a message asking you to reindex. If that is the case, run with this command:</p>
-<pre><code>$ ./qtum-qt --logevents --reindex
-</code></pre>
-<h1 id="convert-qtum-address-to-hash">Convert Qtum Address to Hash</h1>
+                <h1 id="watch-bot">Watch BOT</h1>
 <ol>
-<li>
-<p>With QT Wallet open, select Help &gt; Debug window</p>
-<p><img alt="" src="../../img/qt_wallet_convert_1.png" /></p>
-</li>
-<li>
-<p>Select the Console tab</p>
-</li>
-<li>
-<p>Type the command: <code>gethexaddress (yourQtumAddress)</code></p>
-<p><img alt="" src="../../img/qt_wallet_convert_2.png" /></p>
-</li>
-<li>
-<p>Output is the hash address</p>
-<p><img alt="" src="../../img/qt_wallet_convert_3.png" /></p>
-</li>
-</ol>
-<h1 id="watch-bot">Watch BOT</h1>
-<ol>
-<li><a href="#launch-qt-wallet">Launch QT Wallet</a></li>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
 <li>
 <p>In the <code>Overview</code> tab, click the <code>Add Token</code> button</p>
 <p><img alt="" src="../../img/qt_wallet_watch_1.png" /></p>
@@ -205,7 +190,7 @@
 </ol>
 <h1 id="send-bot-via-qrc-token-tab-easy">Send BOT via QRC Token tab (Easy)</h1>
 <ol>
-<li><a href="#launch-qt-wallet">Launch QT Wallet</a></li>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
 <li><a href="#watch-bot">Watch BOT</a></li>
 <li>
 <p>In the <code>QRC Token</code> tab, click the <code>Send</code> button and select an account which contains some BOT</p>
@@ -233,7 +218,7 @@
 </ol>
 <h1 id="send-bot-via-smart-contract-tab-harder">Send BOT via Smart Contract tab (Harder)</h1>
 <ol>
-<li><a href="#launch-qt-wallet">Launch QT Wallet</a></li>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
 <li>
 <p>Click on <code>Smart Contract</code> &gt; <code>SendTo</code></p>
 <p><img alt="" src="../../img/qt_wallet_sendto_1.png" /></p>
@@ -243,7 +228,7 @@
 </li>
 <li>Copy/paste the <a href="../info/#interface-abi">BodhiToken ABI</a></li>
 <li>Select <code>Function</code> &gt; <code>transfer(a9059cbb)</code></li>
-<li>Get the <a href="#convert-qtum-address-to-hash">hash address</a> you want to send to and paste it</li>
+<li>Get the <a href="../../qtum/qt_wallet/#convert-qtum-address-to-hash">hash address</a> you want to send to and paste it</li>
 <li>Type in the value as the amount to send (in <a href="../info/#bot-units">Botoshi</a>) to that address</li>
 <li>
 <p>Select the <code>Sender Address</code> at the bottom as the address that contains the BOT</p>
@@ -259,7 +244,7 @@
 </ol>
 <h1 id="receive-bot">Receive BOT</h1>
 <ol>
-<li><a href="#launch-qt-wallet">Launch QT Wallet</a></li>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
 <li>
 <p>Click on <code>File</code> &gt; <code>Receiving addresses...</code></p>
 <p><img alt="" src="../../img/qt_wallet_receive_1.png" /></p>

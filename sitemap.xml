@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-11-29</lastmod>
+     <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,31 +13,57 @@
         
     <url>
      <loc>/bodhi_token/info/</loc>
-     <lastmod>2017-11-29</lastmod>
+     <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/bodhi_token/qbao/</loc>
-     <lastmod>2017-11-29</lastmod>
+     <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/bodhi_token/qtum_wallet_mobile/</loc>
-     <lastmod>2017-11-29</lastmod>
+     <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/bodhi_token/qt_wallet_desktop/</loc>
-     <lastmod>2017-11-29</lastmod>
+     <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/bodhi_token/qtum_cli/</loc>
-     <lastmod>2017-11-29</lastmod>
+     <lastmod>2017-12-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/bodhi_core/info/</loc>
+     <lastmod>2017-12-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/bodhi_core/topic_event/</loc>
+     <lastmod>2017-12-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/qtum/qt_wallet/</loc>
+     <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -46,7 +72,7 @@
     
     <url>
      <loc>/deployment/</loc>
-     <lastmod>2017-11-29</lastmod>
+     <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -54,7 +80,7 @@
     
     <url>
      <loc>/help/</loc>
-     <lastmod>2017-11-29</lastmod>
+     <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
