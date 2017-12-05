@@ -113,6 +113,9 @@
     <li class="toctree-l3"><a href="#command-line-in-qt-wallet">Command-line in QT Wallet</a></li>
     
 
+    <li class="toctree-l3"><a href="#searchlogs-queries">Searchlogs Queries</a></li>
+    
+
     <li class="toctree-l3"><a href="#createtopic-tx-receipt">createTopic() Tx Receipt</a></li>
     
 
@@ -192,6 +195,32 @@
 <li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
 <li>In the top menu bar, open <code>Help</code> &gt; <code>Debug window</code></li>
 </ol>
+<h1 id="searchlogs-queries">Searchlogs Queries</h1>
+<p>event TopicCreated</p>
+<pre><code># Use EventFactory address.
+searchlogs 1 -1 '{"addresses": ["f440a14ed367381058d9b517f30b0bca60c8e0f5"]}' '{"topics": ["b7fa6f4e0c226cf0645f9f983dbc0bb4bb971400b98fae2387487d6d810c9c56"]}'
+</code></pre>
+<p>event CentralizedOracleCreated</p>
+<pre><code># Use EventFactory address.
+# The CentralizedOracle gets created when creating a new TopicEvent in the EventFactory.
+searchlogs 1 -1 '{"addresses": ["f440a14ed367381058d9b517f30b0bca60c8e0f5"]}' '{"topics": ["c46e722c8158268af789d6a68206785f8d497869da236f87c2014c1c08fd3dec"]}'
+</code></pre>
+<p>event DecentralizedOracleCreated</p>
+<pre><code># Leave the addresses array blank.
+# The origin contract address is from the CentralizedOracle.
+searchlogs 1 -1 '{"addresses": []}' '{"topics": ["834af578c3d42a351e262ebb4c463c830a9777bfe0a2b930de98eaf02455fa0f"]}'
+</code></pre>
+<p>event OracleResultVoted</p>
+<pre><code># Leave the addresses array blank.
+# The origin contract addresses are from CentralizedOracle and DecentralizedOracle.
+# This includes both QTUM bets and BOT votes.
+searchlogs 1 -1 '{"addresses": []}' '{"topics": ["0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03"]}'
+</code></pre>
+<p>event OracleResultSet</p>
+<pre><code># Leave the addresses array blank.
+# The origin contract addresses are from CentralizedOracle and DecentralizedOracle.
+searchlogs 1 -1 '{"addresses": []}' '{"topics": ["b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221"]}'
+</code></pre>
 <h1 id="createtopic-tx-receipt">createTopic() Tx Receipt</h1>
 <p>Example EventFactory.createTopic() transaction receipt</p>
 <pre><code>$ gettransactionreceipt fb1d39a229849979638617015561ee91e8e669a720a562e978150e6b65f7182f
