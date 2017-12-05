@@ -33,4 +33,5 @@
     a2f82c0e: votingOracleSetResult(uint8,uint256)
     cc42e83a: withdrawWinnings()
 
-# Creating 
+# Betting on a TopicEvent result 
+Bets are placed through the [Centralized Oracle](centralized_oracle.md#betting-on-a-topicevent-result) contract.

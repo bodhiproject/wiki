@@ -14,6 +14,7 @@ pages:
     - Info: bodhi_core/info.md
     - EventFactory: bodhi_core/event_factory.md
     - TopicEvent: bodhi_core/topic_event.md
+    - CentralizedOracle: bodhi_core/centralized_oracle.md
   - Qtum:
     - QT Wallet (Desktop): qtum/qt_wallet.md 
   - Contract Deployment: deployment.md
