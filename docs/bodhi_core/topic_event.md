@@ -32,3 +32,11 @@
     006a8a32: voteFromOracle(uint8,address,uint256)
     a2f82c0e: votingOracleSetResult(uint8,uint256)
     cc42e83a: withdrawWinnings()
+
+# Event Hashes
+
+    event FinalResultSet(uint8 _finalResultIndex)
+    // TODO
+    
+    event WinningsWithdrawn(address indexed _winner, uint256 _qtumTokenWon, uint256 _botTokenWon)
+    // TODO

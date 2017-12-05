@@ -2,6 +2,37 @@
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
 2. In the top menu bar, open `Help` > `Debug window`
 
+# Searchlogs Queries
+event TopicCreated
+
+    # Use EventFactory address.
+    searchlogs 1 -1 '{"addresses": ["f440a14ed367381058d9b517f30b0bca60c8e0f5"]}' '{"topics": ["b7fa6f4e0c226cf0645f9f983dbc0bb4bb971400b98fae2387487d6d810c9c56"]}'
+    
+event CentralizedOracleCreated
+
+    # Use EventFactory address.
+    # The CentralizedOracle gets created when creating a new TopicEvent in the EventFactory.
+    searchlogs 1 -1 '{"addresses": ["f440a14ed367381058d9b517f30b0bca60c8e0f5"]}' '{"topics": ["c46e722c8158268af789d6a68206785f8d497869da236f87c2014c1c08fd3dec"]}'
+
+event DecentralizedOracleCreated
+
+    # Leave the addresses array blank.
+    # The origin contract address is from the CentralizedOracle.
+    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["834af578c3d42a351e262ebb4c463c830a9777bfe0a2b930de98eaf02455fa0f"]}'
+
+event OracleResultVoted
+
+    # Leave the addresses array blank.
+    # The origin contract addresses are from CentralizedOracle and DecentralizedOracle.
+    # This includes both QTUM bets and BOT votes.
+    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03"]}'
+    
+event OracleResultSet
+
+    # Leave the addresses array blank.
+    # The origin contract addresses are from CentralizedOracle and DecentralizedOracle.
+    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221"]}'
+
 # createTopic() Tx Receipt
 Example EventFactory.createTopic() transaction receipt
 
