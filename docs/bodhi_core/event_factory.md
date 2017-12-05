@@ -27,19 +27,52 @@
 2. Click on `Smart Contract` tab
 3. Click on `SendTo` sub tab
 4. Set the [Contract Address](#deployed-contracts) and [Interface (ABI)](#interface-abi)
+
+    ![](../img/create_topicevent1.png)
+
 5. Set the `Function` to `createTopic(d0613dce)`
+
+    ![](../img/create_topicevent2.png)
+
 6. Set the [hash address](../qtum/qt_wallet.md#convert-qtum-address-to-hash) of the CentralizedOracle in `address _oracle` field
+
+    ![](../img/create_topicevent3.png)
+
 7. Set the TopicEvent name broken down by 32 byte blocks converted to hex in the `bytes32[10] _name` fields
+
+    ![](../img/create_topicevent4.png)
+
 8. Set the TopicEvent result names converted to hex in the `bytes32[10] _resultName` fields
+
+    ![](../img/create_topicevent5.png)
+
 9. Set the betting end block in the `uint256 _bettingEndBlock` field
+
+    ![](../img/create_topicevent6.png)
+
 10. Set the result setting end block in the `uint256 _resultSettingEndBlock` field
+
+    ![](../img/create_topicevent7.png)
+
 11. Set the `Gas Limit` to `4000000` (4 million gas just to be safe the transaction goes through, unused gas will be returned to you in the next coinstake transaction)
+
+    ![](../img/create_topicevent8.png)
+
 12. Set the `Sender Address`
+
+    ![](../img/create_topicevent9.png)
+
 13. Click `Send To Contract` button
 14. Wait for transaction to get mined
-15. Open up the `Debug window`
-16. Run the command `gettransactionreceipt (transactionId)`:
 
+    ![](../img/create_topicevent10.png)
+
+# Reading TopicEvent created transaction receipt
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. In the top menu bar, open `Help` > `Debug window`
+3. Run the command `gettransactionreceipt (transactionId)`:
+
+        $ gettransactionreceipt 05b35deb4f452bbbc053f0d47d3ec5560a6fc9d8837361a676a8d2dda42c80c7
         [
           {
             "blockHash": "f2c4cb58f1b5d242fe5cc2f6ab1effeacc0448b5cce8f1ee4942217ac5c68cff",
