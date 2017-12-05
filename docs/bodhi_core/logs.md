@@ -1,8 +1,8 @@
-# Get to command-line in QT Wallet
+# Command-line in QT Wallet
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
 2. In the top menu bar, open `Help` > `Debug window`
 
-# createTopic() Transaction Receipt
+# createTopic() Tx Receipt
 Example EventFactory.createTopic() transaction receipt
 
     $ gettransactionreceipt fb1d39a229849979638617015561ee91e8e669a720a562e978150e6b65f7182f
@@ -82,7 +82,7 @@ log event 2: `TopicCreated` event in `EventFactory`
     # topics[3]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _oracle
     # data: bytes32[10] _name, bytes32[10] _resultNames, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock
 
-# bet() Transaction Receipt
+# bet() Tx Receipt
 Example CentralizedOracle.bet() transaction receipt
 
     $ gettransactionreceipt e08d21a62769fbe2e94178393b888c83890de7ad8190513f00c77fa037589840
@@ -128,7 +128,7 @@ log event 1: `OracleResultVoted` in `CentralizedOracle`
     # topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
     # data: uint8 _resultIndex, uint256 _votedAmount
 
-# setResult() Transaction Receipt
+# setResult() Tx Receipt
 Example CentralizedOracle.setResult() transaction receipt
 
     $ gettransactionreceipt 32636085d831b6ae86868c17292c6a6f68ae0e314e2d75d133033be8b738b2f0
@@ -223,7 +223,7 @@ log event 3: `OracleResultSet` event in `CentralizedOracle`
     # topics[1]: 000000000000000000000000378b20ba8505a6b30b335b8d1bd243132535dfef is address indexed _oracleAddress
     # data: uint8 _resultIndex
 
-# voteResult() Transaction Receipt
+# voteResult() Tx Receipt
 Example DecentralizedOracle.voteResult() transaction receipt
 
     $ gettransactionreceipt 7b9ecbb1270a85f781149c7ebbb0fa5a94e6859ba6a33121d5c690f5249dbdb9
