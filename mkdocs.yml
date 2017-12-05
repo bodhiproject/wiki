@@ -10,6 +10,11 @@ pages:
     - Qtum Wallet (Mobile): bodhi_token/qtum_wallet_mobile.md
     - QT Wallet (Desktop): bodhi_token/qt_wallet_desktop.md
     - Qtum-cli (Desktop): bodhi_token/qtum_cli.md
+  - Bodhi Core:
+    - Info: bodhi_core/info.md
+    - TopicEvent: bodhi_core/topic_event.md
+  - Qtum:
+    - QT Wallet (Desktop): qtum/qt_wallet.md 
   - Contract Deployment: deployment.md
   - Help: help.md
 extra_javascript:
