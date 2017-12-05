@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>CentralizedOracle - Bodhi Prediction Market Wiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CentralizedOracle";
+    var mkdocs_page_input_path = "bodhi_core/centralized_oracle.md";
+    var mkdocs_page_url = "/bodhi_core/centralized_oracle/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Bodhi Prediction Market Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bodhi Token</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bodhi_token/info/">Info</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bodhi_token/qbao/">QBao (Mobile)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bodhi_token/qtum_wallet_mobile/">Qtum Wallet (Mobile)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bodhi_token/qt_wallet_desktop/">QT Wallet (Desktop)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bodhi_token/qtum_cli/">Qtum-cli (Desktop)</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bodhi Core</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../info/">Info</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../event_factory/">EventFactory</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../topic_event/">TopicEvent</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">CentralizedOracle</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#interface-abi">Interface (ABI)</a></li>
+    
+
+    <li class="toctree-l3"><a href="#event-hashes">Event Hashes</a></li>
+    
+
+    <li class="toctree-l3"><a href="#betting-on-a-topicevent-result">Betting on a TopicEvent Result</a></li>
+    
+
+    <li class="toctree-l3"><a href="#reading-bet-transaction-receipt">Reading bet transaction receipt</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Qtum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../qtum/qt_wallet/">QT Wallet (Desktop)</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../deployment/">Contract Deployment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../help/">Help</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Bodhi Prediction Market Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Bodhi Core &raquo;</li>
+        
+      
+    
+    <li>CentralizedOracle</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="interface-abi">Interface (ABI)</h1>
+<p><textarea id="centralized_oracle_abi" class="abi" readonly rows="2">
+[{"constant":true,"inputs":[],"name":"bettingEndBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_resultIndex","type":"uint8"},{"name":"_botAmount","type":"uint256"}],"name":"setResult","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"invalidateOracle","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_eventResultIndex","type":"uint8"}],"name":"getVotedBalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_eventResultIndex","type":"uint8"}],"name":"getEventResultName","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"oracle","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getResultIndex","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getEventName","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"finished","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"invalidResultIndex","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"numOfResults","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currentBalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_resultIndex","type":"uint8"}],"name":"bet","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"resultSettingEndBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"consensusThreshold","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"eventAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_owner","type":"address"},{"name":"_oracle","type":"address"},{"name":"_eventAddress","type":"address"},{"name":"_eventName","type":"bytes32[10]"},{"name":"_eventResultNames","type":"bytes32[10]"},{"name":"_numOfResults","type":"uint8"},{"name":"_bettingEndBlock","type":"uint256"},{"name":"_resultSettingEndBlock","type":"uint256"},{"name":"_consensusThreshold","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_oracleAddress","type":"address"},{"indexed":true,"name":"_participant","type":"address"},{"indexed":false,"name":"_resultIndex","type":"uint8"},{"indexed":false,"name":"_votedAmount","type":"uint256"}],"name":"OracleResultVoted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_oracleAddress","type":"address"},{"indexed":false,"name":"_resultIndex","type":"uint8"}],"name":"OracleResultSet","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_oracleAddress","type":"address"}],"name":"OracleInvalidated","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_previousOwner","type":"address"},{"indexed":true,"name":"_newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"}]
+</textarea>
+<button class="btn" data-clipboard-target="#centralized_oracle_abi">Copy ABI</button>
+<span class="copied">Copied!</span></p>
+<h1 id="event-hashes">Event Hashes</h1>
+<pre><code>event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount);
+0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03
+</code></pre>
+<h1 id="betting-on-a-topicevent-result">Betting on a TopicEvent Result</h1>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab</li>
+<li>Click on <code>SendTo</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>bet(d0821b0e)</code></li>
+<li>
+<p>Set the Result Index you would like to bet in <code>uint8 _resultIndex</code> field</p>
+<p><img alt="" src="../../img/bet_result1.png" /></p>
+</li>
+<li>
+<p>Set the amount of QTUM to bet in the <code>Amount</code> field</p>
+</li>
+<li>
+<p>Set the <code>Sender Address</code> as the address you want to bet from</p>
+<p><img alt="" src="../../img/bet_result2.png" /></p>
+</li>
+<li>
+<p>Click <code>Send To Contract</code> button</p>
+</li>
+<li>
+<p>You should see your new transaction posted</p>
+<p><img alt="" src="../../img/bet_result3.png" /></p>
+</li>
+<li>
+<p>In the <code>Transactions</code> tab, you can also see the transaction</p>
+<p><img alt="" src="../../img/bet_result4.png" /></p>
+</li>
+<li>
+<p>Wait for the transaction to get mined</p>
+</li>
+</ol>
+<h1 id="reading-bet-transaction-receipt">Reading bet transaction receipt</h1>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>In the top menu bar, open <code>Help</code> &gt; <code>Debug window</code></li>
+<li>Run the command <code>gettransactionreceipt (transactionId)</code>:<pre><code>$ gettransactionreceipt e08eb07a4bbd7ddb0d95dbb816bb675d1ba92b253caa348e858a32af42a5e74d
+[
+  {
+    "blockHash": "cc1bc42fb696e53ef3a591b3c387600fc3d82b6835a79e506dddab82f10e68e3",
+    "blockNumber": 44521,
+    "transactionHash": "e08eb07a4bbd7ddb0d95dbb816bb675d1ba92b253caa348e858a32af42a5e74d",
+    "transactionIndex": 2,
+    "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
+    "to": "a9716b4c11b5c3e9c76636967a68ccc4c1329622",
+    "cumulativeGasUsed": 137492,
+    "gasUsed": 137492,
+    "contractAddress": "a9716b4c11b5c3e9c76636967a68ccc4c1329622",
+    "log": [
+      {
+        "address": "a9716b4c11b5c3e9c76636967a68ccc4c1329622",
+        "topics": [
+          "0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03", 
+          "000000000000000000000000a9716b4c11b5c3e9c76636967a68ccc4c1329622", 
+          "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
+        ],
+        "data": "0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000003b9aca00"
+      }
+    ]
+  }
+]
+# contractAddress: a9716b4c11b5c3e9c76636967a68ccc4c1329622 is CentralizedOracle contract
+# log.address: a9716b4c11b5c3e9c76636967a68ccc4c1329622 is CentralizedOracle contract
+# log.topics[1]: 000000000000000000000000a9716b4c11b5c3e9c76636967a68ccc4c1329622 is address indexed _oracleAddress
+# log.topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
+# log.data: uint8 _resultIndex, uint256 _votedAmount
+</code></pre>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../qtum/qt_wallet/" class="btn btn-neutral float-right" title="QT Wallet (Desktop)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../topic_event/" class="btn btn-neutral" title="TopicEvent"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../topic_event/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../qtum/qt_wallet/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+      <script src="../../js/clipboard.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
