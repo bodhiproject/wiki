@@ -87,6 +87,9 @@
     <li class="toctree-l3"><a href="#receive-bot">Receive BOT</a></li>
     
 
+    <li class="toctree-l3"><a href="#approve-bot">approve() BOT</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -272,6 +275,34 @@
 <li>
 <p>Give that address to the person sending the BOT to you</p>
 </li>
+</ol>
+<h1 id="approve-bot">approve() BOT</h1>
+<p>Calling the <code>approve()</code> function in the Bodhi Token contract allows another address to execute a <code>transferFrom()</code> in the amount that is approved.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then <code>SendTo</code> sub tab</li>
+<li>Copy/paste the <a href="../info/#deployed-contracts">Contract Address</a></li>
+<li>Copy/paste the <a href="../info/#interface-abi">BodhiToken ABI</a></li>
+<li>
+<p>Select <code>Function</code> &gt; <code>approve(095ea7b3)</code></p>
+<p><img alt="" src="../../img/approve_bot1.png" /></p>
+</li>
+<li>
+<p>Set the <a href="../../qtum/qt_wallet/#convert-qtum-address-to-hash">hex address</a> of the address you want to approve in the <code>address _spender</code> field</p>
+<p><img alt="" src="../../img/approve_bot2.png" /></p>
+</li>
+<li>
+<p>Set the amount to approve in <a href="../info/#bot-units">Botoshi</a> in the <code>uint256 _value</code> field</p>
+<p><img alt="" src="../../img/approve_bot3.png" /></p>
+</li>
+<li>
+<p>Set the address approving the BOT in the <code>Sender Address</code> field</p>
+<p><img alt="" src="../../img/approve_bot4.png" /></p>
+</li>
+<li>
+<p>Click <code>Send To Contract</code> button</p>
+</li>
+<li>Wait for the transaction to be mined</li>
 </ol>
               
             </div>
