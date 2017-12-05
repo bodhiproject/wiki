@@ -12,6 +12,7 @@ pages:
     - Qtum-cli (Desktop): bodhi_token/qtum_cli.md
   - Bodhi Core:
     - Info: bodhi_core/info.md
+    - EventFactory: bodhi_core/event_factory.md
     - TopicEvent: bodhi_core/topic_event.md
   - Qtum:
     - QT Wallet (Desktop): qtum/qt_wallet.md 
