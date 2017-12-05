@@ -52,6 +52,12 @@
     </url>
         
     <url>
+     <loc>/bodhi_core/event_factory/</loc>
+     <lastmod>2017-12-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/bodhi_core/topic_event/</loc>
      <lastmod>2017-12-05</lastmod>
      <changefreq>daily</changefreq>
