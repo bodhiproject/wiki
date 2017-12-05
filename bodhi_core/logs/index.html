@@ -110,19 +110,19 @@
     <a class="current" href="./">Logs</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#get-to-command-line-in-qt-wallet">Get to command-line in QT Wallet</a></li>
+    <li class="toctree-l3"><a href="#command-line-in-qt-wallet">Command-line in QT Wallet</a></li>
     
 
-    <li class="toctree-l3"><a href="#createtopic-transaction-receipt">createTopic() Transaction Receipt</a></li>
+    <li class="toctree-l3"><a href="#createtopic-tx-receipt">createTopic() Tx Receipt</a></li>
     
 
-    <li class="toctree-l3"><a href="#bet-transaction-receipt">bet() Transaction Receipt</a></li>
+    <li class="toctree-l3"><a href="#bet-tx-receipt">bet() Tx Receipt</a></li>
     
 
-    <li class="toctree-l3"><a href="#setresult-transaction-receipt">setResult() Transaction Receipt</a></li>
+    <li class="toctree-l3"><a href="#setresult-tx-receipt">setResult() Tx Receipt</a></li>
     
 
-    <li class="toctree-l3"><a href="#voteresult-transaction-receipt">voteResult() Transaction Receipt</a></li>
+    <li class="toctree-l3"><a href="#voteresult-tx-receipt">voteResult() Tx Receipt</a></li>
     
 
     </ul>
@@ -187,12 +187,12 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="get-to-command-line-in-qt-wallet">Get to command-line in QT Wallet</h1>
+                <h1 id="command-line-in-qt-wallet">Command-line in QT Wallet</h1>
 <ol>
 <li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
 <li>In the top menu bar, open <code>Help</code> &gt; <code>Debug window</code></li>
 </ol>
-<h1 id="createtopic-transaction-receipt">createTopic() Transaction Receipt</h1>
+<h1 id="createtopic-tx-receipt">createTopic() Tx Receipt</h1>
 <p>Example EventFactory.createTopic() transaction receipt</p>
 <pre><code>$ gettransactionreceipt fb1d39a229849979638617015561ee91e8e669a720a562e978150e6b65f7182f
 [
@@ -269,7 +269,7 @@
 # topics[3]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _oracle
 # data: bytes32[10] _name, bytes32[10] _resultNames, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock
 </code></pre>
-<h1 id="bet-transaction-receipt">bet() Transaction Receipt</h1>
+<h1 id="bet-tx-receipt">bet() Tx Receipt</h1>
 <p>Example CentralizedOracle.bet() transaction receipt</p>
 <pre><code>$ gettransactionreceipt e08d21a62769fbe2e94178393b888c83890de7ad8190513f00c77fa037589840
 [
@@ -313,7 +313,7 @@
 # topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
 # data: uint8 _resultIndex, uint256 _votedAmount
 </code></pre>
-<h1 id="setresult-transaction-receipt">setResult() Transaction Receipt</h1>
+<h1 id="setresult-tx-receipt">setResult() Tx Receipt</h1>
 <p>Example CentralizedOracle.setResult() transaction receipt</p>
 <pre><code>$ gettransactionreceipt 32636085d831b6ae86868c17292c6a6f68ae0e314e2d75d133033be8b738b2f0
 [
@@ -404,7 +404,7 @@
 # topics[1]: 000000000000000000000000378b20ba8505a6b30b335b8d1bd243132535dfef is address indexed _oracleAddress
 # data: uint8 _resultIndex
 </code></pre>
-<h1 id="voteresult-transaction-receipt">voteResult() Transaction Receipt</h1>
+<h1 id="voteresult-tx-receipt">voteResult() Tx Receipt</h1>
 <p>Example DecentralizedOracle.voteResult() transaction receipt</p>
 <pre><code>$ gettransactionreceipt 7b9ecbb1270a85f781149c7ebbb0fa5a94e6859ba6a33121d5c690f5249dbdb9
 [
