@@ -14,25 +14,28 @@
     b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
 
 # voteResult()
+Places a vote with BOT on a result given the index. The BOT is routed to the TopicEvent contract for storage.
+
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `voteResult(a34ce8b9)`
-5. Set the Result Index you would like to vote in `uint8 _eventResultIndex` field. Note this cannot be the equal to the last result index, or your transaction will fail.
+2. [approve()](../bodhi_token/qt_wallet_desktop.md#approve-bot) the amount of BOT you want to vote with. The `_spender` should be the `TopicEvent` address.
+3. Click on `Smart Contract` tab, then click on `SendTo` sub tab
+4. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+5. Set the `Function` to `voteResult(a34ce8b9)`
+6. Set the Result Index you would like to vote in `uint8 _eventResultIndex` field. Note this cannot be the equal to the last result index, or your transaction will fail.
 
     ![](../img/vote_result1.png)
 
-6. Set the amount of BOT to vote in the `uint256 _botAmount` field. Note that you have to `approve()` this amount to the `TopicEvent` contract address from the BodhiToken contract first.
+7. Set the amount of BOT to vote in the `uint256 _botAmount` field. Note that you have to `approve()` this amount to the `TopicEvent` contract address from the BodhiToken contract first.
 
     ![](../img/vote_result2.png)
 
-7. Set the `Sender Address` as the address you want to vote from
+8. Set the `Sender Address` as the address you want to vote from
 
     ![](../img/vote_result3.png)
 
-8. Click `Send To Contract` button
-9. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
+9. Click `Send To Contract` button
+10. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
     
     ![](../img/vote_result4.png)
 
-10. Wait for the transaction to be mined
+11. Wait for the transaction to be mined

@@ -44,16 +44,17 @@ Places a bet on a result given the index. The QTUM is routed to the TopicEvent c
 The CentralizedOracle can set the result by first approving 100 BOT (the consensus threshold) to the TopicEvent address. Then they can call this method to set the result.
 
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `setResult(17840337)`
-5. Set the Result Index you would like to set the result in `uint8 _resultIndex` field
-6. Set the amount `10000000000` (100 BOT in Botoshi) in the `uint256 _botAmount` field
-7. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through
-8. Set the `Sender Address` as the CentralizedOracle address
-9. Click `Send To Contract` button
-10. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
-11. Wait for your transaction to be mined
+2. [approve()](../bodhi_token/qt_wallet_desktop.md#approve-bot) `10000000000` Botoshi (100 BOT) which is the current consensus threshold. The `_spender` should be the `TopicEvent` address.
+3. Click on `Smart Contract` tab, then click on `SendTo` sub tab
+4. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+5. Set the `Function` to `setResult(17840337)`
+6. Set the Result Index you would like to set the result in `uint8 _resultIndex` field
+7. Set the amount `10000000000` Botoshi in the `uint256 _botAmount` field
+8. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through
+9. Set the `Sender Address` as the CentralizedOracle address
+10. Click `Send To Contract` button
+11. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
+12. Wait for your transaction to be mined
 
 # invalidateOracle()
 If the CentralizedOracle does not set the result by the result setting end block, anyone can call this method to invalidate the CentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on.

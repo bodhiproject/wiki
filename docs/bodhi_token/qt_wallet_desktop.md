@@ -67,3 +67,29 @@
 	![](../img/qt_wallet_receive_2.png)
 
 4. Give that address to the person sending the BOT to you
+
+# approve() BOT
+Calling the `approve()` function in the Bodhi Token contract allows another address to execute a `transferFrom()` in the amount that is approved.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then `SendTo` sub tab
+3. Copy/paste the [Contract Address](info.md#deployed-contracts)
+4. Copy/paste the [BodhiToken ABI](info.md#interface-abi)
+5. Select `Function` > `approve(095ea7b3)`
+
+	![](../img/approve_bot1.png)
+
+6. Set the [hex address](../qtum/qt_wallet.md#convert-qtum-address-to-hash) of the address you want to approve in the `address _spender` field
+
+	![](../img/approve_bot2.png)
+
+7. Set the amount to approve in [Botoshi](info.md#bot-units) in the `uint256 _value` field
+
+	![](../img/approve_bot3.png)
+
+8. Set the address approving the BOT in the `Sender Address` field
+
+	![](../img/approve_bot4.png)
+
+9. Click `Send To Contract` button
+10. Wait for the transaction to be mined
