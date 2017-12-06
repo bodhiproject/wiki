@@ -267,25 +267,28 @@ event OracleInvalidated(address indexed _oracleAddress)
 <li><a href="../../bodhi_token/qt_wallet_desktop/#approve-bot">approve()</a> the amount of BOT you want to vote with. The <code>_spender</code> should be the <code>TopicEvent</code> address.</li>
 <li>Click on <code>Smart Contract</code> tab, then click on <code>SendTo</code> sub tab</li>
 <li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
-<li>Set the <code>Function</code> to <code>voteResult(a34ce8b9)</code></li>
 <li>
-<p>Set the Result Index you would like to vote in <code>uint8 _eventResultIndex</code> field. Note this cannot be the equal to the last result index, or your transaction will fail.</p>
+<p>Set the <code>Function</code> to <code>voteResult(a34ce8b9)</code></p>
 <p><img alt="" src="../../img/vote_result1.png" /></p>
 </li>
 <li>
-<p>Set the amount of BOT to vote in the <code>uint256 _botAmount</code> field. Note that you have to <code>approve()</code> this amount to the <code>TopicEvent</code> contract address from the BodhiToken contract first.</p>
+<p>Set the Result Index you would like to vote in <code>uint8 _eventResultIndex</code> field. Note this cannot be the equal to the last result index, or your transaction will fail.</p>
 <p><img alt="" src="../../img/vote_result2.png" /></p>
 </li>
 <li>
-<p>Set the <code>Sender Address</code> as the address you want to vote from</p>
+<p>Set the amount of BOT to vote in the <code>uint256 _botAmount</code> field. Note that you have to <code>approve()</code> this amount to the <code>TopicEvent</code> contract address from the BodhiToken contract first.</p>
 <p><img alt="" src="../../img/vote_result3.png" /></p>
+</li>
+<li>
+<p>Set the <code>Sender Address</code> as the address you want to vote from</p>
+<p><img alt="" src="../../img/vote_result4.png" /></p>
 </li>
 <li>
 <p>Click <code>Send To Contract</code> button</p>
 </li>
 <li>
 <p>You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.</p>
-<p><img alt="" src="../../img/vote_result4.png" /></p>
+<p><img alt="" src="../../img/vote_result5.png" /></p>
 </li>
 <li>
 <p>Wait for the transaction to be mined</p>
