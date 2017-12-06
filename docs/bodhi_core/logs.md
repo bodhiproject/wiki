@@ -22,6 +22,9 @@
     event FinalResultSet(uint8 _finalResultIndex)
     7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416
 
+    event WinningsWithdrawn(address indexed _winner, uint256 _qtumTokenWon, uint256 _botTokenWon)
+    64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029
+
 # Searchlogs Queries
 event TopicCreated
 
@@ -58,6 +61,12 @@ event FinalResultSet
     # Leave the addresses array blank.
     # The origin contract address is from DecentralizedOracle.
     searchlogs 1 -1 '{"addresses": []}' '{"topics": ["7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416"]}'
+
+event WithdrawWinnings
+    
+    # Leave the addresses array blank.
+    # The origin contract address is from TopicEvent.
+    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029"]}'
 
 # createTopic() Tx Receipt
 Example EventFactory.createTopic() transaction receipt
@@ -355,6 +364,7 @@ log event 2: `OracleResultVoted` in `DecentralizedOracle`
 # finalizeResult() Tx Receipt
 Example DecentralizedOracle.finalizeResult() transaction receipt
 
+    $ gettransactionreceipt ea99d499460a9b91ee2b848c8fb2e365a0d6d57c5b8e22c8c34ea9e4edf689ac
     [
       {
         "blockHash": "739007b3d40db25f6ddfd6e2e22ffa767b827d84427b1380bb640957c8b8487c",
@@ -390,3 +400,72 @@ log event 1: `FinalResultSet` event in `TopicEvent`
     # address: 979487ee8c643621d2e3950dbe60edc610d7569a is TopicEvent
     # topics[0]: 7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416 is FinalResultSet event
     # data: uint8 _finalResultIndex
+
+# withdrawWinnings() Tx Receipt
+Example TopicEvent.withdrawWinnings() transaction receipt
+
+    $ gettransactionreceipt 9ec8809f9d9ddd99011ab1fda176a6974d4839f298e299563844db37e008b41b
+    [
+      {
+        "blockHash": "b714317e141e29c9ccf7d051c55ba578cd1adf4239a968db0207673dfe911c66",
+        "blockNumber": 45038,
+        "transactionHash": "9ec8809f9d9ddd99011ab1fda176a6974d4839f298e299563844db37e008b41b",
+        "transactionIndex": 2,
+        "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
+        "to": "979487ee8c643621d2e3950dbe60edc610d7569a",
+        "cumulativeGasUsed": 43666,
+        "gasUsed": 43666,
+        "contractAddress": "979487ee8c643621d2e3950dbe60edc610d7569a",
+        "log": [
+          {
+            "address": "f6177bc9812eeb531907621af6641a41133dea9e",
+            "topics": [
+              "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", 
+              "000000000000000000000000979487ee8c643621d2e3950dbe60edc610d7569a", 
+              "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
+            ],
+            "data": "000000000000000000000000000000000000000000000000000000037e11d600"
+          }, 
+          {
+            "address": "979487ee8c643621d2e3950dbe60edc610d7569a",
+            "topics": [
+              "64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029", 
+              "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
+            ],
+            "data": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000037e11d600"
+          }
+        ]
+      }
+    ]
+
+log event 1: `Transfer` event in `BodhiToken`
+
+    {
+        "address": "f6177bc9812eeb531907621af6641a41133dea9e",
+        "topics": [
+            "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", 
+            "000000000000000000000000979487ee8c643621d2e3950dbe60edc610d7569a", 
+            "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
+        ],
+        "data": "000000000000000000000000000000000000000000000000000000037e11d600"
+    }
+    # address: f6177bc9812eeb531907621af6641a41133dea9e is BodhiToken
+    # topics[0]: ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef is Transfer event
+    # topics[1]: 000000000000000000000000979487ee8c643621d2e3950dbe60edc610d7569a is address indexed _from
+    # topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _to
+    # data: uint256 _value
+
+log event 2: `WithdrawWinnings` event in `TopicEvent`
+
+    {
+        "address": "979487ee8c643621d2e3950dbe60edc610d7569a",
+        "topics": [
+            "64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029", 
+            "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
+        ],
+        "data": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000037e11d600"
+    }
+    # address: 979487ee8c643621d2e3950dbe60edc610d7569a is TopicEvent
+    # topics[0]: 64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029 is WithdrawWinnings event
+    # topics[1]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _winner
+    # data: uint256 _qtumTokenWon, uint256 _botTokenWon

@@ -37,6 +37,23 @@
 
     event FinalResultSet(uint8 _finalResultIndex)
     7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416
-    
+
     event WinningsWithdrawn(address indexed _winner, uint256 _qtumTokenWon, uint256 _botTokenWon)
-    // TODO
+    64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029
+
+# withdrawWinnings()
+Winners of the event are allow to withdraw when [finalizeResult()](decentralized_oracle.md#finalizeresult) is called from the last DecentralizedOracle. This will withdraw both BOT and QTUM tokens to the Sender Address.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `withdrawWinnings(cc42e83a)`
+
+    ![](../img/withdraw_winnings1.png)
+
+5. Set the `Sender Address` as the address withdrawing
+
+    ![](../img/withdraw_winnings2.png)
+
+6. Click `Send To Contract` button
+7. Wait for the transaction to be mined
