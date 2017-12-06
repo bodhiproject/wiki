@@ -77,3 +77,124 @@ If the arbitration end block is reached, the last result index is a valid result
 
 5. Click `Send To Contract` button
 6. Wait for the transaction to be mined
+
+# eventAddress()
+Returns the Event address.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `eventAddress(fad56779)`
+5. Click `Call Contract` button
+6. The `address` is the Event address
+
+# getEventName()
+Returns the event name.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getEventName(b81e43fc)`
+5. Click `Call Contract` button
+6. The `string` is the Event name
+
+# getEventResultName()
+Returns the event name given the Event result index.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getEventResultName(4cb15529)`
+5. Click `Call Contract` button
+6. Set the `uint8 _eventResultIndex`
+7. The `string` is the Event result name
+
+# numOfResults()
+Returns the number of Event results.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `numOfResults(ca381d2e)`
+5. Click `Call Contract` button
+6. The `uint8` is the number of Event results
+
+# consensusThreshold()
+Returns the consensus threshold that needs to be reached in order for the Oracle to be valid.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `consensusThreshold(f9b0b5b9)`
+5. Click `Call Contract` button
+6. The `uint256` is the consensus threshold
+
+# lastResultIndex()
+Returns the last index of the previous oracle.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `lastResultIndex(54750783)`
+5. Click `Call Contract` button
+6. The `uint8` is the last result index
+
+# arbitrationEndBlock()
+Returns the block when the voting period will end. 
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `arbitrationEndBlock(4f2c07f5)`
+5. Click `Call Contract` button
+6. The `uint256` is the arbitration end block
+
+# getBetBalances()
+Returns an array of QTUM bet balances placed by the sender. Shows 10 values and each index is the bet amount for that result index.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getBetBalances(871169b9)`
+5. Click `Call Contract` button
+6. The `uint256[10]` is the array of QTUM bet balances shown in Satoshi
+
+# getVoteBalances()
+Returns an array of BOT vote balances placed by the sender. Shows 10 values and each index is the vote amount for that result index.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getVoteBalances(95d3382a)`
+5. Click `Call Contract` button
+6. The `uint256[10]` is the array of BOT vote balances shown in Botoshi
+
+# getTotalBets()
+Returns an array of total QTUM bets placed by all participants. Shows 10 values and each index is the total bet amount for that result.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getTotalBets(a3cb679d)`
+5. Click `Call Contract` button
+6. The `uint256[10]` is the array of total QTUM bets shown in Satoshi
+
+# getTotalVotes()
+Returns an array of total BOT votes placed by all participants. Shows 10 values and each index is the total vote amount for that result.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getTotalVotes(9a0e7d66)`
+5. Click `Call Contract` button
+6. The `uint256[10]` is the array of total BOT votes shown in Botoshi
+
+# finished()
+Returns true or false if the Oracle is finished. No more transactions are allowed after finished.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `finished(bef4876b)`
+5. Click `Call Contract` button
+6. The `bool` shows true/false if the Oracle is finished
