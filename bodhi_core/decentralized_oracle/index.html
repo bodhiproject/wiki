@@ -121,6 +121,42 @@
     <li class="toctree-l3"><a href="#finalizeresult">finalizeResult()</a></li>
     
 
+    <li class="toctree-l3"><a href="#eventaddress">eventAddress()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#geteventname">getEventName()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#geteventresultname">getEventResultName()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#numofresults">numOfResults()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#consensusthreshold">consensusThreshold()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#lastresultindex">lastResultIndex()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#arbitrationendblock">arbitrationEndBlock()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#getbetbalances">getBetBalances()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#getvotebalances">getVoteBalances()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#gettotalbets">getTotalBets()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#gettotalvotes">getTotalVotes()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#finished">finished()</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -216,10 +252,10 @@ a34ce8b9: voteResult(uint8,uint256)
 </code></pre>
 <h1 id="event-hashes">Event Hashes</h1>
 <pre><code>event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
-// TODO
+0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03
 
 event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
-// TODO
+b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
 
 event OracleInvalidated(address indexed _oracleAddress)
 // TODO
@@ -269,6 +305,127 @@ event OracleInvalidated(address indexed _oracleAddress)
 <p>Click <code>Send To Contract</code> button</p>
 </li>
 <li>Wait for the transaction to be mined</li>
+</ol>
+<h1 id="eventaddress">eventAddress()</h1>
+<p>Returns the Event address.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>eventAddress(fad56779)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>address</code> is the Event address</li>
+</ol>
+<h1 id="geteventname">getEventName()</h1>
+<p>Returns the event name.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getEventName(b81e43fc)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>string</code> is the Event name</li>
+</ol>
+<h1 id="geteventresultname">getEventResultName()</h1>
+<p>Returns the event name given the Event result index.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getEventResultName(4cb15529)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>Set the <code>uint8 _eventResultIndex</code></li>
+<li>The <code>string</code> is the Event result name</li>
+</ol>
+<h1 id="numofresults">numOfResults()</h1>
+<p>Returns the number of Event results.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>numOfResults(ca381d2e)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint8</code> is the number of Event results</li>
+</ol>
+<h1 id="consensusthreshold">consensusThreshold()</h1>
+<p>Returns the consensus threshold that needs to be reached in order for the Oracle to be valid.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>consensusThreshold(f9b0b5b9)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256</code> is the consensus threshold</li>
+</ol>
+<h1 id="lastresultindex">lastResultIndex()</h1>
+<p>Returns the last index of the previous oracle.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>lastResultIndex(54750783)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint8</code> is the last result index</li>
+</ol>
+<h1 id="arbitrationendblock">arbitrationEndBlock()</h1>
+<p>Returns the block when the voting period will end. </p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>arbitrationEndBlock(4f2c07f5)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256</code> is the arbitration end block</li>
+</ol>
+<h1 id="getbetbalances">getBetBalances()</h1>
+<p>Returns an array of QTUM bet balances placed by the sender. Shows 10 values and each index is the bet amount for that result index.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getBetBalances(871169b9)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256[10]</code> is the array of QTUM bet balances shown in Satoshi</li>
+</ol>
+<h1 id="getvotebalances">getVoteBalances()</h1>
+<p>Returns an array of BOT vote balances placed by the sender. Shows 10 values and each index is the vote amount for that result index.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getVoteBalances(95d3382a)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256[10]</code> is the array of BOT vote balances shown in Botoshi</li>
+</ol>
+<h1 id="gettotalbets">getTotalBets()</h1>
+<p>Returns an array of total QTUM bets placed by all participants. Shows 10 values and each index is the total bet amount for that result.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getTotalBets(a3cb679d)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256[10]</code> is the array of total QTUM bets shown in Satoshi</li>
+</ol>
+<h1 id="gettotalvotes">getTotalVotes()</h1>
+<p>Returns an array of total BOT votes placed by all participants. Shows 10 values and each index is the total vote amount for that result.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getTotalVotes(9a0e7d66)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint256[10]</code> is the array of total BOT votes shown in Botoshi</li>
+</ol>
+<h1 id="finished">finished()</h1>
+<p>Returns true or false if the Oracle is finished. No more transactions are allowed after finished.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>finished(bef4876b)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>bool</code> shows true/false if the Oracle is finished</li>
 </ol>
               
             </div>
