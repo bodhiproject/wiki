@@ -142,13 +142,7 @@
     <li class="toctree-l3"><a href="#arbitrationendblock">arbitrationEndBlock()</a></li>
     
 
-    <li class="toctree-l3"><a href="#getbetbalances">getBetBalances()</a></li>
-    
-
     <li class="toctree-l3"><a href="#getvotebalances">getVoteBalances()</a></li>
-    
-
-    <li class="toctree-l3"><a href="#gettotalbets">getTotalBets()</a></li>
     
 
     <li class="toctree-l3"><a href="#gettotalvotes">getTotalVotes()</a></li>
@@ -380,16 +374,6 @@ event OracleInvalidated(address indexed _oracleAddress)
 <li>Click <code>Call Contract</code> button</li>
 <li>The <code>uint256</code> is the arbitration end block</li>
 </ol>
-<h1 id="getbetbalances">getBetBalances()</h1>
-<p>Returns an array of QTUM bet balances placed by the sender. Shows 10 values and each index is the bet amount for that result index.</p>
-<ol>
-<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
-<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
-<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
-<li>Set the <code>Function</code> to <code>getBetBalances(871169b9)</code></li>
-<li>Click <code>Call Contract</code> button</li>
-<li>The <code>uint256[10]</code> is the array of QTUM bet balances shown in Satoshi</li>
-</ol>
 <h1 id="getvotebalances">getVoteBalances()</h1>
 <p>Returns an array of BOT vote balances placed by the sender. Shows 10 values and each index is the vote amount for that result index.</p>
 <ol>
@@ -399,16 +383,6 @@ event OracleInvalidated(address indexed _oracleAddress)
 <li>Set the <code>Function</code> to <code>getVoteBalances(95d3382a)</code></li>
 <li>Click <code>Call Contract</code> button</li>
 <li>The <code>uint256[10]</code> is the array of BOT vote balances shown in Botoshi</li>
-</ol>
-<h1 id="gettotalbets">getTotalBets()</h1>
-<p>Returns an array of total QTUM bets placed by all participants. Shows 10 values and each index is the total bet amount for that result.</p>
-<ol>
-<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
-<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
-<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
-<li>Set the <code>Function</code> to <code>getTotalBets(a3cb679d)</code></li>
-<li>Click <code>Call Contract</code> button</li>
-<li>The <code>uint256[10]</code> is the array of total QTUM bets shown in Satoshi</li>
 </ol>
 <h1 id="gettotalvotes">getTotalVotes()</h1>
 <p>Returns an array of total BOT votes placed by all participants. Shows 10 values and each index is the total vote amount for that result.</p>
