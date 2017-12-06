@@ -31,10 +31,10 @@
 # Event Hashes
 
     event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
-    // TODO
+    0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03
 
     event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
-    // TODO
+    b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
 
     event OracleInvalidated(address indexed _oracleAddress)
     // TODO
@@ -46,23 +46,25 @@ Places a bet on a result given the index. The QTUM is routed to the TopicEvent c
 2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `bet(d0821b0e)`
-5. Set the Result Index you would like to bet in `uint8 _resultIndex` field
 
     ![](../img/bet_result1.png)
 
-6. Set the amount of QTUM to bet in the `Amount` field
-7. Set the `Sender Address` as the address you want to bet from
+5. Set the Result Index you would like to bet in `uint8 _resultIndex` field
 
     ![](../img/bet_result2.png)
 
-8. Click `Send To Contract` button
-9. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
-    
+6. Set the amount of QTUM to bet in the `Amount` field
+
     ![](../img/bet_result3.png)
 
-10. In the `Transactions` tab, you can also see the transaction
+7. Set the `Sender Address` as the address you want to bet from
 
     ![](../img/bet_result4.png)
+
+8. Click `Send To Contract` button
+9. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
+
+    ![](../img/bet_result5.png)
     
 11. Wait for the transaction to get mined
 
