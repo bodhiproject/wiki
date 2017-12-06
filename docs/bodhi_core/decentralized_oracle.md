@@ -152,16 +152,6 @@ Returns the block when the voting period will end.
 5. Click `Call Contract` button
 6. The `uint256` is the arbitration end block
 
-# getBetBalances()
-Returns an array of QTUM bet balances placed by the sender. Shows 10 values and each index is the bet amount for that result index.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `Call` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `getBetBalances(871169b9)`
-5. Click `Call Contract` button
-6. The `uint256[10]` is the array of QTUM bet balances shown in Satoshi
-
 # getVoteBalances()
 Returns an array of BOT vote balances placed by the sender. Shows 10 values and each index is the vote amount for that result index.
 
@@ -171,16 +161,6 @@ Returns an array of BOT vote balances placed by the sender. Shows 10 values and 
 4. Set the `Function` to `getVoteBalances(95d3382a)`
 5. Click `Call Contract` button
 6. The `uint256[10]` is the array of BOT vote balances shown in Botoshi
-
-# getTotalBets()
-Returns an array of total QTUM bets placed by all participants. Shows 10 values and each index is the total bet amount for that result.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `Call` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `getTotalBets(a3cb679d)`
-5. Click `Call Contract` button
-6. The `uint256[10]` is the array of total QTUM bets shown in Satoshi
 
 # getTotalVotes()
 Returns an array of total BOT votes placed by all participants. Shows 10 values and each index is the total vote amount for that result.
