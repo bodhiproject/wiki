@@ -13,6 +13,9 @@
     event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
     b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
 
+    event OracleInvalidated(address indexed _oracleAddress)
+    // TODO
+
 # voteResult()
 Places a vote with BOT on a result given the index. The BOT is routed to the TopicEvent contract for storage.
 
