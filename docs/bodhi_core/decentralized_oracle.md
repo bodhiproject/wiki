@@ -36,7 +36,7 @@
     b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
 
     event OracleInvalidated(address indexed _oracleAddress)
-    // TODO
+    f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
 
 # voteResult()
 Places a vote with BOT on a result given the index. The BOT is routed to the TopicEvent contract for storage.

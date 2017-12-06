@@ -37,7 +37,7 @@
     b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
 
     event OracleInvalidated(address indexed _oracleAddress)
-    // TODO
+    f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
 
 # bet()
 Places a bet on a result given the index. The QTUM is routed to the TopicEvent contract for storage.
@@ -86,6 +86,25 @@ The CentralizedOracle can set the result by first approving 100 BOT (the consens
 
 # invalidateOracle()
 If the CentralizedOracle does not set the result by the result setting end block, anyone can call this method to invalidate the CentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `invalidateOracle(2f64452e)`
+    
+    ![](../img/invalidate_centralized1.png)
+
+5. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through. Any unused gas will be returned to you.
+
+    ![](../img/invalidate_centralized2.png)
+
+6. Set the `Sender Address` as the CentralizedOracle address
+7. Click `Send To Contract` button
+8. Your transaction is posted. Save the transaction id if you want to verify the transaction succeeded.
+
+    ![](../img/invalidate_centralized3.png)
+
+9. Wait for your transaction to be mined
 
 # eventAddress()
 Returns the Event address.
