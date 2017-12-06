@@ -2,7 +2,7 @@
 
 **QTUM Testnet**
 
-* EventFactory: `f440a14ed367381058d9b517f30b0bca60c8e0f5`
+* EventFactory: `fd922f5163b8bd4595cc489cf1c1dfc06c4ee115`
 
 # Interface (ABI)
 <textarea id="event_factory_abi" class="abi" readonly rows="2">
@@ -20,7 +20,7 @@
 # Event Hashes
 
     event TopicCreated(address indexed _topicAddress, address indexed _creator, address indexed _oracle, bytes32[10] _name, bytes32[10] _resultNames, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock)
-    b7fa6f4e0c226cf0645f9f983dbc0bb4bb971400b98fae2387487d6d810c9c56
+    // TODO
 
 # createTopic()
 Creates a new TopicEvent.
