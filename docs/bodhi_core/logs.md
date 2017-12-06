@@ -2,6 +2,26 @@
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
 2. In the top menu bar, open `Help` > `Debug window`
 
+# Event Hashes
+
+    event TopicCreated(address indexed _topicAddress, address indexed _creator, address indexed _oracle, bytes32[10] _name, bytes32[10] _resultNames, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock)
+    b7fa6f4e0c226cf0645f9f983dbc0bb4bb971400b98fae2387487d6d810c9c56
+
+    event CentralizedOracleCreated(address indexed _contractAddress, address indexed _oracle, address indexed _eventAddress, bytes32[10] _eventName, bytes32[10] _eventResultNames, uint8 _numOfResults, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock, uint256 _consensusThreshold)
+    c46e722c8158268af789d6a68206785f8d497869da236f87c2014c1c08fd3dec
+    
+    event DecentralizedOracleCreated(address indexed _contractAddress, address indexed _eventAddress, bytes32[10] _eventName, bytes32[10] _eventResultNames, uint8 _numOfResults, uint8 _lastResultIndex, uint256 _arbitrationEndBlock, uint256 _consensusThreshold)
+    834af578c3d42a351e262ebb4c463c830a9777bfe0a2b930de98eaf02455fa0f
+
+    event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
+    0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03
+
+    event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
+    b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
+
+    event FinalResultSet(uint8 _finalResultIndex)
+    7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416
+
 # Searchlogs Queries
 event TopicCreated
 
@@ -17,7 +37,7 @@ event CentralizedOracleCreated
 event DecentralizedOracleCreated
 
     # Leave the addresses array blank.
-    # The origin contract address is from the CentralizedOracle.
+    # The origin contract address is from CentralizedOracle.
     searchlogs 1 -1 '{"addresses": []}' '{"topics": ["834af578c3d42a351e262ebb4c463c830a9777bfe0a2b930de98eaf02455fa0f"]}'
 
 event OracleResultVoted
@@ -32,6 +52,12 @@ event OracleResultSet
     # Leave the addresses array blank.
     # The origin contract addresses are from CentralizedOracle and DecentralizedOracle.
     searchlogs 1 -1 '{"addresses": []}' '{"topics": ["b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221"]}'
+
+event FinalResultSet
+
+    # Leave the addresses array blank.
+    # The origin contract address is from DecentralizedOracle.
+    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416"]}'
 
 # createTopic() Tx Receipt
 Example EventFactory.createTopic() transaction receipt
@@ -325,3 +351,42 @@ log event 2: `OracleResultVoted` in `DecentralizedOracle`
     # topics[1]: 0000000000000000000000007a14d09cbf2a438cb8658e9407ae1467de483332 is address indexed _oracleAddress
     # topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
     # data: uint8 _resultIndex, uint256 _votedAmount
+
+# finalizeResult() Tx Receipt
+Example DecentralizedOracle.finalizeResult() transaction receipt
+
+    [
+      {
+        "blockHash": "739007b3d40db25f6ddfd6e2e22ffa767b827d84427b1380bb640957c8b8487c",
+        "blockNumber": 45028,
+        "transactionHash": "ea99d499460a9b91ee2b848c8fb2e365a0d6d57c5b8e22c8c34ea9e4edf689ac",
+        "transactionIndex": 2,
+        "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
+        "to": "7a14d09cbf2a438cb8658e9407ae1467de483332",
+        "cumulativeGasUsed": 37669,
+        "gasUsed": 37669,
+        "contractAddress": "7a14d09cbf2a438cb8658e9407ae1467de483332",
+        "log": [
+          {
+            "address": "979487ee8c643621d2e3950dbe60edc610d7569a",
+            "topics": [
+              "7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416"
+            ],
+            "data": "0000000000000000000000000000000000000000000000000000000000000003"
+          }
+        ]
+      }
+    ]
+
+log event 1: `FinalResultSet` event in `TopicEvent`
+
+    {
+        "address": "979487ee8c643621d2e3950dbe60edc610d7569a",
+        "topics": [
+            "7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416"
+        ],
+        "data": "0000000000000000000000000000000000000000000000000000000000000003"
+    }
+    # address: 979487ee8c643621d2e3950dbe60edc610d7569a is TopicEvent
+    # topics[0]: 7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416 is FinalResultSet event
+    # data: uint8 _finalResultIndex

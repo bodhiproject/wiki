@@ -39,3 +39,16 @@ Places a vote with BOT on a result given the index. The BOT is routed to the Top
     ![](../img/vote_result4.png)
 
 11. Wait for the transaction to be mined
+
+# finalizeResult()
+If the arbitration end block is reached, the last result index is a valid result, and the consensus threshold has not been surpassed, anyone may call this method to set the final result in the [TopicEvent](topic_event.md). This allows winners to withdraw from the [TopicEvent](topic_event.md).
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `finalizeResult(61cac418)`
+
+    ![](../img/finalize_result1.png)
+
+5. Click `Send To Contract` button
+6. Wait for the transaction to be mined
