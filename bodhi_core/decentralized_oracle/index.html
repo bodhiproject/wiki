@@ -115,6 +115,9 @@
     <li class="toctree-l3"><a href="#voteresult">voteResult()</a></li>
     
 
+    <li class="toctree-l3"><a href="#finalizeresult">finalizeResult()</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -224,6 +227,21 @@ b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
 <li>
 <p>Wait for the transaction to be mined</p>
 </li>
+</ol>
+<h1 id="finalizeresult">finalizeResult()</h1>
+<p>If the arbitration end block is reached, the last result index is a valid result, and the consensus threshold has not been surpassed, anyone may call this method to set the final result in the <a href="../topic_event/">TopicEvent</a>. This allows winners to withdraw from the <a href="../topic_event/">TopicEvent</a>.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>SendTo</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>
+<p>Set the <code>Function</code> to <code>finalizeResult(61cac418)</code></p>
+<p><img alt="" src="../../img/finalize_result1.png" /></p>
+</li>
+<li>
+<p>Click <code>Send To Contract</code> button</p>
+</li>
+<li>Wait for the transaction to be mined</li>
 </ol>
               
             </div>
