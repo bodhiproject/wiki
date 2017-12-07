@@ -115,7 +115,8 @@ Returns the Event address.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `eventAddress(fad56779)`
 5. Click `Call Contract` button
-6. The `address` is the Event address
+6. Returns:
+    * `address` is the Event address
 
 # getEventName()
 Returns the event name.
@@ -125,7 +126,8 @@ Returns the event name.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getEventName(b81e43fc)`
 5. Click `Call Contract` button
-6. The `string` is the Event name
+6. Returns:
+    * `string` is the Event name
 
 # getEventResultName()
 Returns the event name given the Event result index.
@@ -136,7 +138,8 @@ Returns the event name given the Event result index.
 4. Set the `Function` to `getEventResultName(4cb15529)`
 5. Click `Call Contract` button
 6. Set the `uint8 _eventResultIndex`
-7. The `string` is the Event result name
+7. Returns:
+    * `string` is the Event result name
 
 # numOfResults()
 Returns the number of Event results.
@@ -146,7 +149,8 @@ Returns the number of Event results.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `numOfResults(ca381d2e)`
 5. Click `Call Contract` button
-6. The `uint8` is the number of Event results
+6. Returns:
+    * `uint8` is the number of Event results
 
 # consensusThreshold()
 Returns the consensus threshold that needs to be reached in order for the Oracle to be valid.
@@ -156,7 +160,8 @@ Returns the consensus threshold that needs to be reached in order for the Oracle
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `consensusThreshold(f9b0b5b9)`
 5. Click `Call Contract` button
-6. The `uint256` is the consensus threshold
+6. Returns:
+    * `uint256` is the consensus threshold
 
 # lastResultIndex()
 Returns the last index of the previous oracle.
@@ -166,7 +171,8 @@ Returns the last index of the previous oracle.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `lastResultIndex(54750783)`
 5. Click `Call Contract` button
-6. The `uint8` is the last result index
+6. Returns:
+    * `uint8` is the last result index
 
 # arbitrationEndBlock()
 Returns the block when the voting period will end. 
@@ -176,7 +182,8 @@ Returns the block when the voting period will end.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `arbitrationEndBlock(4f2c07f5)`
 5. Click `Call Contract` button
-6. The `uint256` is the arbitration end block
+6. Returns:
+    * `uint256` is the arbitration end block
 
 # getVoteBalances()
 Returns an array of BOT vote balances placed by the sender. Shows 10 values and each index is the vote amount for that result index.
@@ -186,7 +193,8 @@ Returns an array of BOT vote balances placed by the sender. Shows 10 values and 
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getVoteBalances(95d3382a)`
 5. Click `Call Contract` button
-6. The `uint256[10]` is the array of BOT vote balances shown in Botoshi
+6. Returns:
+    * `uint256[10]` is the array of BOT vote balances shown in Botoshi
 
 # getTotalVotes()
 Returns an array of total BOT votes placed by all participants. Shows 10 values and each index is the total vote amount for that result.
@@ -196,7 +204,8 @@ Returns an array of total BOT votes placed by all participants. Shows 10 values 
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getTotalVotes(9a0e7d66)`
 5. Click `Call Contract` button
-6. The `uint256[10]` is the array of total BOT votes shown in Botoshi
+6. Returns:
+    * `uint256[10]` is the array of total BOT votes shown in Botoshi
 
 # getResult()
 Returns the winning result index, name, and true/false indicating if the Oracle is finished. Please note this will return an error if the Oracle is not finished and will return this error:
@@ -208,7 +217,10 @@ Returns the winning result index, name, and true/false indicating if the Oracle 
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getResult(de292789)`
 5. Click `Call Contract` button
-6. The `uint8` is the winning result index. The `string` is the winning result name. And the `bool` is the flag indicating the result is valid.
+6. Returns:
+    * `uint8` is the winning result index
+    * `string` is the winning result name
+    * `bool` is the flag indicating the result is valid
 
 # finished()
 Returns true or false if the Oracle is finished. No more transactions are allowed after finished.
@@ -218,4 +230,5 @@ Returns true or false if the Oracle is finished. No more transactions are allowe
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `finished(bef4876b)`
 5. Click `Call Contract` button
-6. The `bool` shows true/false if the Oracle is finished
+6. Returns:
+    * `bool` shows true/false if the Oracle is finished

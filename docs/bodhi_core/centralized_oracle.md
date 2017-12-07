@@ -128,7 +128,8 @@ Returns the Event address.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `eventAddress(fad56779)`
 5. Click `Call Contract` button
-6. The `address` is the Event address
+6. Returns: 
+    * `address` is the Event address
 
 # getEventName()
 Returns the event name.
@@ -138,7 +139,8 @@ Returns the event name.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getEventName(b81e43fc)`
 5. Click `Call Contract` button
-6. The `string` is the Event name
+6. Returns:
+    * `string` is the Event name
 
 # getEventResultName()
 Returns the event name given the Event result index.
@@ -149,7 +151,8 @@ Returns the event name given the Event result index.
 4. Set the `Function` to `getEventResultName(4cb15529)`
 5. Click `Call Contract` button
 6. Set the `uint8 _eventResultIndex`
-7. The `string` is the Event result name
+7. Returns:
+    * `string` is the Event result name
 
 # numOfResults()
 Returns the number of Event results.
@@ -159,7 +162,8 @@ Returns the number of Event results.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `numOfResults(ca381d2e)`
 5. Click `Call Contract` button
-6. The `uint8` is the number of Event results
+6. Returns:
+    * `uint8` is the number of Event results
 
 # consensusThreshold()
 Returns the consensus threshold that needs to be reached in order for the Oracle to be valid.
@@ -169,7 +173,8 @@ Returns the consensus threshold that needs to be reached in order for the Oracle
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `consensusThreshold(f9b0b5b9)`
 5. Click `Call Contract` button
-6. The `uint256` is the consensus threshold
+6. Returns: 
+    * `uint256` is the consensus threshold
 
 # oracle()
 Returns the address of the CentralizedOracle.
@@ -179,7 +184,8 @@ Returns the address of the CentralizedOracle.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `oracle(7dc0d1d0)`
 5. Click `Call Contract` button
-6. The `address` is the CentralizedOracle in hex
+6. Returns:
+    * `address` is the CentralizedOracle in hex
 
 # bettingEndBlock()
 Returns the block when the betting period will end.
@@ -189,7 +195,8 @@ Returns the block when the betting period will end.
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `bettingEndBlock(12ca9ed5)`
 5. Click `Call Contract` button
-6. The `uint256` is the betting end block
+6. Returns:
+    * `uint256` is the betting end block
 
 # resultSettingEndBlock()
 Returns the block when the CentralizedOracle will no longer be able to set the result.
@@ -199,7 +206,8 @@ Returns the block when the CentralizedOracle will no longer be able to set the r
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `resultSettingEndBlock(d16e637b)`
 5. Click `Call Contract` button
-6. The `uint256` is the result setting end block
+6. Returns:
+    * `uint256` is the result setting end block
 
 # getBetBalances()
 Returns an array of QTUM bet balances placed by the sender. Shows 10 values and each index is the bet amount for that result index.
@@ -208,8 +216,10 @@ Returns an array of QTUM bet balances placed by the sender. Shows 10 values and 
 2. Click on `Smart Contract` tab, then click on `Call` sub tab
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getBetBalances(871169b9)`
-5. Click `Call Contract` button
-6. The `uint256[10]` is the array of QTUM bet balances shown in Satoshi
+5. Set the `Sender Address` of the address to get the balances of
+6. Click `Call Contract` button
+7. Returns:
+    * `uint256[10]` is the array of QTUM bet balances shown in Satoshi
 
 # getVoteBalances()
 Returns an array of BOT vote balances placed by the sender. Shows 10 values and each index is the vote amount for that result index.
@@ -218,8 +228,10 @@ Returns an array of BOT vote balances placed by the sender. Shows 10 values and 
 2. Click on `Smart Contract` tab, then click on `Call` sub tab
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getVoteBalances(95d3382a)`
-5. Click `Call Contract` button
-6. The `uint256[10]` is the array of BOT vote balances shown in Botoshi
+5. Set the `Sender Address` of the address to get the balances of
+7. Click `Call Contract` button
+8. Returns:
+    * `uint256[10]` is the array of BOT vote balances shown in Botoshi
 
 # getTotalBets()
 Returns an array of total QTUM bets placed by all participants. Shows 10 values and each index is the total bet amount for that result.
@@ -229,7 +241,8 @@ Returns an array of total QTUM bets placed by all participants. Shows 10 values 
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getTotalBets(a3cb679d)`
 5. Click `Call Contract` button
-6. The `uint256[10]` is the array of total QTUM bets shown in Satoshi
+6. Returns:
+    * `uint256[10]` is the array of total QTUM bets shown in Satoshi
 
 # getTotalVotes()
 Returns an array of total BOT votes placed by all participants. Shows 10 values and each index is the total vote amount for that result.
@@ -239,7 +252,8 @@ Returns an array of total BOT votes placed by all participants. Shows 10 values 
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getTotalVotes(9a0e7d66)`
 5. Click `Call Contract` button
-6. The `uint256[10]` is the array of total BOT votes shown in Botoshi
+6. Returns:
+    * `uint256[10]` is the array of total BOT votes shown in Botoshi
 
 # getResult()
 Returns the winning result index, name, and true/false indicating if the Oracle is finished. Please note this will return an error if the Oracle is not finished and will return this error:
@@ -251,7 +265,10 @@ Returns the winning result index, name, and true/false indicating if the Oracle 
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `getResult(de292789)`
 5. Click `Call Contract` button
-6. The `uint8` is the winning result index. The `string` is the winning result name. And the `bool` is the flag indicating the result is valid.
+6. Returns:
+    * `uint8` is the winning result index
+    * `string` is the winning result name
+    * `bool` is the flag indicating the result is valid
 
 # finished()
 Returns true or false if the Oracle is finished. No more transactions are allowed after finished.
@@ -261,5 +278,5 @@ Returns true or false if the Oracle is finished. No more transactions are allowe
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 4. Set the `Function` to `finished(bef4876b)`
 5. Click `Call Contract` button
-6. The `bool` shows true/false if the Oracle is finished
-
+6. Returns:
+    * `bool` shows true/false if the Oracle is finished

@@ -59,3 +59,137 @@ Winners of the event are allow to withdraw when [finalizeResult()](decentralized
 
 6. Click `Send To Contract` button
 7. Wait for the transaction to be mined
+
+# numOfResults()
+Returns the number of Event results.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `numOfResults(ca381d2e)`
+5. Click `Call Contract` button
+6. Returns:
+    * `uint8` is the number of Event results
+
+# status()
+Returns the index of the current status of the Event.
+
+    0: Betting - first round of betting with QTUM
+    1: OracleVoting - subsequent rounds of voting with BOT
+    2: Collection - event is finished and winners can withdraw winnings
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `status(200d2ed2)`
+5. Click `Call Contract` button
+6. Returns: 
+    * `uint8` is the index of the status
+
+# oracles()
+Returns address of the Oracle and true/false indicating if the Oracle is finished.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `oracles(5b69a7d8)`
+5. Set the `uint256` of the index to get the the Oracle info
+6. Click `Call Contract` button
+7. Returns: 
+    * `bool didSetResult` is the flag indicating if it is finished
+    * `address oracleAddress` is the Oracle's address
+
+# getBetBalances()
+Returns an array of QTUM bet balances placed by the sender. Shows 10 values and each index is the total bet amount for that result index.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getBetBalances(871169b9)`
+5. Set the `Sender Address` of the address to get the balances of
+6. Click `Call Contract` button
+7. Returns:
+    * `uint256[10]` is the array of QTUM bet balances shown in Satoshi
+
+# getVoteBalances()
+Returns an array of BOT vote balances placed by the sender. Shows 10 values and each index is the total vote amount for that result index.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getVoteBalances(95d3382a)`
+5. Set the `Sender Address` of the address to get the balances of
+7. Click `Call Contract` button
+8. Returns: 
+    * `uint256[10]` is the array of BOT vote balances shown in Botoshi
+
+# totalQtumValue()
+Returns the total QTUM value (in Satoshi) bet for all the results.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `totalQtumValue(8030b87e)`
+5. Click `Call Contract` button
+6. Returns:
+    * `uint256` is the total Satoshi of the Event contract
+
+# totalBotValue()
+Returns the total BOT value (in Botoshi) voted in all the Oracles.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `totalBotValue(07e1df56)`
+5. Click `Call Contract` button
+6. Returns: 
+    * `uint256` is the total Botoshi of the Event contract
+
+# calculateQtumContributorWinnings()
+Returns the total QTUM you will receive. If the status is not in the collection state, it will return 0.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `calculateQtumContributorWinnings(91216876)`
+5. Set the `Sender Address` of the address to calculate
+6. Click `Call Contract` button
+7. Returns: 
+    * `uint256` is the Satoshi you will receive when withdrawing
+
+# calculateBotContributorWinnings()
+Returns the total BOT you will receive. If the status is not in the collection state, it will return 0.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `calculateBotContributorWinnings(fd268eee)`
+5. Set the `Sender Address` of the address to calculate
+6. Click `Call Contract` button
+7. Returns: 
+    * `uint256` is the Botoshi you will receive when withdrawing
+
+# getFinalResult()
+Returns the final result index, name, and true/false indicating if the result is finalized.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getFinalResult(3c6e5310)`
+5. Click `Call Contract` button
+6. Returns:
+    * `uint8` is the final result index 
+    * `string` is the final result name
+    * `bool` is the flag indicating the final result is valid
+
+# didWithdraw()
+Returns true or false if the address has withdrew their winnings from the Event.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `didWithdraw(1707490f)`
+5. Set the [hex address](../qtum/qt_wallet.md#convert-qtum-address-to-hash) of the address you want to check in the `address` field
+6. Click `Call Contract` button
+7. Returns: 
+    * `bool` is the true/false indicating if that address has already withdrawn
