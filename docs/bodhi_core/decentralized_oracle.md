@@ -57,16 +57,20 @@ Places a vote with BOT on a result given the index. The BOT is routed to the Top
 
     ![](../img/vote_result3.png)
 
-8. Set the `Sender Address` as the address you want to vote from
+8. If this vote will reach the consensus threshold, set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through. If under the threshold, leave it as the default gas limit. Any unused gas will be returned to you. The vote that reaches the consensus threshold will need high gas to create a new DecentralizedOracle contract.
 
     ![](../img/vote_result4.png)
 
-9. Click `Send To Contract` button
-10. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
-    
+9. Set the `Sender Address` as the address you want to vote from
+
     ![](../img/vote_result5.png)
 
-11. Wait for the transaction to be mined
+10. Click `Send To Contract` button
+11. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
+    
+    ![](../img/vote_result6.png)
+
+12. Wait for the transaction to be mined
 
 # finalizeResult()
 If the arbitration end block is reached, the last result index is a valid result, and the consensus threshold has not been surpassed, anyone may call this method to set the final result in the [TopicEvent](topic_event.md). This allows winners to withdraw from the [TopicEvent](topic_event.md).
@@ -80,6 +84,28 @@ If the arbitration end block is reached, the last result index is a valid result
 
 5. Click `Send To Contract` button
 6. Wait for the transaction to be mined
+
+# invalidateOracle()
+If this DecentralizedOracle was created by invalidating the last Oracle and does not hit the consensus threshold in time, anyone can call this method to invalidate the DecentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on. You can verify the last Oracle was invalidated when the [last result index](#lastresultindex) is equal to 255.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `invalidateOracle(2f64452e)`
+    
+    ![](../img/invalidate_centralized1.png)
+
+5. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through. Any unused gas will be returned to you.
+
+    ![](../img/invalidate_centralized2.png)
+
+6. Set the `Sender Address` as the CentralizedOracle address
+7. Click `Send To Contract` button
+8. Your transaction is posted. Save the transaction id if you want to verify the transaction succeeded.
+
+    ![](../img/invalidate_centralized3.png)
+
+9. Wait for your transaction to be mined
 
 # eventAddress()
 Returns the Event address.
@@ -171,6 +197,18 @@ Returns an array of total BOT votes placed by all participants. Shows 10 values 
 4. Set the `Function` to `getTotalVotes(9a0e7d66)`
 5. Click `Call Contract` button
 6. The `uint256[10]` is the array of total BOT votes shown in Botoshi
+
+# getResult()
+Returns the winning result index, name, and true/false indicating if the Oracle is finished. Please note this will return an error if the Oracle is not finished and will return this error:
+
+![](../img/call_contract_error.png)
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getResult(de292789)`
+5. Click `Call Contract` button
+6. The `uint8` is the winning result index. The `string` is the winning result name. And the `bool` is the flag indicating the result is valid.
 
 # finished()
 Returns true or false if the Oracle is finished. No more transactions are allowed after finished.

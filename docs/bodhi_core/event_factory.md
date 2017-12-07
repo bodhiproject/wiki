@@ -84,7 +84,7 @@ Creates a new TopicEvent.
 
     ![](../img/create_topicevent7.png)
 
-11. Set the `Gas Limit` to `4000000` (4 million gas just to be safe the transaction goes through, unused gas will be returned to you in the next coinstake transaction)
+11. Set the `Gas Limit` to `4500000` (4.5 million). Just to be safe the transaction goes through, all unused gas will be returned to you in the next coinstake transaction.
 
     ![](../img/create_topicevent8.png)
 

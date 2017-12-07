@@ -69,20 +69,34 @@ Places a bet on a result given the index. The QTUM is routed to the TopicEvent c
 11. Wait for the transaction to get mined
 
 # setResult()
-The CentralizedOracle can set the result by first approving 100 BOT (the consensus threshold) to the TopicEvent address. Then they can call this method to set the result.
+The CentralizedOracle can set the result by first approving 100 BOT (the consensus threshold) to the TopicEvent address. The CentralizedOracle can call this method to set the result between the [betting end block](#bettingendblock) and the [result setting end block](#resultsettingendblock).
 
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. [approve()](../bodhi_token/qt_wallet_desktop.md#approve-bot) `10000000000` Botoshi (100 BOT) which is the current consensus threshold. The `_spender` should be the `TopicEvent` address.
+2. [approve()](../bodhi_token/qt_wallet_desktop.md#approve-bot) `10000000000` Botoshi (100 BOT) which is the current consensus threshold for CentralizedOracles. The `_spender` should be the `TopicEvent` address.
 3. Click on `Smart Contract` tab, then click on `SendTo` sub tab
 4. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
 5. Set the `Function` to `setResult(80ce60d1)`
+
+    ![](../img/set_result1.png)
+
 6. Set the Result Index you would like to set the result in `uint8 _resultIndex` field
-7. Set the amount `10000000000` Botoshi in the `uint256 _botAmount` field
-8. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through
-9. Set the `Sender Address` as the CentralizedOracle address
-10. Click `Send To Contract` button
-11. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
-12. Wait for your transaction to be mined
+
+    ![](../img/set_result2.png)
+
+7. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through. Any unspent gas will be returned to you.
+
+    ![](../img/set_result3.png)
+
+8. Set the `Sender Address` as the CentralizedOracle address
+
+    ![](../img/set_result4.png)
+
+9. Click `Send To Contract` button
+10. You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.
+
+    ![](../img/set_result5.png)
+
+11. Wait for your transaction to be mined
 
 # invalidateOracle()
 If the CentralizedOracle does not set the result by the result setting end block, anyone can call this method to invalidate the CentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on.
@@ -226,6 +240,18 @@ Returns an array of total BOT votes placed by all participants. Shows 10 values 
 4. Set the `Function` to `getTotalVotes(9a0e7d66)`
 5. Click `Call Contract` button
 6. The `uint256[10]` is the array of total BOT votes shown in Botoshi
+
+# getResult()
+Returns the winning result index, name, and true/false indicating if the Oracle is finished. Please note this will return an error if the Oracle is not finished and will return this error:
+
+![](../img/call_contract_error.png)
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `getResult(de292789)`
+5. Click `Call Contract` button
+6. The `uint8` is the winning result index. The `string` is the winning result name. And the `bool` is the flag indicating the result is valid.
 
 # finished()
 Returns true or false if the Oracle is finished. No more transactions are allowed after finished.
