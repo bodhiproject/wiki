@@ -121,6 +121,9 @@
     <li class="toctree-l3"><a href="#finalizeresult">finalizeResult()</a></li>
     
 
+    <li class="toctree-l3"><a href="#invalidateoracle">invalidateOracle()</a></li>
+    
+
     <li class="toctree-l3"><a href="#eventaddress">eventAddress()</a></li>
     
 
@@ -146,6 +149,9 @@
     
 
     <li class="toctree-l3"><a href="#gettotalvotes">getTotalVotes()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#getresult">getResult()</a></li>
     
 
     <li class="toctree-l3"><a href="#finished">finished()</a></li>
@@ -274,15 +280,19 @@ f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
 <p><img alt="" src="../../img/vote_result3.png" /></p>
 </li>
 <li>
-<p>Set the <code>Sender Address</code> as the address you want to vote from</p>
+<p>If this vote will reach the consensus threshold, set the <code>Gas Limit</code> to <code>3000000</code> (3 million) to make sure the transaction goes through. If under the threshold, leave it as the default gas limit. Any unused gas will be returned to you. The vote that reaches the consensus threshold will need high gas to create a new DecentralizedOracle contract.</p>
 <p><img alt="" src="../../img/vote_result4.png" /></p>
+</li>
+<li>
+<p>Set the <code>Sender Address</code> as the address you want to vote from</p>
+<p><img alt="" src="../../img/vote_result5.png" /></p>
 </li>
 <li>
 <p>Click <code>Send To Contract</code> button</p>
 </li>
 <li>
 <p>You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.</p>
-<p><img alt="" src="../../img/vote_result5.png" /></p>
+<p><img alt="" src="../../img/vote_result6.png" /></p>
 </li>
 <li>
 <p>Wait for the transaction to be mined</p>
@@ -302,6 +312,32 @@ f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
 <p>Click <code>Send To Contract</code> button</p>
 </li>
 <li>Wait for the transaction to be mined</li>
+</ol>
+<h1 id="invalidateoracle">invalidateOracle()</h1>
+<p>If this DecentralizedOracle was created by invalidating the last Oracle and does not hit the consensus threshold in time, anyone can call this method to invalidate the DecentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on. You can verify the last Oracle was invalidated when the <a href="#lastresultindex">last result index</a> is equal to 255.</p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>SendTo</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>
+<p>Set the <code>Function</code> to <code>invalidateOracle(2f64452e)</code></p>
+<p><img alt="" src="../../img/invalidate_centralized1.png" /></p>
+</li>
+<li>
+<p>Set the <code>Gas Limit</code> to <code>3000000</code> (3 million) to make sure the transaction goes through. Any unused gas will be returned to you.</p>
+<p><img alt="" src="../../img/invalidate_centralized2.png" /></p>
+</li>
+<li>
+<p>Set the <code>Sender Address</code> as the CentralizedOracle address</p>
+</li>
+<li>Click <code>Send To Contract</code> button</li>
+<li>
+<p>Your transaction is posted. Save the transaction id if you want to verify the transaction succeeded.</p>
+<p><img alt="" src="../../img/invalidate_centralized3.png" /></p>
+</li>
+<li>
+<p>Wait for your transaction to be mined</p>
+</li>
 </ol>
 <h1 id="eventaddress">eventAddress()</h1>
 <p>Returns the Event address.</p>
@@ -393,6 +429,17 @@ f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
 <li>Set the <code>Function</code> to <code>getTotalVotes(9a0e7d66)</code></li>
 <li>Click <code>Call Contract</code> button</li>
 <li>The <code>uint256[10]</code> is the array of total BOT votes shown in Botoshi</li>
+</ol>
+<h1 id="getresult">getResult()</h1>
+<p>Returns the winning result index, name, and true/false indicating if the Oracle is finished. Please note this will return an error if the Oracle is not finished and will return this error:</p>
+<p><img alt="" src="../../img/call_contract_error.png" /></p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getResult(de292789)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint8</code> is the winning result index. The <code>string</code> is the winning result name. And the <code>bool</code> is the flag indicating the result is valid.</li>
 </ol>
 <h1 id="finished">finished()</h1>
 <p>Returns true or false if the Oracle is finished. No more transactions are allowed after finished.</p>

@@ -156,6 +156,9 @@
     <li class="toctree-l3"><a href="#gettotalvotes">getTotalVotes()</a></li>
     
 
+    <li class="toctree-l3"><a href="#getresult">getResult()</a></li>
+    
+
     <li class="toctree-l3"><a href="#finished">finished()</a></li>
     
 
@@ -301,20 +304,38 @@ f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
 </li>
 </ol>
 <h1 id="setresult">setResult()</h1>
-<p>The CentralizedOracle can set the result by first approving 100 BOT (the consensus threshold) to the TopicEvent address. Then they can call this method to set the result.</p>
+<p>The CentralizedOracle can set the result by first approving 100 BOT (the consensus threshold) to the TopicEvent address. The CentralizedOracle can call this method to set the result between the <a href="#bettingendblock">betting end block</a> and the <a href="#resultsettingendblock">result setting end block</a>.</p>
 <ol>
 <li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
-<li><a href="../../bodhi_token/qt_wallet_desktop/#approve-bot">approve()</a> <code>10000000000</code> Botoshi (100 BOT) which is the current consensus threshold. The <code>_spender</code> should be the <code>TopicEvent</code> address.</li>
+<li><a href="../../bodhi_token/qt_wallet_desktop/#approve-bot">approve()</a> <code>10000000000</code> Botoshi (100 BOT) which is the current consensus threshold for CentralizedOracles. The <code>_spender</code> should be the <code>TopicEvent</code> address.</li>
 <li>Click on <code>Smart Contract</code> tab, then click on <code>SendTo</code> sub tab</li>
 <li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
-<li>Set the <code>Function</code> to <code>setResult(80ce60d1)</code></li>
-<li>Set the Result Index you would like to set the result in <code>uint8 _resultIndex</code> field</li>
-<li>Set the amount <code>10000000000</code> Botoshi in the <code>uint256 _botAmount</code> field</li>
-<li>Set the <code>Gas Limit</code> to <code>3000000</code> (3 million) to make sure the transaction goes through</li>
-<li>Set the <code>Sender Address</code> as the CentralizedOracle address</li>
-<li>Click <code>Send To Contract</code> button</li>
-<li>You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.</li>
-<li>Wait for your transaction to be mined</li>
+<li>
+<p>Set the <code>Function</code> to <code>setResult(80ce60d1)</code></p>
+<p><img alt="" src="../../img/set_result1.png" /></p>
+</li>
+<li>
+<p>Set the Result Index you would like to set the result in <code>uint8 _resultIndex</code> field</p>
+<p><img alt="" src="../../img/set_result2.png" /></p>
+</li>
+<li>
+<p>Set the <code>Gas Limit</code> to <code>3000000</code> (3 million) to make sure the transaction goes through. Any unspent gas will be returned to you.</p>
+<p><img alt="" src="../../img/set_result3.png" /></p>
+</li>
+<li>
+<p>Set the <code>Sender Address</code> as the CentralizedOracle address</p>
+<p><img alt="" src="../../img/set_result4.png" /></p>
+</li>
+<li>
+<p>Click <code>Send To Contract</code> button</p>
+</li>
+<li>
+<p>You should see your new transaction posted. Save the transaction id if you want to verify the transaction succeeded.</p>
+<p><img alt="" src="../../img/set_result5.png" /></p>
+</li>
+<li>
+<p>Wait for your transaction to be mined</p>
+</li>
 </ol>
 <h1 id="invalidateoracle">invalidateOracle()</h1>
 <p>If the CentralizedOracle does not set the result by the result setting end block, anyone can call this method to invalidate the CentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on.</p>
@@ -462,6 +483,17 @@ f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
 <li>Set the <code>Function</code> to <code>getTotalVotes(9a0e7d66)</code></li>
 <li>Click <code>Call Contract</code> button</li>
 <li>The <code>uint256[10]</code> is the array of total BOT votes shown in Botoshi</li>
+</ol>
+<h1 id="getresult">getResult()</h1>
+<p>Returns the winning result index, name, and true/false indicating if the Oracle is finished. Please note this will return an error if the Oracle is not finished and will return this error:</p>
+<p><img alt="" src="../../img/call_contract_error.png" /></p>
+<ol>
+<li><a href="../../qtum/qt_wallet/#launch-qt-wallet">Launch QT Wallet</a></li>
+<li>Click on <code>Smart Contract</code> tab, then click on <code>Call</code> sub tab</li>
+<li>Set the <code>Contract Address</code> and <a href="#interface-abi">Interface (ABI)</a></li>
+<li>Set the <code>Function</code> to <code>getResult(de292789)</code></li>
+<li>Click <code>Call Contract</code> button</li>
+<li>The <code>uint8</code> is the winning result index. The <code>string</code> is the winning result name. And the <code>bool</code> is the flag indicating the result is valid.</li>
 </ol>
 <h1 id="finished">finished()</h1>
 <p>Returns true or false if the Oracle is finished. No more transactions are allowed after finished.</p>
