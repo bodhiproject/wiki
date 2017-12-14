@@ -10,11 +10,11 @@
     event TopicCreated(address indexed _topicAddress, address indexed _creator, address indexed _oracle, bytes32[10] _name, bytes32[10] _resultNames, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock)
     b7fa6f4e0c226cf0645f9f983dbc0bb4bb971400b98fae2387487d6d810c9c56
 
-    event CentralizedOracleCreated(address indexed _contractAddress, address indexed _oracle, address indexed _eventAddress, bytes32[10] _eventName, bytes32[10] _eventResultNames, uint8 _numOfResults, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock, uint256 _consensusThreshold)
-    c46e722c8158268af789d6a68206785f8d497869da236f87c2014c1c08fd3dec
+    event CentralizedOracleCreated(address indexed _contractAddress, address indexed _oracle, address indexed _eventAddress, bytes32[10] _name, bytes32[10] _resultNames, uint8 _numOfResults, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock, uint256 _consensusThreshold)
     
-    event DecentralizedOracleCreated(address indexed _contractAddress, address indexed _eventAddress, bytes32[10] _eventName, bytes32[10] _eventResultNames, uint8 _numOfResults, uint8 _lastResultIndex, uint256 _arbitrationEndBlock, uint256 _consensusThreshold)
-    834af578c3d42a351e262ebb4c463c830a9777bfe0a2b930de98eaf02455fa0f
+    
+    event DecentralizedOracleCreated(address indexed _contractAddress, address indexed _eventAddress, bytes32[10] _name, bytes32[10] _resultNames, uint8 _numOfResults, uint8 _lastResultIndex, uint256 _arbitrationEndBlock, uint256 _consensusThreshold)
+    
 
     event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
     0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03
@@ -25,8 +25,8 @@
     event OracleInvalidated(address indexed _oracleAddress)
     f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
 
-    event FinalResultSet(uint8 _finalResultIndex)
-    7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416
+    event FinalResultSet(address _eventAddress, uint8 _finalResultIndex)
+    
 
     event WinningsWithdrawn(address indexed _winner, uint256 _qtumTokenWon, uint256 _botTokenWon)
     64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029

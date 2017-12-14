@@ -2,7 +2,7 @@
 
 **QTUM Testnet**
 
-* EventFactory: `fd922f5163b8bd4595cc489cf1c1dfc06c4ee115`
+* EventFactory: `2db9a38afe3fdfdbc13aa4ef8c8cc955c92b239b`
 
 # Interface (ABI)
 <textarea id="event_factory_abi" class="abi" readonly rows="2">
