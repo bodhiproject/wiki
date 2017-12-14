@@ -38,7 +38,7 @@
 # Event Hashes
 
     event FinalResultSet(address _eventAddress, uint8 _finalResultIndex)
-    
+    // TODO
 
     event WinningsWithdrawn(address indexed _winner, uint256 _qtumTokenWon, uint256 _botTokenWon)
     64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029
