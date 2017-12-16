@@ -167,18 +167,20 @@
 
     # Leave the addresses array blank.
     # The origin contract address is from DecentralizedOracle.
-    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416"]}'
+    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["e1dd417dcbeb9c130709b6712f14e2b3362b509f72c1b86daa86da8173d92477"]}'
 
     # Example FinalResultSet event in transaction found
     {
-        "address": "979487ee8c643621d2e3950dbe60edc610d7569a",
+        "address": "a51f3252ff700df157b4633d1fa563fbcbe6e8fd",
         "topics": [
-            "7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416"
+            "e1dd417dcbeb9c130709b6712f14e2b3362b509f72c1b86daa86da8173d92477",
+            "000000000000000000000000a51f3252ff700df157b4633d1fa563fbcbe6e8fd"
         ],
-        "data": "0000000000000000000000000000000000000000000000000000000000000003"
+        "data": "0000000000000000000000000000000000000000000000000000000000000002"
     }
     # address: 979487ee8c643621d2e3950dbe60edc610d7569a is TopicEvent
-    # topics[0]: 7027fc755e013abe84c8ae0945b02936c75236b0aec3ee7532605273667de416 is FinalResultSet event
+    # topics[0]: e1dd417dcbeb9c130709b6712f14e2b3362b509f72c1b86daa86da8173d92477 is FinalResultSet event
+    # topics[1]: 000000000000000000000000a51f3252ff700df157b4633d1fa563fbcbe6e8fd is address indexed _eventAddress
     # data: uint8 _finalResultIndex
 
 **event WithdrawWinnings**
