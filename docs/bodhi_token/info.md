@@ -6,7 +6,7 @@
 
 **QTUM Testnet**
 
-* a619b1a87d4f17fb56e347887b971094918b016c
+* f6177bc9812eeb531907621af6641a41133dea9e
 
 # BOT Units
 * 8 decimals
