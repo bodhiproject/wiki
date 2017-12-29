@@ -183,13 +183,13 @@
     # topics[1]: 000000000000000000000000a51f3252ff700df157b4633d1fa563fbcbe6e8fd is address indexed _eventAddress
     # data: uint8 _finalResultIndex
 
-**event WithdrawWinnings**
+**event WinningsWithdrawn**
     
     # Leave the addresses array blank.
     # The origin contract address is from TopicEvent.
     searchlogs 1 -1 '{"addresses": []}' '{"topics": ["64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029"]}'
 
-    # Example WithdrawWinnings event in transaction found
+    # Example WinningsWithdrawn event in transaction found
     {
         "address": "979487ee8c643621d2e3950dbe60edc610d7569a",
         "topics": [
@@ -199,7 +199,7 @@
         "data": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000037e11d600"
     }
     # address: 979487ee8c643621d2e3950dbe60edc610d7569a is TopicEvent
-    # topics[0]: 64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029 is WithdrawWinnings event
+    # topics[0]: 64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029 is WinningsWithdrawn event
     # topics[1]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _winner
     # data: uint256 _qtumTokenWon, uint256 _botTokenWon
 
@@ -782,7 +782,7 @@ log event 1: `Transfer` event in `BodhiToken`
     # topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _to
     # data: uint256 _value
 
-log event 2: `WithdrawWinnings` event in `TopicEvent`
+log event 2: `WinningsWithdrawn` event in `TopicEvent`
 
     {
         "address": "979487ee8c643621d2e3950dbe60edc610d7569a",
@@ -793,6 +793,6 @@ log event 2: `WithdrawWinnings` event in `TopicEvent`
         "data": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000037e11d600"
     }
     # address: 979487ee8c643621d2e3950dbe60edc610d7569a is TopicEvent
-    # topics[0]: 64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029 is WithdrawWinnings event
+    # topics[0]: 64bd7c266edce1b240f0ed2697cdca2e2478fb1dbc18ec833f80cda28a34c029 is WinningsWithdrawn event
     # topics[1]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _winner
     # data: uint256 _qtumTokenWon, uint256 _botTokenWon
