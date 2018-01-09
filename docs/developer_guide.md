@@ -1,5 +1,5 @@
 
-
+All of our code are open sourced. Developers can follow this guide to get projects set up.
 
 ### Prerequisite
 
@@ -64,7 +64,7 @@
          
          $ node src/index.js
 
-   Then play with graphiql on [localhost:5555/graphiql](localhost:5555/graphiql)
+      Then play with graphiql on [localhost:5555/graphiql](localhost:5555/graphiql)
 
 4. Run below query in the graphiql website
 
