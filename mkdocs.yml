@@ -20,7 +20,7 @@ pages:
   - Qtum:
     - QT Wallet (Desktop): qtum/qt_wallet.md 
   - Contract Deployment: deployment.md
-  - First Time User Guide: first_time_user_guide.md
+  - Developer Guide: developer_guide.md
   - Help: help.md
 extra_javascript:
   ['https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js','js/clipboard.js']
