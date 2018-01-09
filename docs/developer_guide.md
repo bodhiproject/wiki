@@ -40,6 +40,9 @@ All of our code are open sourced. Developers can follow this guide to get projec
          $ brew install mongodb
          $ sudo mkdir -p /data/db
          $ sudo chown -R `id -un` /data/db
+         
+         $ mongod
+         # mongod start MongoDB
       
 
       Open another terminal and type 
