@@ -7,15 +7,15 @@
 
 2. Then open terminal and enter the directory:
 
-      ``` 
-      $ cd /qtum-0.14.13/bin
-      ```
+      
+         $ cd /qtum-0.14.13/bin
+      
 
 3. Run command to start sync.
 
-      ``` 
-      $ sudo ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents -printtoconsole
-      ```
+       
+         $ sudo ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents -printtoconsole
+      
 
       The terminal should show some info like below
 
@@ -23,9 +23,9 @@
 
 4. Open another terminal and cd into the same directory, run command
 
-      ``` 
-      $ ./qtum-cli -rpcuser=bodhi -rpcpassword=bodhi -rpcport=13889 getblockcount 
-      ```
+      
+         $ ./qtum-cli -rpcuser=bodhi -rpcpassword=bodhi -rpcport=13889 getblockcount 
+      
 
       it will show the amount you have synced. Then you can open [https://testnet.qtum.org/](https://testnet.qtum.org/) and see the blocks part, when you reached around the number in the first block, your sync is almost done.
 
