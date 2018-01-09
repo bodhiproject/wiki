@@ -1,4 +1,3 @@
-# First time user guide
 
 
 
