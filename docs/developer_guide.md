@@ -11,7 +11,7 @@ All of our code is open sourced. Developers can follow this guide to get project
 
 3. Run command to start sync.
 
-         $ ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents -printtoconsole      
+         $ sudo ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents -printtoconsole      
 
       The terminal should show some info like below
 
@@ -113,7 +113,9 @@ All of our code is open sourced. Developers can follow this guide to get project
 
          $ curl http://localhost:8080/getblockcount
 
-      you should get a message like {“result”:xxxxx}
+      Or download [Postman](https://www.getpostman.com/) and unzip it, then open postman, in the Builder panel, enter http://localhost:8080/getblockcount in the input area. Then click send button.
+
+      You should get a message like {“result”:xxxxx}
 
 
 ### UI
