@@ -1,31 +1,25 @@
 
-All of our code are open sourced. Developers can follow this guide to get projects set up.
+All of our code is open sourced. Developers can follow this guide to get projects set up.
 
 ### Prerequisite
 
-1. Download `qtum-0.14.13-osx64.tar.gz`  from [https://github.com/qtumproject/qtum/releases](https://github.com/qtumproject/qtum/releases) and unzip it.
+1. Download `qtum-x.xx.xx-osx64.tar.gz`  from [https://github.com/qtumproject/qtum/releases](https://github.com/qtumproject/qtum/releases) and unzip it.
 
 2. Then open terminal and enter the directory:
-
       
-         $ cd /qtum-0.14.13/bin
-      
+         $ cd /qtum-x.xx.xx/bin
 
 3. Run command to start sync.
 
-       
-         $ sudo ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents -printtoconsole
-      
+         $ ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents -printtoconsole      
 
       The terminal should show some info like below
 
-      **![img](img/sync_screenshot.png)**
+      ![img](img/sync_screenshot.png)
 
 4. Open another terminal and cd into the same directory, run command
 
-      
-         $ ./qtum-cli -rpcuser=bodhi -rpcpassword=bodhi -rpcport=13889 getblockcount 
-      
+         $ ./qtum-cli -rpcuser=bodhi -rpcpassword=bodhi -rpcport=13889 getblockcount       
 
       it will show the amount you have synced. Then you can open [https://testnet.qtum.org/](https://testnet.qtum.org/) and see the blocks part, when you reached around the number in the first block, your sync is almost done.
 
@@ -35,22 +29,18 @@ All of our code are open sourced. Developers can follow this guide to get projec
 
       Run following command 
 
-          
          $ brew update
          $ brew install mongodb
          $ sudo mkdir -p /data/db
          $ sudo chown -R `id -un` /data/db
-         
+
          $ mongod
-         # mongod start MongoDB
-      
+         # mongod start MongoDB   
 
       Open another terminal and type 
 
-       
          $ mongo
          $ show dbs
-      
 
       You will see how much storage your database use.
 
@@ -65,7 +55,7 @@ All of our code are open sourced. Developers can follow this guide to get projec
 
 3. Start bodhi-graphql at 5555 back to previous terminal and run
          
-         $ node src/index.js
+         $ npm start
 
       Then play with graphiql on [localhost:5555/graphiql](localhost:5555/graphiql)
 
@@ -121,7 +111,7 @@ All of our code are open sourced. Developers can follow this guide to get projec
 
 6. Open another terminal and run 
 
-         $curl http://localhost:8080/getblockcount
+         $ curl http://localhost:8080/getblockcount
 
       you should get a message like {“result”:xxxxx}
 
@@ -143,6 +133,6 @@ All of our code are open sourced. Developers can follow this guide to get projec
 
          $ yarn start
 
-      After the compiled process completed successfully, it will show success commands & redirect to the http://localhost:3000/ of your browser where you will find the login screen of the  app.
+      After the compiled process completed successfully, it will show success commands & redirect to the http://localhost:3000/ of your browser where you will find the dashboard of the app.
 
-5. To create an Optimized Product Build of the isomorphic app. you will need need to do is to run build command in you terminal root directory of the app. `yarn build`
+5. To create an optimized product build of the Isomorphic app, you will need to run this build command in your terminal root directory of the app. `yarn build`
