@@ -30,8 +30,8 @@
 
 # Event Hashes
 
-    event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
-    // TODO
+    event OracleResultVoted(uint16 indexed _version, address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
+    999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67
 
     event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
     // TODO

@@ -16,8 +16,8 @@
     event DecentralizedOracleCreated(address indexed _contractAddress, address indexed _eventAddress, bytes32[10] _name, bytes32[10] _resultNames, uint8 _numOfResults, uint8 _lastResultIndex, uint256 _arbitrationEndBlock, uint256 _consensusThreshold)
     // TODO
 
-    event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
-    // TODO
+    event OracleResultVoted(uint16 indexed _version, address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
+    999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67
 
     event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
     // TODO
@@ -91,10 +91,25 @@
     # Leave the addresses array blank.
     # The origin contract addresses are from CentralizedOracle and DecentralizedOracle.
     # This includes both QTUM bets and BOT votes.
-    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03"]}'
+    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67"]}'
 
     # Example OracleResultVoted event in transaction found
-    // TODO
+    {
+        "address": "d78f96ea55ad0c8a283b6d759f39cda34a7c5b10",
+        "topics": [
+            "999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67",
+            "0000000000000000000000000000000000000000000000000000000000000000",
+            "000000000000000000000000d78f96ea55ad0c8a283b6d759f39cda34a7c5b10",
+            "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
+        ],
+        "data": "0000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000001dcd6500"
+    }
+    # address: d78f96ea55ad0c8a283b6d759f39cda34a7c5b10 is CentralizedOracle
+    # topics[0]: 999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67 is OracleResultVoted event
+    # topics[1]: 0000000000000000000000000000000000000000000000000000000000000000 is uint16 indexed _version
+    # topics[2]: 000000000000000000000000d78f96ea55ad0c8a283b6d759f39cda34a7c5b10 is address indexed _oracleAddress
+    # topics[3]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
+    # data: uint8 _resultIndex, uint256 _votedAmount
     
 **event OracleResultSet**
 
@@ -202,50 +217,51 @@ log event 2: `TopicCreated` event in `EventFactory`
 # bet() Tx Receipt
 Example CentralizedOracle.bet() transaction receipt
 
-    // TODO
-    $ gettransactionreceipt a70f416caf1a698712217774e18adbda27a16857f8bd185b9bbaf39e56e3d1ab
+    $ gettransactionreceipt 366953ec6096efe8e628da76551aae971059354f77618ed08f115f295967333a
     [
-      {
-        "blockHash": "a4271c3bf5e1d78c85d424c622b2a87d32b065a01cf4e20d4d8fded2a55b9b0d",
-        "blockNumber": 45177,
-        "transactionHash": "a70f416caf1a698712217774e18adbda27a16857f8bd185b9bbaf39e56e3d1ab",
-        "transactionIndex": 2,
-        "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
-        "to": "244945e1502508f34880d0299dc8d4d2be9ef6d4",
-        "cumulativeGasUsed": 138057,
-        "gasUsed": 138057,
-        "contractAddress": "244945e1502508f34880d0299dc8d4d2be9ef6d4",
-        "log": [
-          {
-            "address": "244945e1502508f34880d0299dc8d4d2be9ef6d4",
-            "topics": [
-              "0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03", 
-              "000000000000000000000000244945e1502508f34880d0299dc8d4d2be9ef6d4", 
-              "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
-            ],
-            "data": "0000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000003b9aca00"
-          }
-        ]
-      }
+        {
+            "blockHash": "ae73b206fbfeeceabc97fa372eabc2e0fb0172184c1b1d33c32eb2c14138d92d",
+            "blockNumber": 65786,
+            "transactionHash": "366953ec6096efe8e628da76551aae971059354f77618ed08f115f295967333a",
+            "transactionIndex": 2,
+            "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
+            "to": "d78f96ea55ad0c8a283b6d759f39cda34a7c5b10",
+            "cumulativeGasUsed": 138694,
+            "gasUsed": 138694,
+            "contractAddress": "d78f96ea55ad0c8a283b6d759f39cda34a7c5b10",
+            "log": [
+                {
+                    "address": "d78f96ea55ad0c8a283b6d759f39cda34a7c5b10",
+                    "topics": [
+                        "999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67",
+                        "0000000000000000000000000000000000000000000000000000000000000000",
+                        "000000000000000000000000d78f96ea55ad0c8a283b6d759f39cda34a7c5b10",
+                        "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
+                    ],
+                    "data": "0000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000001dcd6500"
+                }
+            ]
+        }
     ]
     # contractAddress: 244945e1502508f34880d0299dc8d4d2be9ef6d4 is CentralizedOracle
 
 log event 1: `OracleResultVoted` in `CentralizedOracle`
 
-    // TODO
     {
-        "address": "244945e1502508f34880d0299dc8d4d2be9ef6d4",
+        "address": "d78f96ea55ad0c8a283b6d759f39cda34a7c5b10",
         "topics": [
-            "0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03", 
-            "000000000000000000000000244945e1502508f34880d0299dc8d4d2be9ef6d4", 
+            "999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67",
+            "0000000000000000000000000000000000000000000000000000000000000000",
+            "000000000000000000000000d78f96ea55ad0c8a283b6d759f39cda34a7c5b10",
             "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
         ],
-        "data": "0000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000003b9aca00"
-        }
-    # address: 244945e1502508f34880d0299dc8d4d2be9ef6d4 is CentralizedOracle
-    # topics[0]: 0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03 is OracleResultVoted event
-    # topics[1]: 000000000000000000000000244945e1502508f34880d0299dc8d4d2be9ef6d4 is address indexed _oracleAddress
-    # topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
+        "data": "0000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000001dcd6500"
+    }
+    # address: d78f96ea55ad0c8a283b6d759f39cda34a7c5b10 is CentralizedOracle
+    # topics[0]: 999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67 is OracleResultVoted event
+    # topics[1]: 0000000000000000000000000000000000000000000000000000000000000000 is uint16 indexed _version
+    # topics[2]: 000000000000000000000000d78f96ea55ad0c8a283b6d759f39cda34a7c5b10 is address indexed _oracleAddress
+    # topics[3]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
     # data: uint8 _resultIndex, uint256 _votedAmount
 
 # setResult() Tx Receipt
