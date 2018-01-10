@@ -2,12 +2,12 @@
 
 **QTUM Testnet**
 
-* OracleFactory: `6d5b0ec97475e8d854efddc81d3a1d0f0f019669`
+* OracleFactory: `ce39131df7cd9965d2ea43dae6281bb1b7933705`
 
 # Event Hashes
 
-    event CentralizedOracleCreated(address indexed _contractAddress, address indexed _oracle, address indexed _eventAddress, bytes32[10] _name, bytes32[10] _resultNames, uint8 _numOfResults, uint256 _bettingEndBlock, uint256 _resultSettingEndBlock, uint256 _consensusThreshold)
-    c46e722c8158268af789d6a68206785f8d497869da236f87c2014c1c08fd3dec
+    event CentralizedOracleCreated(uint16 indexed _version, address indexed _contractAddress, address indexed _eventAddress, uint8 _numOfResults, address _oracle, uint256 _bettingStartBlock, uint256 _bettingEndBlock, uint256 _resultSettingStartBlock, uint256 _resultSettingEndBlock, uint256 _consensusThreshold)
+    1e482c6081e57445e988bc379f3066a27d0db9fb8d6c9fb9aeff950cec4c1897
     
     event DecentralizedOracleCreated(address indexed _contractAddress, address indexed _eventAddress, bytes32[10] _name, bytes32[10] _resultNames, uint8 _numOfResults, uint8 _lastResultIndex, uint256 _arbitrationEndBlock, uint256 _consensusThreshold)
-    834af578c3d42a351e262ebb4c463c830a9777bfe0a2b930de98eaf02455fa0f
+    // TODO
