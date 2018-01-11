@@ -91,24 +91,16 @@ All of our code is open sourced. Developers can follow this guide to get project
 
          $ git clone https://github.com/bodhiproject/bodhi-api.git
 
-2. Install submodules
+2. Install dependencies
 
          $ cd bodhi-api
-         $ git submodule update --init
+         $ npm install
 
-3. Install npm install
-
-         $ npm install 
-
-4. Install dependencies
-
-         $ npm-recursive-install
-
-5. Run project
+3. Run project
 
          $ npm start
 
-6. Open another terminal and run 
+4. Open another terminal and run 
 
          $ curl http://localhost:8080/getblockcount
 
