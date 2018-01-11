@@ -47,7 +47,7 @@ All of our code is open sourced. Developers can follow this guide to get project
 
       You can also get some installation help from [Here](https://docs.mongodb.com/manual/administration/install-community/).                
 
-      If you installed mongodb in docker, you can also start mongodb 
+      If you installed docker, you can also start mongodb 
 
          $ docker run -d -p 27017:27017 mongo
 
@@ -111,7 +111,7 @@ All of our code is open sourced. Developers can follow this guide to get project
 
 ### UI
 
-      **UI has dependency on grapghql, api**
+   **UI has dependency on grapghql, api**
 
 1. Clone project
 
