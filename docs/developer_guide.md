@@ -11,7 +11,8 @@ All of our code is open sourced. Developers can follow this guide to get project
 
 3. Run command to start sync.
 
-         $ sudo ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents -printtoconsole      
+         $ ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents 
+         # If you get permission denied, add sudo. If you want verbose logging, add -printtoconsole
 
       The terminal should show some info like below
 
@@ -19,7 +20,7 @@ All of our code is open sourced. Developers can follow this guide to get project
 
 4. Open another terminal and cd into the same directory, run command
 
-         $ ./qtum-cli -rpcuser=bodhi -rpcpassword=bodhi -rpcport=13889 getblockcount       
+         $ ./qtum-cli -rpcuser=bodhi -rpcpassword=bodhi -testnet getblockcount       
 
       it will show the amount you have synced. Then you can open [https://testnet.qtum.org/](https://testnet.qtum.org/) and see the blocks part, when you reached around the number in the first block, your sync is almost done.
 
@@ -45,6 +46,10 @@ All of our code is open sourced. Developers can follow this guide to get project
       You will see how much storage your database use.
 
       You can also get some installation help from [Here](https://docs.mongodb.com/manual/administration/install-community/).                
+
+      If you installed mongodb in docker, you can also start mongodb 
+
+         $ docker run -d -p 27017:27017 mongo
 
 
 2. Open terminal and run command
@@ -84,12 +89,6 @@ All of our code is open sourced. Developers can follow this guide to get project
 
 1. Clone project
 
-      SSH:
-
-         $ git clone git@github.com:bodhiproject/bodhi-api.git
-
-      or HTTPS:
-
          $ git clone https://github.com/bodhiproject/bodhi-api.git
 
 2. Install submodules
@@ -97,9 +96,9 @@ All of our code is open sourced. Developers can follow this guide to get project
          $ cd bodhi-api
          $ git submodule update --init
 
-3. Install npm-recursive-install
+3. Install npm install
 
-         $ npm install -g recursive-install
+         $ npm install 
 
 4. Install dependencies
 
@@ -119,6 +118,8 @@ All of our code is open sourced. Developers can follow this guide to get project
 
 
 ### UI
+
+      **UI has dependency on grapghql, api**
 
 1. Clone project
 
