@@ -12,7 +12,7 @@ All of our code is open sourced. Developers can follow this guide to get project
 3. Run command to start sync.
 
          $ ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents 
-         # If you get permission denied, add sudo. If you want verbose logging, add -printtoconsole
+         # If you want verbose logging, add -printtoconsole
 
       The terminal should show some info like below
 
