@@ -157,6 +157,17 @@ Returns the total BOT and QTUM you will receive. If the status is not in the col
     * `uint256` is the Botoshi you will receive when withdrawing
     * `uint256` is the Satoshi you will receive when withdrawing
 
+# resultIndex()
+Returns the current result index. If it returns 255, then none of the Oracles have set the result.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `resultIndex(0d4e8aed)`
+5. Click `Call Contract` button
+6. Returns:
+    * `uint8` is the result index
+
 # getFinalResult()
 Returns the final result index and true/false indicating if the result is finalized.
 
