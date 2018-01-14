@@ -5,7 +5,7 @@
 # Event Hashes
     
     event Transfer(address indexed _from, address indexed _to, uint256 _value)
-    // TODO
+    ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
 
     event TopicCreated(uint16 indexed _version, address indexed _topicAddress, bytes32[10] _name, bytes32[10] _resultNames)
     83b9cf916e58a51bacb9cfa2e56de173d9757e8ef33a56b89cf1a7e52fff4338
