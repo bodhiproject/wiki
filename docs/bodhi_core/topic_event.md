@@ -39,8 +39,8 @@
     event FinalResultSet(uint16 indexed _version, address indexed _eventAddress, uint8 _finalResultIndex)
     14959b24f45a8f41b814b331ae09533db9d7e7962ca200e484f849a1fd1955aa
 
-    event WinningsWithdrawn(address indexed _winner, uint256 _qtumTokenWon, uint256 _botTokenWon)
-    // TODO
+    event WinningsWithdrawn(uint16 indexed _version, address indexed _winner, uint256 _qtumTokenWon, uint256 _botTokenWon)
+    2b37430897e8d659983fc8ae7ab83ad5b3be5a7db7ea0add5706731c2395f550
 
 # withdrawWinnings()
 Winners of the event are allow to withdraw when [finalizeResult()](decentralized_oracle.md#finalizeresult) is called from the last DecentralizedOracle. This will withdraw both BOT and QTUM tokens to the Sender Address.
