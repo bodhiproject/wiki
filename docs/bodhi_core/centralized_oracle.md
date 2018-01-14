@@ -207,20 +207,16 @@ Returns an array of total BOT votes placed by all participants. Shows 10 values 
 6. Returns:
     * `uint256[10]` is the array of total BOT votes shown in Botoshi
 
-# getResult()
-Returns the winning result index, name, and true/false indicating if the Oracle is finished. Please note this will return an error if the Oracle is not finished and will return this error:
-
-![](../img/call_contract_error.png)
+# resultIndex()
+Returns the result index. If it returns 255, then the Centralized Oracle has not set the result yet.
 
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
 2. Click on `Smart Contract` tab, then click on `Call` sub tab
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `getResult(de292789)`
+4. Set the `Function` to `resultIndex(0d4e8aed)`
 5. Click `Call Contract` button
 6. Returns:
-    * `uint8` is the winning result index
-    * `string` is the winning result name
-    * `bool` is the flag indicating the result is valid
+    * `uint8` is the result index
 
 # finished()
 Returns true or false if the Oracle is finished. No more transactions are allowed after finished.
