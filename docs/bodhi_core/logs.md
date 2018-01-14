@@ -166,7 +166,7 @@
 # createTopic() Tx Receipt
 Example EventFactory.createTopic() transaction receipt
 
-    $ gettransactionreceipt 385917379bb4dea6d280e32593ea47e4870e0454867806f79e7892332ea026b5
+    $ ./qtum-cli -testnet gettransactionreceipt 385917379bb4dea6d280e32593ea47e4870e0454867806f79e7892332ea026b5
     [
         {
             "blockHash": "adcf9207ef9760b3589c4d17ec4ad93069ec93124842a330a95aafdee2949508",
@@ -242,7 +242,7 @@ log event 2: `TopicCreated` event in `EventFactory`
 # bet() Tx Receipt
 Example CentralizedOracle.bet() transaction receipt
 
-    $ gettransactionreceipt 366953ec6096efe8e628da76551aae971059354f77618ed08f115f295967333a
+    $ ./qtum-cli -testnet gettransactionreceipt 366953ec6096efe8e628da76551aae971059354f77618ed08f115f295967333a
     [
         {
             "blockHash": "ae73b206fbfeeceabc97fa372eabc2e0fb0172184c1b1d33c32eb2c14138d92d",
@@ -292,7 +292,7 @@ log event 1: `OracleResultVoted` in `CentralizedOracle`
 # setResult() Tx Receipt
 Example CentralizedOracle.setResult() transaction receipt
 
-    $ gettransactionreceipt 1d498254fd672d6e8deaff9b92b95bcd9ab6a9591ff415b9f0b3be442fcc9392
+    $ ./qtum-cli -testnet gettransactionreceipt 1d498254fd672d6e8deaff9b92b95bcd9ab6a9591ff415b9f0b3be442fcc9392
     [
         {
             "blockHash": "8d2d73644f9d5587265b75b0193406c508b614efe79c6e18baf3bb191e299389",
@@ -394,7 +394,7 @@ log event 3: `OracleResultSet` event in `CentralizedOracle`
 Example DecentralizedOracle.voteResult() transaction receipt under the consensus threshold.
 
     // TODO
-    $ gettransactionreceipt 7b9ecbb1270a85f781149c7ebbb0fa5a94e6859ba6a33121d5c690f5249dbdb9
+    $ ./qtum-cli -testnet gettransactionreceipt 7b9ecbb1270a85f781149c7ebbb0fa5a94e6859ba6a33121d5c690f5249dbdb9
     [
       {
         "blockHash": "0bf96288986b22e3f6c88bffb47cc921b1be3efc225b244e84009df4dec5ae39",
@@ -469,6 +469,7 @@ log event 2: `OracleResultVoted` in `DecentralizedOracle`
 Example DecentralizedOracle.voteResult() transaction receipt that reaches the consensus threshold.
 
     // TODO
+    $ ./qtum-cli -testnet gettransactionreceipt 9322ded76ee91ca077569d5ca27920054c9ff74ea19a7ac3a43618e2bce2d9c3
     [
       {
         "blockHash": "8b7e1045fe89f0dc846d1238dfc6dace825708502f1275e329b8009b8757995c",
@@ -595,7 +596,7 @@ log event 4: `OracleResultSet` in `DecentralizedOracle`
 Example DecentralizedOracle.finalizeResult() transaction receipt
 
     // TODO
-    $ gettransactionreceipt 3eb3805a1f9707c5e9de071b1ecde0083035498cce07b31a45133bca40d2afa5
+    $ ./qtum-cli -testnet gettransactionreceipt 3eb3805a1f9707c5e9de071b1ecde0083035498cce07b31a45133bca40d2afa5
     [
         {
             "blockHash": "41c0c9b023e66a6db95d545a5292a6a9444997b867e47353fca92e76f0b066f0",
@@ -640,7 +641,7 @@ log event 1: `FinalResultSet` event in `TopicEvent`
 Example TopicEvent.withdrawWinnings() transaction receipt
 
     // TODO
-    $ gettransactionreceipt 9ec8809f9d9ddd99011ab1fda176a6974d4839f298e299563844db37e008b41b
+    $ ./qtum-cli -testnet gettransactionreceipt 9ec8809f9d9ddd99011ab1fda176a6974d4839f298e299563844db37e008b41b
     [
       {
         "blockHash": "b714317e141e29c9ccf7d051c55ba578cd1adf4239a968db0207673dfe911c66",
