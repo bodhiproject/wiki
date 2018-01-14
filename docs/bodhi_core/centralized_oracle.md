@@ -139,6 +139,17 @@ Returns the address of the CentralizedOracle.
 6. Returns:
     * `address` is the CentralizedOracle in hex
 
+# bettingStartBlock()
+Returns the block when the betting period will start.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `bettingStartBlock(e04c1e63)`
+5. Click `Call Contract` button
+6. Returns:
+    * `uint256` is the bettingStartBlock
+
 # bettingEndBlock()
 Returns the block when the betting period will end.
 
@@ -149,6 +160,17 @@ Returns the block when the betting period will end.
 5. Click `Call Contract` button
 6. Returns:
     * `uint256` is the betting end block
+
+# resultSettingStartBlock()
+Returns the block when the CentralizedOracle will be able to set the result.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `resultSettingStartBlock(b6fadfb7)`
+5. Click `Call Contract` button
+6. Returns:
+    * `uint256` is the resultSettingStartBlock
 
 # resultSettingEndBlock()
 Returns the block when the CentralizedOracle will no longer be able to set the result.
