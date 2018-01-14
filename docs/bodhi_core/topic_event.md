@@ -144,32 +144,21 @@ Returns the total BOT value (in Botoshi) voted in all the Oracles.
 6. Returns: 
     * `uint256` is the total Botoshi of the Event contract
 
-# calculateQtumContributorWinnings()
-Returns the total QTUM you will receive. If the status is not in the collection state, it will return 0.
+# calculateWinnings()
+Returns the total BOT and QTUM you will receive. If the status is not in the collection state, it will return 0.
 
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
 2. Click on `Smart Contract` tab, then click on `Call` sub tab
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `calculateQtumContributorWinnings(91216876)`
-5. Set the `Sender Address` of the address to calculate
-6. Click `Call Contract` button
-7. Returns: 
-    * `uint256` is the Satoshi you will receive when withdrawing
-
-# calculateBotContributorWinnings()
-Returns the total BOT you will receive. If the status is not in the collection state, it will return 0.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `Call` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `calculateBotContributorWinnings(fd268eee)`
+4. Set the `Function` to `calculateWinnings(11f2a04d)`
 5. Set the `Sender Address` of the address to calculate
 6. Click `Call Contract` button
 7. Returns: 
     * `uint256` is the Botoshi you will receive when withdrawing
+    * `uint256` is the Satoshi you will receive when withdrawing
 
 # getFinalResult()
-Returns the final result index, name, and true/false indicating if the result is finalized.
+Returns the final result index and true/false indicating if the result is finalized.
 
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
 2. Click on `Smart Contract` tab, then click on `Call` sub tab
@@ -178,7 +167,6 @@ Returns the final result index, name, and true/false indicating if the result is
 5. Click `Call Contract` button
 6. Returns:
     * `uint8` is the final result index 
-    * `string` is the final result name
     * `bool` is the flag indicating the final result is valid
 
 # didWithdraw()
