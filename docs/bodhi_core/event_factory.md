@@ -77,23 +77,31 @@ Creates a new TopicEvent.
         # "Kanye West" = 
         # 4b616e7965205765737400000000000000000000000000000000000000000000 in hex
 
-9. Set the betting end block in the `uint256 _bettingEndBlock` field. This needs to be greater than the current block.
+9. Set the bettingStartBlock in the `uint256 _bettingStartBlock` field.
 
     ![](../img/create_topicevent6.png)
 
-10. Set the result setting end block in the `uint256 _resultSettingEndBlock` field. This needs to be greater than the `bettingEndBlock`.
+10. Set the bettingEndBlock in the `uint256 _bettingEndBlock` field. This needs to be > than the `bettingStartBlock`.
 
     ![](../img/create_topicevent7.png)
 
-11. Set the `Gas Limit` to `4500000` (4.5 million). Just to be safe the transaction goes through, all unused gas will be returned to you in the next coinstake transaction.
+11. Set the resultSettingStartBlock in the `uint256 _resultSettingStartBlock` field. This needs to be >= than the `bettingEndBlock`.
 
     ![](../img/create_topicevent8.png)
 
-12. Set the `Sender Address`
+12. Set the resultSettingEndBlock in the `uint256 _resultSettingEndBlock` field. This needs to be > than the `resultSettingStartBlock`.
 
     ![](../img/create_topicevent9.png)
 
-13. Click `Send To Contract` button
-14. Wait for transaction to get mined
+13. Set the `Gas Limit` to `4000000` (4 million). Just to be safe the transaction goes through, all unused gas will be returned to you in the next coinstake transaction.
 
     ![](../img/create_topicevent10.png)
+
+14. Set the `Sender Address`
+
+    ![](../img/create_topicevent11.png)
+
+15. Click `Send To Contract` button
+16. Wait for transaction to get mined
+
+    ![](../img/create_topicevent12.png)
