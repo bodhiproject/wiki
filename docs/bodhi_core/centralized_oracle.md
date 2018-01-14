@@ -95,28 +95,6 @@ The CentralizedOracle can set the result by first approving 100 BOT (the consens
 
 11. Wait for your transaction to be mined
 
-# invalidateOracle()
-If the CentralizedOracle does not set the result by the result setting end block, anyone can call this method to invalidate the CentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `invalidateOracle(2f64452e)`
-    
-    ![](../img/invalidate_centralized1.png)
-
-5. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through. Any unused gas will be returned to you.
-
-    ![](../img/invalidate_centralized2.png)
-
-6. Set the `Sender Address` as the CentralizedOracle address
-7. Click `Send To Contract` button
-8. Your transaction is posted. Save the transaction id if you want to verify the transaction succeeded.
-
-    ![](../img/invalidate_centralized3.png)
-
-9. Wait for your transaction to be mined
-
 # eventAddress()
 Returns the Event address.
 
@@ -127,29 +105,6 @@ Returns the Event address.
 5. Click `Call Contract` button
 6. Returns: 
     * `address` is the Event address
-
-# getEventName()
-Returns the event name.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `Call` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `getEventName(b81e43fc)`
-5. Click `Call Contract` button
-6. Returns:
-    * `string` is the Event name
-
-# getEventResultName()
-Returns the event name given the Event result index.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `Call` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `getEventResultName(4cb15529)`
-5. Click `Call Contract` button
-6. Set the `uint8 _eventResultIndex`
-7. Returns:
-    * `string` is the Event result name
 
 # numOfResults()
 Returns the number of Event results.
