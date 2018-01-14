@@ -393,76 +393,76 @@ log event 3: `OracleResultSet` event in `CentralizedOracle`
 # voteResult() Under Threshold Tx Receipt
 Example DecentralizedOracle.voteResult() transaction receipt under the consensus threshold.
 
-    // TODO
-    $ ./qtum-cli -testnet gettransactionreceipt 7b9ecbb1270a85f781149c7ebbb0fa5a94e6859ba6a33121d5c690f5249dbdb9
+    $ ./qtum-cli -testnet gettransactionreceipt 3a5646ff578e9ca055d2b9296a539fb97ea4936a0a5f3a849ebd6eee69b9fe67
     [
-      {
-        "blockHash": "0bf96288986b22e3f6c88bffb47cc921b1be3efc225b244e84009df4dec5ae39",
-        "blockNumber": 44700,
-        "transactionHash": "7b9ecbb1270a85f781149c7ebbb0fa5a94e6859ba6a33121d5c690f5249dbdb9",
-        "transactionIndex": 2,
-        "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
-        "to": "7a14d09cbf2a438cb8658e9407ae1467de483332",
-        "cumulativeGasUsed": 146513,
-        "gasUsed": 146513,
-        "contractAddress": "7a14d09cbf2a438cb8658e9407ae1467de483332",
-        "log": [
-          {
-            "address": "f6177bc9812eeb531907621af6641a41133dea9e",
-            "topics": [
-              "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", 
-              "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3", 
-              "000000000000000000000000979487ee8c643621d2e3950dbe60edc610d7569a"
-            ],
-            "data": "000000000000000000000000000000000000000000000000000000012a05f200"
-          }, 
-          {
-            "address": "7a14d09cbf2a438cb8658e9407ae1467de483332",
-            "topics": [
-              "0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03", 
-              "0000000000000000000000007a14d09cbf2a438cb8658e9407ae1467de483332", 
-              "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
-            ],
-            "data": "0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000012a05f200"
-          }
-        ]
-      }
+        {
+            "blockHash": "c16cb160b1b38aaf35abae1da2cc3d577d1eb6f99b7cde4f7be7545e456142d5",
+            "blockNumber": 68120,
+            "transactionHash": "3a5646ff578e9ca055d2b9296a539fb97ea4936a0a5f3a849ebd6eee69b9fe67",
+            "transactionIndex": 2,
+            "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
+            "to": "09223575cc86e0c7d42f3b16f20fceb2caef828b",
+            "cumulativeGasUsed": 127066,
+            "gasUsed": 127066,
+            "contractAddress": "09223575cc86e0c7d42f3b16f20fceb2caef828b",
+            "log": [
+                {
+                    "address": "f6177bc9812eeb531907621af6641a41133dea9e",
+                    "topics": [
+                        "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                        "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3",
+                        "0000000000000000000000000387da9a3e773b559ca0367c5929360e4a4294f6"
+                    ],
+                    "data": "0000000000000000000000000000000000000000000000000000000047868c00"
+                },
+                {
+                    "address": "09223575cc86e0c7d42f3b16f20fceb2caef828b",
+                    "topics": [
+                        "999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67",
+                        "0000000000000000000000000000000000000000000000000000000000000000",
+                        "00000000000000000000000009223575cc86e0c7d42f3b16f20fceb2caef828b",
+                        "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
+                    ],
+                    "data": "00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000047868c00"
+                }
+            ]
+        }
     ]
 
 log event 1: `Transfer` event in `BodhiToken`
 
-    // TODO
     {
         "address": "f6177bc9812eeb531907621af6641a41133dea9e",
         "topics": [
-            "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", 
-            "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3", 
-            "000000000000000000000000979487ee8c643621d2e3950dbe60edc610d7569a"
+            "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3",
+            "0000000000000000000000000387da9a3e773b559ca0367c5929360e4a4294f6"
         ],
-        "data": "000000000000000000000000000000000000000000000000000000012a05f200"
+        "data": "0000000000000000000000000000000000000000000000000000000047868c00"
     }
     # address: f6177bc9812eeb531907621af6641a41133dea9e is BodhiToken
     # topics[0]: ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef is Transfer event
     # topics[1]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _from
-    # topics[2]: 000000000000000000000000979487ee8c643621d2e3950dbe60edc610d7569a is address indexed _to
+    # topics[2]: 0000000000000000000000000387da9a3e773b559ca0367c5929360e4a4294f6 is address indexed _to
     # data: uint256 _value
 
 log event 2: `OracleResultVoted` in `DecentralizedOracle`
     
-    // TODO
     {
-        "address": "7a14d09cbf2a438cb8658e9407ae1467de483332",
+        "address": "09223575cc86e0c7d42f3b16f20fceb2caef828b",
         "topics": [
-            "0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03", 
-            "0000000000000000000000007a14d09cbf2a438cb8658e9407ae1467de483332", 
+            "999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67",
+            "0000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000009223575cc86e0c7d42f3b16f20fceb2caef828b",
             "00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3"
         ],
-        "data": "0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000012a05f200"
+        "data": "00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000047868c00"
     }
-    # address: 7a14d09cbf2a438cb8658e9407ae1467de483332 is DecentralizedOracle
-    # topics[0]: 0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03 is OracleResultVoted event
-    # topics[1]: 0000000000000000000000007a14d09cbf2a438cb8658e9407ae1467de483332 is address indexed _oracleAddress
-    # topics[2]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
+    # address: 09223575cc86e0c7d42f3b16f20fceb2caef828b is DecentralizedOracle
+    # topics[0]: 999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67 is OracleResultVoted event
+    # topics[1]: 0000000000000000000000000000000000000000000000000000000000000000 is uint16 indexed _version
+    # topics[2]: 00000000000000000000000009223575cc86e0c7d42f3b16f20fceb2caef828b is address indexed _oracleAddress
+    # topics[3]: 00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3 is address indexed _participant
     # data: uint8 _resultIndex, uint256 _votedAmount
 
 # voteResult() Over Threshold Tx Receipt
