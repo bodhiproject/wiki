@@ -33,11 +33,8 @@
     event OracleResultVoted(uint16 indexed _version, address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
     999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67
 
-    event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
-    // TODO
-
-    event OracleInvalidated(address indexed _oracleAddress)
-    // TODO
+    event OracleResultSet(uint16 indexed _version, address indexed _oracleAddress, uint8 _resultIndex)
+    766d7bf9e9e8671204cd1da1b1b107d50247d2d1c389c552765262ee3afefb9b
 
 # bet()
 Places a bet on a result given the index. The QTUM is routed to the TopicEvent contract for storage.
