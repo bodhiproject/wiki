@@ -22,8 +22,8 @@
     event OracleResultSet(uint16 indexed _version, address indexed _oracleAddress, uint8 _resultIndex)
     766d7bf9e9e8671204cd1da1b1b107d50247d2d1c389c552765262ee3afefb9b
 
-    event FinalResultSet(address _eventAddress, uint8 _finalResultIndex)
-    // TODO
+    event FinalResultSet(uint16 indexed _version, address indexed _eventAddress, uint8 _finalResultIndex)
+    14959b24f45a8f41b814b331ae09533db9d7e7962ca200e484f849a1fd1955aa
 
     event WinningsWithdrawn(address indexed _winner, uint256 _qtumTokenWon, uint256 _botTokenWon)
     // TODO
@@ -149,10 +149,23 @@
 
     # Leave the addresses array blank.
     # The origin contract address is from DecentralizedOracle.
-    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["e1dd417dcbeb9c130709b6712f14e2b3362b509f72c1b86daa86da8173d92477"]}'
+    searchlogs 1 -1 '{"addresses": []}' '{"topics": ["14959b24f45a8f41b814b331ae09533db9d7e7962ca200e484f849a1fd1955aa"]}'
 
     # Example FinalResultSet event in transaction found
-    // TODO
+    {
+        "address": "0387da9a3e773b559ca0367c5929360e4a4294f6",
+        "topics": [
+            "14959b24f45a8f41b814b331ae09533db9d7e7962ca200e484f849a1fd1955aa",
+            "0000000000000000000000000000000000000000000000000000000000000000",
+            "0000000000000000000000000387da9a3e773b559ca0367c5929360e4a4294f6"
+        ],
+        "data": "0000000000000000000000000000000000000000000000000000000000000002"
+    }
+    # address: 0387da9a3e773b559ca0367c5929360e4a4294f6 is TopicEvent
+    # topics[0]: 14959b24f45a8f41b814b331ae09533db9d7e7962ca200e484f849a1fd1955aa is FinalResultSet event
+    # topics[1]: 0000000000000000000000000000000000000000000000000000000000000000 is uint16 indexed _version
+    # topics[2]: 0000000000000000000000000387da9a3e773b559ca0367c5929360e4a4294f6 is address indexed _eventAddress
+    # data: uint8 _finalResultIndex
 
 **event WinningsWithdrawn**
     
@@ -596,25 +609,25 @@ log event 4: `OracleResultSet` in `DecentralizedOracle`
 # finalizeResult() Tx Receipt
 Example DecentralizedOracle.finalizeResult() transaction receipt
 
-    // TODO
-    $ ./qtum-cli -testnet gettransactionreceipt 3eb3805a1f9707c5e9de071b1ecde0083035498cce07b31a45133bca40d2afa5
+    $ ./qtum-cli -testnet gettransactionreceipt e5ffaafc8cf5a239750075ac1866537bc3999561e2bbd7012bc80b24e0338cbb
     [
         {
-            "blockHash": "41c0c9b023e66a6db95d545a5292a6a9444997b867e47353fca92e76f0b066f0",
-            "blockNumber": 50896,
-            "transactionHash": "3eb3805a1f9707c5e9de071b1ecde0083035498cce07b31a45133bca40d2afa5",
+            "blockHash": "2aca546e5adb3a6e2ac38c5cba81f2ce40097a8982d8b6ef37795729048c48f3",
+            "blockNumber": 68245,
+            "transactionHash": "e5ffaafc8cf5a239750075ac1866537bc3999561e2bbd7012bc80b24e0338cbb",
             "transactionIndex": 2,
             "from": "17e7888aa7412a735f336d2f6d784caefabb6fa3",
-            "to": "c46489624c5d47bbe69f68f8d55701d7c84718b2",
-            "cumulativeGasUsed": 38031,
-            "gasUsed": 38031,
-            "contractAddress": "c46489624c5d47bbe69f68f8d55701d7c84718b2",
+            "to": "97c781c612ad23f4049f253bd52ac2889855f2da",
+            "cumulativeGasUsed": 43448,
+            "gasUsed": 43448,
+            "contractAddress": "97c781c612ad23f4049f253bd52ac2889855f2da",
             "log": [
                 {
-                    "address": "a51f3252ff700df157b4633d1fa563fbcbe6e8fd",
+                    "address": "0387da9a3e773b559ca0367c5929360e4a4294f6",
                     "topics": [
-                        "e1dd417dcbeb9c130709b6712f14e2b3362b509f72c1b86daa86da8173d92477",
-                        "000000000000000000000000a51f3252ff700df157b4633d1fa563fbcbe6e8fd"
+                        "14959b24f45a8f41b814b331ae09533db9d7e7962ca200e484f849a1fd1955aa",
+                        "0000000000000000000000000000000000000000000000000000000000000000",
+                        "0000000000000000000000000387da9a3e773b559ca0367c5929360e4a4294f6"
                     ],
                     "data": "0000000000000000000000000000000000000000000000000000000000000002"
                 }
@@ -624,18 +637,19 @@ Example DecentralizedOracle.finalizeResult() transaction receipt
 
 log event 1: `FinalResultSet` event in `TopicEvent`
 
-    // TODO
     {
-        "address": "a51f3252ff700df157b4633d1fa563fbcbe6e8fd",
+        "address": "0387da9a3e773b559ca0367c5929360e4a4294f6",
         "topics": [
-            "e1dd417dcbeb9c130709b6712f14e2b3362b509f72c1b86daa86da8173d92477",
-            "000000000000000000000000a51f3252ff700df157b4633d1fa563fbcbe6e8fd"
+            "14959b24f45a8f41b814b331ae09533db9d7e7962ca200e484f849a1fd1955aa",
+            "0000000000000000000000000000000000000000000000000000000000000000",
+            "0000000000000000000000000387da9a3e773b559ca0367c5929360e4a4294f6"
         ],
         "data": "0000000000000000000000000000000000000000000000000000000000000002"
     }
-    # address: 979487ee8c643621d2e3950dbe60edc610d7569a is TopicEvent
-    # topics[0]: e1dd417dcbeb9c130709b6712f14e2b3362b509f72c1b86daa86da8173d92477 is FinalResultSet event
-    # topics[1]: 000000000000000000000000a51f3252ff700df157b4633d1fa563fbcbe6e8fd is address indexed _eventAddress
+    # address: 0387da9a3e773b559ca0367c5929360e4a4294f6 is TopicEvent
+    # topics[0]: 14959b24f45a8f41b814b331ae09533db9d7e7962ca200e484f849a1fd1955aa is FinalResultSet event
+    # topics[1]: 0000000000000000000000000000000000000000000000000000000000000000 is uint16 indexed _version
+    # topics[2]: 0000000000000000000000000387da9a3e773b559ca0367c5929360e4a4294f6 is address indexed _eventAddress
     # data: uint8 _finalResultIndex
 
 # withdrawWinnings() Tx Receipt
