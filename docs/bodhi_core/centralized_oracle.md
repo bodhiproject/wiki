@@ -1,43 +1,40 @@
 # Interface (ABI)
 <textarea id="centralized_oracle_abi" class="abi" readonly rows="2">
-[{"constant":true,"inputs":[],"name":"bettingEndBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"invalidateOracle","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_eventResultIndex","type":"uint8"}],"name":"getEventResultName","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"oracle","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_resultIndex","type":"uint8"}],"name":"setResult","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getBetBalances","outputs":[{"name":"","type":"uint256[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getVoteBalances","outputs":[{"name":"","type":"uint256[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getTotalVotes","outputs":[{"name":"","type":"uint256[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getTotalBets","outputs":[{"name":"","type":"uint256[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getEventName","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"finished","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"invalidResultIndex","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"numOfResults","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_resultIndex","type":"uint8"}],"name":"bet","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"resultSettingEndBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getResult","outputs":[{"name":"","type":"uint8"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"consensusThreshold","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"eventAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_owner","type":"address"},{"name":"_oracle","type":"address"},{"name":"_eventAddress","type":"address"},{"name":"_eventName","type":"bytes32[10]"},{"name":"_eventResultNames","type":"bytes32[10]"},{"name":"_numOfResults","type":"uint8"},{"name":"_bettingEndBlock","type":"uint256"},{"name":"_resultSettingEndBlock","type":"uint256"},{"name":"_consensusThreshold","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_oracleAddress","type":"address"},{"indexed":true,"name":"_participant","type":"address"},{"indexed":false,"name":"_resultIndex","type":"uint8"},{"indexed":false,"name":"_votedAmount","type":"uint256"}],"name":"OracleResultVoted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_oracleAddress","type":"address"},{"indexed":false,"name":"_resultIndex","type":"uint8"}],"name":"OracleResultSet","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_oracleAddress","type":"address"}],"name":"OracleInvalidated","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_previousOwner","type":"address"},{"indexed":true,"name":"_newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"}]
+[{"constant":true,"inputs":[],"name":"resultIndex","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"bettingEndBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"version","outputs":[{"name":"","type":"uint16"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"oracle","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_resultIndex","type":"uint8"}],"name":"setResult","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getBetBalances","outputs":[{"name":"","type":"uint256[11]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getVoteBalances","outputs":[{"name":"","type":"uint256[11]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getTotalVotes","outputs":[{"name":"","type":"uint256[11]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getTotalBets","outputs":[{"name":"","type":"uint256[11]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"resultSettingStartBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"INVALID_RESULT_INDEX","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"finished","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"numOfResults","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_resultIndex","type":"uint8"}],"name":"bet","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"resultSettingEndBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"bettingStartBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"consensusThreshold","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"eventAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_version","type":"uint16"},{"name":"_owner","type":"address"},{"name":"_eventAddress","type":"address"},{"name":"_numOfResults","type":"uint8"},{"name":"_oracle","type":"address"},{"name":"_bettingStartBlock","type":"uint256"},{"name":"_bettingEndBlock","type":"uint256"},{"name":"_resultSettingStartBlock","type":"uint256"},{"name":"_resultSettingEndBlock","type":"uint256"},{"name":"_consensusThreshold","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_version","type":"uint16"},{"indexed":true,"name":"_oracleAddress","type":"address"},{"indexed":true,"name":"_participant","type":"address"},{"indexed":false,"name":"_resultIndex","type":"uint8"},{"indexed":false,"name":"_votedAmount","type":"uint256"}],"name":"OracleResultVoted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_version","type":"uint16"},{"indexed":true,"name":"_oracleAddress","type":"address"},{"indexed":false,"name":"_resultIndex","type":"uint8"}],"name":"OracleResultSet","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_previousOwner","type":"address"},{"indexed":true,"name":"_newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"}]
 </textarea>
 <button class="btn" data-clipboard-target="#centralized_oracle_abi">Copy ABI</button>
 <span class="copied">Copied!</span>
 
 # Function Signatures
 
+    bb235d67: INVALID_RESULT_INDEX()
     d0821b0e: bet(uint8)
     12ca9ed5: bettingEndBlock()
+    e04c1e63: bettingStartBlock()
     f9b0b5b9: consensusThreshold()
     fad56779: eventAddress()
     bef4876b: finished()
     871169b9: getBetBalances()
-    b81e43fc: getEventName()
-    4cb15529: getEventResultName(uint8)
-    de292789: getResult()
     a3cb679d: getTotalBets()
     9a0e7d66: getTotalVotes()
     95d3382a: getVoteBalances()
-    c8ef9028: invalidResultIndex()
-    2f64452e: invalidateOracle()
     ca381d2e: numOfResults()
     7dc0d1d0: oracle()
     8da5cb5b: owner()
+    0d4e8aed: resultIndex()
     d16e637b: resultSettingEndBlock()
+    b6fadfb7: resultSettingStartBlock()
     80ce60d1: setResult(uint8)
     f2fde38b: transferOwnership(address)
+    54fd4d50: version()
 
 # Event Hashes
 
-    event OracleResultVoted(address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
-    0f6520c85c2e282b6c54e14e5b424ca7eafc89615f05f2d35f3c1f9110e9df03
+    event OracleResultVoted(uint16 indexed _version, address indexed _oracleAddress, address indexed _participant, uint8 _resultIndex, uint256 _votedAmount)
+    999983c5b5c285890ab4b2b91f9a82d0ca95784c9b138bd37110ba06faa45f67
 
-    event OracleResultSet(address indexed _oracleAddress, uint8 _resultIndex)
-    b42c9ac580dc82ad43bf9a1b2262e16b53f647e722089b93ebae1479032fc221
-
-    event OracleInvalidated(address indexed _oracleAddress)
-    f4ad6ac3ff78b4399aa29b69aba278918f35eb95a74408de8340f267e43c112e
+    event OracleResultSet(uint16 indexed _version, address indexed _oracleAddress, uint8 _resultIndex)
+    766d7bf9e9e8671204cd1da1b1b107d50247d2d1c389c552765262ee3afefb9b
 
 # bet()
 Places a bet on a result given the index. The QTUM is routed to the TopicEvent contract for storage.
@@ -98,28 +95,6 @@ The CentralizedOracle can set the result by first approving 100 BOT (the consens
 
 11. Wait for your transaction to be mined
 
-# invalidateOracle()
-If the CentralizedOracle does not set the result by the result setting end block, anyone can call this method to invalidate the CentralizedOracle. This will create a new DecentralizedOracle and start a new BOT voting round. All results will be available to vote on.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `SendTo` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `invalidateOracle(2f64452e)`
-    
-    ![](../img/invalidate_centralized1.png)
-
-5. Set the `Gas Limit` to `3000000` (3 million) to make sure the transaction goes through. Any unused gas will be returned to you.
-
-    ![](../img/invalidate_centralized2.png)
-
-6. Set the `Sender Address` as the CentralizedOracle address
-7. Click `Send To Contract` button
-8. Your transaction is posted. Save the transaction id if you want to verify the transaction succeeded.
-
-    ![](../img/invalidate_centralized3.png)
-
-9. Wait for your transaction to be mined
-
 # eventAddress()
 Returns the Event address.
 
@@ -130,29 +105,6 @@ Returns the Event address.
 5. Click `Call Contract` button
 6. Returns: 
     * `address` is the Event address
-
-# getEventName()
-Returns the event name.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `Call` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `getEventName(b81e43fc)`
-5. Click `Call Contract` button
-6. Returns:
-    * `string` is the Event name
-
-# getEventResultName()
-Returns the event name given the Event result index.
-
-1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
-2. Click on `Smart Contract` tab, then click on `Call` sub tab
-3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `getEventResultName(4cb15529)`
-5. Click `Call Contract` button
-6. Set the `uint8 _eventResultIndex`
-7. Returns:
-    * `string` is the Event result name
 
 # numOfResults()
 Returns the number of Event results.
@@ -187,6 +139,17 @@ Returns the address of the CentralizedOracle.
 6. Returns:
     * `address` is the CentralizedOracle in hex
 
+# bettingStartBlock()
+Returns the block when the betting period will start.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `bettingStartBlock(e04c1e63)`
+5. Click `Call Contract` button
+6. Returns:
+    * `uint256` is the bettingStartBlock
+
 # bettingEndBlock()
 Returns the block when the betting period will end.
 
@@ -197,6 +160,17 @@ Returns the block when the betting period will end.
 5. Click `Call Contract` button
 6. Returns:
     * `uint256` is the betting end block
+
+# resultSettingStartBlock()
+Returns the block when the CentralizedOracle will be able to set the result.
+
+1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
+2. Click on `Smart Contract` tab, then click on `Call` sub tab
+3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
+4. Set the `Function` to `resultSettingStartBlock(b6fadfb7)`
+5. Click `Call Contract` button
+6. Returns:
+    * `uint256` is the resultSettingStartBlock
 
 # resultSettingEndBlock()
 Returns the block when the CentralizedOracle will no longer be able to set the result.
@@ -255,20 +229,16 @@ Returns an array of total BOT votes placed by all participants. Shows 10 values 
 6. Returns:
     * `uint256[10]` is the array of total BOT votes shown in Botoshi
 
-# getResult()
-Returns the winning result index, name, and true/false indicating if the Oracle is finished. Please note this will return an error if the Oracle is not finished and will return this error:
-
-![](../img/call_contract_error.png)
+# resultIndex()
+Returns the result index. If it returns 255, then the Centralized Oracle has not set the result yet.
 
 1. [Launch QT Wallet](../qtum/qt_wallet.md#launch-qt-wallet)
 2. Click on `Smart Contract` tab, then click on `Call` sub tab
 3. Set the `Contract Address` and [Interface (ABI)](#interface-abi)
-4. Set the `Function` to `getResult(de292789)`
+4. Set the `Function` to `resultIndex(0d4e8aed)`
 5. Click `Call Contract` button
 6. Returns:
-    * `uint8` is the winning result index
-    * `string` is the winning result name
-    * `bool` is the flag indicating the result is valid
+    * `uint8` is the result index
 
 # finished()
 Returns true or false if the Oracle is finished. No more transactions are allowed after finished.
