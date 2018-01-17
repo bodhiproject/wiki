@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Help - Bodhi Prediction Market Wiki</title>
+  <title>Developer Guide - Bodhi Prediction Market Wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Help";
-    var mkdocs_page_input_path = "help.md";
-    var mkdocs_page_url = "/help/";
+    var mkdocs_page_name = "Developer Guide";
+    var mkdocs_page_input_path = "developer_guide.md";
+    var mkdocs_page_url = "/developer_guide/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -128,23 +128,29 @@
     <a class="" href="../deployment/">Contract Deployment</a>
 	    </li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../developer_guide/">Developer Guide</a>
-	    </li>
-          
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">Help</a>
+    <a class="current" href="./">Developer Guide</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#further-help">Further Help</a></li>
+    <li class="toctree-l2"><a href="#prerequisite">Prerequisite</a></li>
     
 
-    <li class="toctree-l2"><a href="#mkdocs-markdown">Mkdocs Markdown</a></li>
+    <li class="toctree-l2"><a href="#graphql-mongodb">GraphQL + MongoDB</a></li>
+    
+
+    <li class="toctree-l2"><a href="#api">API</a></li>
+    
+
+    <li class="toctree-l2"><a href="#ui">UI</a></li>
     
 
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../help/">Help</a>
 	    </li>
           
         </ul>
@@ -169,7 +175,7 @@
     
       
     
-    <li>Help</li>
+    <li>Developer Guide</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -179,12 +185,142 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="further-help">Further Help</h1>
-<p>If you need further assistance, you can reach me at:</p>
-<p>Email: <a href="mailto:deric@bodhi.network">deric@bodhi.network</a></p>
-<p>Telegram: <a href="https://t.me/dwalintukan">https://t.me/dwalintukan</a></p>
-<h1 id="mkdocs-markdown">Mkdocs Markdown</h1>
-<p>For full documentation visit <a href="http://mkdocs.org">mkdocs.org</a>.</p>
+                <p>All of our code is open sourced. Developers can follow this guide to get projects set up.</p>
+<h3 id="prerequisite">Prerequisite</h3>
+<ol>
+<li>
+<p>Download <code>qtum-x.xx.xx-osx64.tar.gz</code>  from <a href="https://github.com/qtumproject/qtum/releases">https://github.com/qtumproject/qtum/releases</a> and unzip it.</p>
+</li>
+<li>
+<p>Then open terminal and enter the directory:</p>
+<pre><code> $ cd /qtum-x.xx.xx/bin
+</code></pre>
+</li>
+<li>
+<p>Run command to start sync.</p>
+<pre><code> $ ./qtumd -testnet -rpcuser=bodhi -rpcpassword=bodhi -logevents 
+ # If you want verbose logging, add -printtoconsole
+</code></pre>
+<p>The terminal should show some info like below</p>
+<p><img alt="img" src="../img/sync_screenshot.png" /></p>
+</li>
+<li>
+<p>Open another terminal and cd into the same directory, run command</p>
+<pre><code> $ ./qtum-cli -rpcuser=bodhi -rpcpassword=bodhi -testnet getblockcount
+</code></pre>
+<p>it will show the amount you have synced. Then you can open <a href="https://testnet.qtum.org/">https://testnet.qtum.org/</a> and see the blocks part, when you reached around the number in the first block, your sync is almost done.</p>
+</li>
+</ol>
+<h3 id="graphql-mongodb">GraphQL + MongoDB</h3>
+<ol>
+<li>
+<p>Install MongoDB</p>
+<p>Run following command </p>
+<pre><code> $ brew update
+ $ brew install mongodb
+ $ sudo mkdir -p /data/db
+ $ sudo chown -R `id -un` /data/db
+
+ $ mongod
+ # mongod start MongoDB
+</code></pre>
+<p>Open another terminal and type </p>
+<pre><code> $ mongo
+ $ show dbs
+</code></pre>
+<p>You will see how much storage your database use.</p>
+<p>You can also get some installation help from <a href="https://docs.mongodb.com/manual/administration/install-community/">Here</a>.                </p>
+<p>If you installed docker, you can also start mongodb </p>
+<pre><code> $ docker run -d -p 27017:27017 mongo
+</code></pre>
+</li>
+<li>
+<p>Open terminal and run command</p>
+<pre><code> $ git clone https://github.com/bodhiproject/bodhi-graphql.git
+ $ cd bodhi-graphql
+ $ npm install
+</code></pre>
+</li>
+<li>
+<p>Start bodhi-graphql at 5555 back to previous terminal and run</p>
+<pre><code> $ npm start
+</code></pre>
+<p>Then play with graphiql on <a href="localhost:5555/graphiql">localhost:5555/graphiql</a></p>
+</li>
+<li>
+<p>Run below query in the graphiql website</p>
+<pre><code> query{
+   allOracles {
+       address,
+       topicAddress,
+       status,
+       token,
+       name,
+       options,
+       optionIdxs,
+       amounts,
+       resultIdx,
+       blockNum,
+       endBlock
+     },
+ }
+</code></pre>
+<p>If your QTUM is synced, you should get some Oracle objects. Otherwise you can only get an empty array.</p>
+</li>
+</ol>
+<h3 id="api">API</h3>
+<ol>
+<li>
+<p>Clone project</p>
+<pre><code> $ git clone https://github.com/bodhiproject/bodhi-api.git
+</code></pre>
+</li>
+<li>
+<p>Install dependencies</p>
+<pre><code> $ cd bodhi-api
+ $ npm install
+</code></pre>
+</li>
+<li>
+<p>Run project</p>
+<pre><code> $ npm start
+</code></pre>
+</li>
+<li>
+<p>Open another terminal and run </p>
+<pre><code> $ curl http://localhost:8080/getblockcount
+</code></pre>
+<p>Or download <a href="https://www.getpostman.com/">Postman</a> and unzip it, then open postman, in the Builder panel, enter http://localhost:8080/getblockcount in the input area. Then click send button.</p>
+<p>You should get a message like {“result”:xxxxx}</p>
+</li>
+</ol>
+<h3 id="ui">UI</h3>
+<p><strong>UI has dependency on grapghql, api</strong></p>
+<ol>
+<li>
+<p>Clone project</p>
+<pre><code> $ git clone https://github.com/bodhiproject/bodhi-ui.git
+</code></pre>
+</li>
+<li>
+<p>Installing Packages &amp; Dependencies: <code>yarn</code> <br />
+   it will download all the necessary packages and dependencies in to node_modules folder.</p>
+</li>
+<li>
+<p>Run command</p>
+<pre><code> $ npm install
+</code></pre>
+</li>
+<li>
+<p>Start the app </p>
+<pre><code> $ yarn start
+</code></pre>
+<p>After the compiled process completed successfully, it will show success commands &amp; redirect to the http://localhost:3000/ of your browser where you will find the dashboard of the app.</p>
+</li>
+<li>
+<p>To create an optimized product build of the Isomorphic app, you will need to run this build command in your terminal root directory of the app. <code>yarn build</code></p>
+</li>
+</ol>
               
             </div>
           </div>
@@ -192,8 +328,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../help/" class="btn btn-neutral float-right" title="Help">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../developer_guide/" class="btn btn-neutral" title="Developer Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../deployment/" class="btn btn-neutral" title="Contract Deployment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -219,8 +357,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../developer_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../deployment/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../help/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
