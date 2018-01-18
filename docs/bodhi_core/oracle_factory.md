@@ -2,7 +2,7 @@
 
 **QTUM Testnet**
 
-* OracleFactory: `ce39131df7cd9965d2ea43dae6281bb1b7933705`
+* OracleFactory: `18a4fd5add78af3deb2e3dd97a47f9dc008caf82`
 
 # Event Hashes
 
