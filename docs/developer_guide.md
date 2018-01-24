@@ -24,6 +24,8 @@ All of our code is open sourced. Developers can follow this guide to get project
 
       it will show the amount you have synced. Then you can open [https://testnet.qtum.org/](https://testnet.qtum.org/) and see the blocks part, when you reached around the number in the first block, your sync is almost done.
 
+5. When sync is done, stop the command in the first terminal by `CTRL+C`
+
 ### GraphQL + MongoDB
 
 1. Install MongoDB
@@ -83,31 +85,6 @@ All of our code is open sourced. Developers can follow this guide to get project
          }
 
       If your QTUM is synced, you should get some Oracle objects. Otherwise you can only get an empty array.
-
-
-### API
-
-1. Clone project
-
-         $ git clone https://github.com/bodhiproject/bodhi-api.git
-
-2. Install dependencies
-
-         $ cd bodhi-api
-         $ npm install
-
-3. Run project
-
-         $ npm start
-
-4. Open another terminal and run 
-
-         $ curl http://localhost:8080/getblockcount
-
-      Or download [Postman](https://www.getpostman.com/) and unzip it, then open postman, in the Builder panel, enter http://localhost:8080/getblockcount in the input area. Then click send button.
-
-      You should get a message like {“result”:xxxxx}
-
 
 ### UI
 
