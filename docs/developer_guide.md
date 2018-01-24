@@ -88,7 +88,7 @@ All of our code is open sourced. Developers can follow this guide to get project
 
 ### UI
 
-   **UI has dependency on grapghql, api**
+   **UI has dependency on graphql**
 
 1. Clone project
 
