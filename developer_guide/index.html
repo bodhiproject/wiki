@@ -139,9 +139,6 @@
     <li class="toctree-l2"><a href="#graphql-mongodb">GraphQL + MongoDB</a></li>
     
 
-    <li class="toctree-l2"><a href="#api">API</a></li>
-    
-
     <li class="toctree-l2"><a href="#ui">UI</a></li>
     
 
@@ -210,6 +207,9 @@
 </code></pre>
 <p>it will show the amount you have synced. Then you can open <a href="https://testnet.qtum.org/">https://testnet.qtum.org/</a> and see the blocks part, when you reached around the number in the first block, your sync is almost done.</p>
 </li>
+<li>
+<p>When sync is done, stop the command in the first terminal by <code>CTRL+C</code></p>
+</li>
 </ol>
 <h3 id="graphql-mongodb">GraphQL + MongoDB</h3>
 <ol>
@@ -268,34 +268,8 @@
 <p>If your QTUM is synced, you should get some Oracle objects. Otherwise you can only get an empty array.</p>
 </li>
 </ol>
-<h3 id="api">API</h3>
-<ol>
-<li>
-<p>Clone project</p>
-<pre><code> $ git clone https://github.com/bodhiproject/bodhi-api.git
-</code></pre>
-</li>
-<li>
-<p>Install dependencies</p>
-<pre><code> $ cd bodhi-api
- $ npm install
-</code></pre>
-</li>
-<li>
-<p>Run project</p>
-<pre><code> $ npm start
-</code></pre>
-</li>
-<li>
-<p>Open another terminal and run </p>
-<pre><code> $ curl http://localhost:8080/getblockcount
-</code></pre>
-<p>Or download <a href="https://www.getpostman.com/">Postman</a> and unzip it, then open postman, in the Builder panel, enter http://localhost:8080/getblockcount in the input area. Then click send button.</p>
-<p>You should get a message like {“result”:xxxxx}</p>
-</li>
-</ol>
 <h3 id="ui">UI</h3>
-<p><strong>UI has dependency on grapghql, api</strong></p>
+<p><strong>UI has dependency on graphql</strong></p>
 <ol>
 <li>
 <p>Clone project</p>
