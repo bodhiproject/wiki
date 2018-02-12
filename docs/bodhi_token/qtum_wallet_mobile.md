@@ -17,12 +17,12 @@
 
 	![](../img/qt_mobile_watch_3.png)
 
-5. Add `Token Name`: BOT
-6. Copy/paste the `Token Address` (see [Deployed Contracts](info.md#deployed-contracts) Mainnet address above)
-7. Copy/paste the `ABI Interface` (see [Interface (ABI)](info.md#interface-abi) above)
-8. Click `OK` button
+5. Copy/paste the `Token Address` (see [Deployed Contracts](info.md#deployed-contracts) Mainnet address above)
 
 	![](../img/qt_mobile_watch_4.png)
+
+6. The `Token Name` should autofill by itself
+7. Click `OK` button
 
 # Send BOT
 1. Download the mobile app and launch it
