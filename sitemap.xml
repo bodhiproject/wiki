@@ -106,6 +106,16 @@
     
 
     
+        
+    <url>
+     <loc>/ethereum/mainnet_v0/</loc>
+     <lastmod>2018-05-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
     <url>
      <loc>/deployment/</loc>
      <lastmod>2018-05-15</lastmod>

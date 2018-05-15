@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Testnet v0 - Bodhi Prediction Market Wiki</title>
+  <title>Mainnet v0 - Bodhi Prediction Market Wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Testnet v0";
-    var mkdocs_page_input_path = "qtum/testnet_v0.md";
-    var mkdocs_page_url = "/qtum/testnet_v0/";
+    var mkdocs_page_name = "Mainnet v0";
+    var mkdocs_page_input_path = "ethereum/mainnet_v0.md";
+    var mkdocs_page_url = "/ethereum/mainnet_v0/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -118,18 +118,15 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../mainnet_v0/">Mainnet v0</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Testnet v0</a>
-    <ul class="subnav">
-            
-    </ul>
+    <a class="" href="../../qtum/mainnet_v0/">Mainnet v0</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../qt_wallet/">QT Wallet (Desktop)</a>
+    <a class="" href="../../qtum/testnet_v0/">Testnet v0</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../qtum/qt_wallet/">QT Wallet (Desktop)</a>
                 </li>
     </ul>
 	    </li>
@@ -138,9 +135,15 @@
 		
     <span class="caption-text">Ethereum</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../ethereum/mainnet_v0/">Mainnet v0</a>
+    <a class="current" href="./">Mainnet v0</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#bodhiethereum">BodhiEthereum</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -182,11 +185,11 @@
     
       
         
-          <li>Qtum &raquo;</li>
+          <li>Ethereum &raquo;</li>
         
       
     
-    <li>Testnet v0</li>
+    <li>Mainnet v0</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -196,7 +199,34 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="bodhiethereum">BodhiEthereum</h1>
+<pre><code>11/1/2017
+Address: 0x47c171cE16c1C06AaE6E785Ba3c518C42235da0F
+Txid: 0x5724fdf61205159221d64faccbc767f1be29947ea3fe63380b70e6f300749726
+Owner: 0x6b36fdf89d706035dc97b6aa4bc84b2418a452f1
+</code></pre>
+<p><strong>ABI</strong>
+<textarea id="bodhi_ethereum_abi" class="abi" readonly rows="2">
+[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_amount","type":"uint256"}],"name":"mint","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"},{"name":"_data","type":"bytes"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"tokenTotalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"supply","type":"uint256"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"Mint","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_previousOwner","type":"address"},{"indexed":true,"name":"_newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"data","type":"bytes"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"}]
+</textarea>
+<button class="btn" data-clipboard-target="#bodhi_ethereum_abi">Copy ABI</button>
+<span class="copied">Copied!</span></p>
+<p><strong>Function Signatures</strong></p>
+<pre><code>dd62ed3e: allowance(address,address)
+095ea7b3: approve(address,uint256)
+70a08231: balanceOf(address)
+313ce567: decimals()
+40c10f19: mint(address,uint256)
+06fdde03: name()
+8da5cb5b: owner()
+95d89b41: symbol()
+f7abab9e: tokenTotalSupply()
+18160ddd: totalSupply()
+a9059cbb: transfer(address,uint256)
+be45fd62: transfer(address,uint256,bytes)
+23b872dd: transferFrom(address,address,uint256)
+f2fde38b: transferOwnership(address)
+</code></pre>
               
             </div>
           </div>
@@ -204,10 +234,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../qt_wallet/" class="btn btn-neutral float-right" title="QT Wallet (Desktop)">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../deployment/" class="btn btn-neutral float-right" title="Contract Deployment">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../mainnet_v0/" class="btn btn-neutral" title="Mainnet v0"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../qtum/qt_wallet/" class="btn btn-neutral" title="QT Wallet (Desktop)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -233,10 +263,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../mainnet_v0/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../qtum/qt_wallet/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../qt_wallet/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
