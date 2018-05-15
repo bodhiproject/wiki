@@ -18,8 +18,8 @@ pages:
     - DecentralizedOracle: bodhi_core/decentralized_oracle.md
     - Logs: bodhi_core/logs.md
   - Qtum:
-    - Mainnet Contracts: qtum/mainnet.md
-    - Testnet Contracts: qtum/testnet.md
+    - Mainnet v0: qtum/mainnet_v0.md
+    - Testnet v0: qtum/testnet_v0.md
     - QT Wallet (Desktop): qtum/qt_wallet.md 
   - Contract Deployment: deployment.md
   - Developer Guide: developer_guide.md
