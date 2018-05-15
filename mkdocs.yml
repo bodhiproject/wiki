@@ -21,6 +21,8 @@ pages:
     - Mainnet v0: qtum/mainnet_v0.md
     - Testnet v0: qtum/testnet_v0.md
     - QT Wallet (Desktop): qtum/qt_wallet.md 
+  - Ethereum:
+    - Mainnet v0: ethereum/mainnet_v0.md
   - Contract Deployment: deployment.md
   - Developer Guide: developer_guide.md
   - Help: help.md
