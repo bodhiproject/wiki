@@ -1,9 +1,13 @@
 # BodhiEthereum
 
-    11/1/2017
+    5/15/2018
     Address: 0x47c171cE16c1C06AaE6E785Ba3c518C42235da0F
     Txid: 0x5724fdf61205159221d64faccbc767f1be29947ea3fe63380b70e6f300749726
     Owner: 0x6b36fdf89d706035dc97b6aa4bc84b2418a452f1
+
+    Name: "Bodhi Ethereum"
+    Symbol: "BOE"
+    Decimals: 8
 
 **ABI**
 <textarea id="bodhi_ethereum_abi" class="abi" readonly rows="2">
